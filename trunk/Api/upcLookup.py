@@ -19,6 +19,7 @@ from django.utils import simplejson
 # -----------------------------------------------------------------------------
 
 UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
+GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
 
 # -----------------------------------------------------------------------------
 # Custom RPC Transport Class
