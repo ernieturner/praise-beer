@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="appName">Praise Beer</string>
+<string name="scanBeer">Scan Beer</string>
+<string name="quitApp">Quit Application</string>
+<string name="scanContent">Scanned UPC Value: </string>
+
+
+<string name="noDataEntered">No data was entered to search on...</string>
+<string name="scanResults">Scan Results</string>
+<string name="upcFormat">UPC Format: </string>
+</resources>

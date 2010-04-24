@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/upcResultsLayout">
+
+    <TextView
+          android:id="@+id/beerUpcContent"
+          android:layout_width="wrap_content"
+          android:layout_height="fill_parent"
+          android:textSize="20sp"
+          android:layout_weight="5"/>
+ 	<TextView
+ 		  android:id="@+id/beerUpcType"
+          android:layout_width="wrap_content"
+          android:layout_height="fill_parent"
+          android:textSize="15sp"
+          android:layout_weight="1"/>
+</LinearLayout>
