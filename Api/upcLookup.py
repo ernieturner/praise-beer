@@ -10,19 +10,19 @@ import logging
 from StringIO import StringIO
 import urllib
 import re
-
+import PBUtils
 
 from google.appengine.api import urlfetch
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from django.utils import simplejson
 
+
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
 
 UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
-GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
 
 # -----------------------------------------------------------------------------
 # Custom RPC Transport Class
@@ -84,35 +84,6 @@ class GoogleXMLRPCTransport(object):
         return u.close()
 
 
-# -----------------------------------------------------------------------------
-# Google API Search Handler Class
-# -----------------------------------------------------------------------------
-
-class GoogleSearch():
-	def getResults(self,description):		
-		base   = "http://ajax.googleapis.com/ajax/services/search/web?"		
-		params = {
-			'v':'1.0',
-			'key':GOOGLE_SEARCH_API_KEY,
-			'q':'site:beeradvocate.com '+ description
-		}
-		payload = urllib.urlencode(params)
-		url     = base + payload
-					
-		response = StringIO(urlfetch.fetch(url).content)		
-		result   = self._formatResults(simplejson.load(response))
-		return result;					
-
-	def _formatResults(self,searchResults):        
-		baBase = 'http://www.beeradvocate.com/beer/profile/'		
-		lookup = {};
-		for entry in searchResults['responseData']['results']:
-			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-			else:									
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-		return lookup.keys();
 					
 # -----------------------------------------------------------------------------
 # Web Request Handler Class
@@ -138,13 +109,14 @@ class MainHandler(webapp.RequestHandler):
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
                     productDescription = result['description']                    
-                    links = GoogleSearch().getResults(result['description'])
-                    #size = result['size']
+                    links  = PBUtils.GoogleSearch().getResults(result['description'])
+                    rating = PBUtils.Scraper().doScrape(links[0])
+                    #size  = result['size']
                 else:
                     error = True
 
                 if error == False:
-                    jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links})
+                    jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "rating":rating})
                 else:
                     jsonResponse = simplejson.dumps({"success": False, "errorResponse": result})
         else:
