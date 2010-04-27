@@ -3,7 +3,6 @@
 # -----------------------------------------------------------------------------
 # Imports
 # -----------------------------------------------------------------------------
-import wsgiref.handlers
 import sys
 import logging
 from StringIO import StringIO
@@ -12,8 +11,6 @@ import re
 
 from google.appengine.api import urlfetch
 from google.appengine.api.urlfetch import DownloadError 
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp.util import run_wsgi_app
 from django.utils import simplejson
 
 # -----------------------------------------------------------------------------
@@ -23,7 +20,7 @@ from django.utils import simplejson
 GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
 
 # -----------------------------------------------------------------------------
-# Scraper - This will scrape the BA site for us
+# Scraper - This will scrape the BA site for us, or Google's cache, depending
 # -----------------------------------------------------------------------------
 class Scraper():
 
@@ -49,13 +46,13 @@ class Scraper():
 						ratings = {'overall':m.group(1,2,3), 'bros':m.group(4,5)}
 						return ratings
 					else:
-						return 'no matches'+content
+						return 'No matches found.'
 				else:
-					return 'nope'		
+					return 'An error occurred during URL fetch ('+ result.status.code +').'		
 			except:
-				return "Request Timed Out"	
+				return "Request timed out"	
 				
-		return "no results"
+		return "No results found."
 		
 # -----------------------------------------------------------------------------
 # Google API Search Handler Class
@@ -67,7 +64,7 @@ class GoogleSearch():
 		params = {
 			'v':'1.0',
 			'key':GOOGLE_SEARCH_API_KEY,
-			'q':'site:beeradvocate.com '+ description
+			'q':'site:beeradvocate.com/beer/profile/ '+ description
 		}
 		payload = urllib.urlencode(params)
 		url     = base + payload
