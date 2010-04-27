@@ -45,8 +45,8 @@ public class PraiseBeer extends Activity {
     		IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
     		if (scanResult != null) { 
     			Intent i = new Intent(this, UpcResults.class);
-    	    	i.putExtra("content", scanResult.getContents());
-    	    	i.putExtra("format", scanResult.getFormatName());
+    	    	i.putExtra("upcCode", scanResult.getContents());
+    	    	i.putExtra("upcFormat", scanResult.getFormatName());
     	    	startActivity(i);
     		} 
     	}
