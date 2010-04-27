@@ -21,7 +21,6 @@ public class UpcResults extends Activity implements Runnable
 {
 	private boolean sentUpcRequest = false;
 	private static int SEARCH_DIALOG_ID = 1;
-	
 	private ScanDetails upcDetails;
 	
     @Override
@@ -56,6 +55,10 @@ public class UpcResults extends Activity implements Runnable
         		sentUpcRequest = true;
         		thread.start();
         		return;
+        	}
+        	else
+        	{
+        		//TODO: Error handling, invalid barcode scanned
         	}
         }
     	//Handle failure state
@@ -193,14 +196,14 @@ public class UpcResults extends Activity implements Runnable
 		//Attempt to read out saved data
         super.onRestoreInstanceState(savedInstanceState);
         upcDetails = new ScanDetails(savedInstanceState.getString("upcCode"), 
-        							savedInstanceState.getString("upcType"),
-        							savedInstanceState.getString("scannedProduct"),
-        							savedInstanceState.getStringArray("productLinks")
+        							 savedInstanceState.getString("upcType"),
+        							 savedInstanceState.getString("scannedProduct"),
+        							 savedInstanceState.getStringArray("productLinks")
         							);
 
         sentUpcRequest = savedInstanceState.getBoolean("sentUpcRequest");
         
-        //If data exists, display it. Otherwise request new data
+        //If we've already made a request, display the results. Otherwise request new data
         if(sentUpcRequest == true)
         {
         	setResultText();
