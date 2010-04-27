@@ -4,22 +4,25 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.util.Linkify;
 import android.widget.TextView;
 
-public class UpcResults extends Activity implements Runnable{
-
-	private String upcCode;
-	private String upcFormat;
-	private String product;
-	private ProgressDialog pd;
+public class UpcResults extends Activity implements Runnable
+{
+	private boolean sentUpcRequest = false;
+	private static int SEARCH_DIALOG_ID = 1;
+	
+	private ScanDetails upcDetails;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class UpcResults extends Activity implements Runnable{
         	startRequestThread();
         }
     }
+
+/***********************************
+* Search thread functions
+**********************************/
     
     /**
      * Takes input (UPC content, UPC type) from intent object and starts a thread
@@ -41,12 +48,12 @@ public class UpcResults extends Activity implements Runnable{
     	Bundle extras = getIntent().getExtras(); 
     	if(extras != null)
         {
-        	upcCode = extras.getString("content");
-        	upcFormat = extras.getString("format");
-        	if(upcCode != null && upcCode != "")
+    		upcDetails = new ScanDetails(extras.getString("upcCode"), extras.getString("upcFormat"));
+        	if(upcDetails.getUpcCode() != null && upcDetails.getUpcCode() != "")
         	{	
-        		pd = ProgressDialog.show(this, "Searching", "Searching for results", true, false);
+        		showDialog(SEARCH_DIALOG_ID);
         		Thread thread = new Thread(this);
+        		sentUpcRequest = true;
         		thread.start();
         		return;
         	}
@@ -63,48 +70,51 @@ public class UpcResults extends Activity implements Runnable{
      */
 	public void run()
     {
-    	int upcLength = upcCode.length();
-    	if(upcLength != 12 && upcLength != 13)
-    	{
-    		//TODO: Error handling
-    	}
-    	else
-    	{
-	        try
-	        {
-	        	URL upcLookup = new URL("http://praisebeer.appspot.com/upclookup?upc=" + upcCode);
-	        	BufferedReader in = new BufferedReader(new InputStreamReader(upcLookup.openStream()));
+        try
+        {
+        	URL upcLookup = new URL("http://praisebeer.appspot.com/upclookup?upc=" + upcDetails.getUpcCode());
+        	BufferedReader in = new BufferedReader(new InputStreamReader(upcLookup.openStream()));
 
-	        	String jsonResults = "";
-	        	String inputLine;
+        	String jsonResults = "";
+        	String inputLine;
 
-	        	while ((inputLine = in.readLine()) != null)
-	        		jsonResults += inputLine;
-	        	in.close();
-	        	try
-	        	{
-	        		JSONObject apiResult = new JSONObject(jsonResults);
-	        		boolean success = apiResult.getBoolean("success");
-	        		if(success)
-	        		{
-	        			product = apiResult.getString("description");
-	        		}
-	        		else
-	        		{
-	        			String errorMessage = apiResult.getString("errorResponse");
-	        			product = errorMessage;
-	        		}
-	        	}
-	        	catch(JSONException e)
-	        	{
-	        		//TODO: Error handling
-	        	}
-	        }
-	        catch (Exception e)
-	        {
-	            product = "Request to server could not be made: " + e.getMessage();
-	        }
-    	}
+        	while ((inputLine = in.readLine()) != null)
+        		jsonResults += inputLine;
+        	in.close();
+        	try
+        	{
+        		JSONObject apiResult = new JSONObject(jsonResults);
+        		boolean success = apiResult.getBoolean("success");
+        		if(success)
+        		{
+        			upcDetails.setProductName(apiResult.getString("description"));
+        			//Convert links from JSON array to normal array
+        			JSONArray apiLinks = apiResult.getJSONArray("links");
+        			String[] links = new String[16];
+        			for(int i=0; i<apiLinks.length(); i++)
+        				links[i] = apiLinks.getString(i);
+        			upcDetails.setProductLinks(links);
+        		}
+        		else
+        		{
+        			//TODO: Error handling
+        			//      1-check if UPC lookup fail
+        			//        a-Ask user for manual entry
+        			//      2-check if search lookup fail
+        			//        b-Give user product name found, ask for modification
+        			upcDetails.setProductName(apiResult.getString("errorResponse"));
+        		}
+        	}
+        	catch(JSONException e)
+        	{
+        		//TODO: Error handling
+        	}
+        }
+        catch (Exception e)
+        {
+        	//TODO: Error handling
+            //product = "Request to server could not be made: " + e.getMessage();
+        }
         handler.sendEmptyMessage(0);
     }
     
@@ -112,24 +122,49 @@ public class UpcResults extends Activity implements Runnable{
      * Handler for thread control. Handles response from thread (UPC lookup result)
      * and updates UI
      */
-    private Handler handler = new Handler() {
+    private Handler handler = new Handler() 
+    {
 	        @Override
-	        public void handleMessage(Message msg) {
-	                pd.dismiss();
-	                setResultText();
+	        public void handleMessage(Message msg) 
+	        {
+        		dismissDialog(UpcResults.SEARCH_DIALOG_ID);
+        		setResultText();
 	        }
 	};
+	
+	protected Dialog onCreateDialog(int id) 
+	{
+		if(id == SEARCH_DIALOG_ID)
+		{
+			ProgressDialog loadingDialog = new ProgressDialog(this);
+			loadingDialog.setTitle("Searching...");
+			loadingDialog.setMessage("Searching for results");
+			loadingDialog.setIndeterminate(true);
+			loadingDialog.setCancelable(false);
+			return loadingDialog;
+		}
+		return super.onCreateDialog(id);
+	}
 	
 	/**
 	 * Sets text on screen to value of product found and type of UPC code scanned
 	 */
 	private void setResultText()
 	{
+		//TODO: Eventually we need to forward to another activity based on what happened
 		TextView resultContent = (TextView) findViewById(R.id.beerUpcContent);
+		TextView resultLinks = (TextView) findViewById(R.id.beerUpcLink);
         TextView resultType = (TextView) findViewById(R.id.beerUpcType);
-        resultContent.setText(product);
-        resultType.setText(this.getString(R.string.upcFormat) + " " + upcFormat);
+        
+        resultContent.setText(upcDetails.getProduct());
+        resultLinks.setText(upcDetails.getProductLink());
+        Linkify.addLinks(resultLinks, Linkify.WEB_URLS);
+        resultType.setText(upcDetails.getUpcCode() + " - " + upcDetails.getUpcFormat());
 	}
+
+/***********************************
+ * State saving functions
+ **********************************/
 	
 	/**
 	 * Saves product results, UPC type, and UPC code so a duplicate request
@@ -139,9 +174,11 @@ public class UpcResults extends Activity implements Runnable{
 	public void onSaveInstanceState(Bundle savedInstanceState) 
 	{
 		//Save found product in case Activity gets killed (orientation change, etc)
-		savedInstanceState.putString("scannedProduct", product);
-		savedInstanceState.putString("upcType", upcFormat);
-		savedInstanceState.putString("upcCode", upcCode);
+		savedInstanceState.putString("scannedProduct", upcDetails.getProduct());
+		savedInstanceState.putString("upcType", upcDetails.getUpcFormat());
+		savedInstanceState.putString("upcCode", upcDetails.getUpcCode());
+		savedInstanceState.putStringArray("productLinks", upcDetails.getProductLinks());
+		savedInstanceState.putBoolean("sentUpcRequest", sentUpcRequest);
 		super.onSaveInstanceState(savedInstanceState);
 	}
 	
@@ -155,12 +192,16 @@ public class UpcResults extends Activity implements Runnable{
     {
 		//Attempt to read out saved data
         super.onRestoreInstanceState(savedInstanceState);
-        product = savedInstanceState.getString("scannedProduct");
-        upcFormat = savedInstanceState.getString("upcType"); 
-        upcCode = savedInstanceState.getString("upcCode");
+        upcDetails = new ScanDetails(savedInstanceState.getString("upcCode"), 
+        							savedInstanceState.getString("upcType"),
+        							savedInstanceState.getString("scannedProduct"),
+        							savedInstanceState.getStringArray("productLinks")
+        							);
+
+        sentUpcRequest = savedInstanceState.getBoolean("sentUpcRequest");
         
         //If data exists, display it. Otherwise request new data
-        if(product != null && product != "")
+        if(sentUpcRequest == true)
         {
         	setResultText();
         }

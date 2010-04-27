@@ -11,7 +11,15 @@
           android:layout_width="wrap_content"
           android:layout_height="fill_parent"
           android:textSize="20sp"
-          android:layout_weight="5"/>
+          android:layout_weight="1"/>
+          
+    <TextView
+          android:id="@+id/beerUpcLink"
+          android:layout_width="wrap_content"
+          android:layout_height="fill_parent"
+          android:textSize="20sp"
+          android:layout_weight="1"/>
+          
  	<TextView
  		  android:id="@+id/beerUpcType"
           android:layout_width="wrap_content"
