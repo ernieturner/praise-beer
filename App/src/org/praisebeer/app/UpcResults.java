@@ -3,6 +3,7 @@ package org.praisebeer.app;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Vector;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,61 +12,43 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.util.Linkify;
-import android.widget.TextView;
 
 public class UpcResults extends Activity implements Runnable
 {
-	private boolean sentUpcRequest = false;
+	public static final int REQUEST_CODE = 0x009c5ca4;
 	private static int SEARCH_DIALOG_ID = 1;
 	private ScanDetails upcDetails;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.upc_results);
-        
-        if(savedInstanceState == null)
+        //setContentView(R.layout.upc_results);
+        Bundle extras = getIntent().getExtras();
+        if(extras == null)
         {
-        	startRequestThread();
+        	setResult(RESULT_CANCELED);
+        	finish();
         }
+        
+        upcDetails = new ScanDetails(extras.getString("upcCode"), extras.getString("upcFormat"));
+        
+        if(upcDetails.getUpcCode() != null && upcDetails.getUpcCode() != "")
+    	{	
+    		showDialog(SEARCH_DIALOG_ID);
+    		Thread thread = new Thread(this);
+    		thread.start();
+    		return;
+    	}
+    	else
+    	{
+    		//TODO: Error handling, invalid barcode scanned
+    	}
     }
 
-/***********************************
-* Search thread functions
-**********************************/
-    
-    /**
-     * Takes input (UPC content, UPC type) from intent object and starts a thread
-     * to search UPC database for result.
-     */
-    private void startRequestThread()
-    {
-    	Bundle extras = getIntent().getExtras(); 
-    	if(extras != null)
-        {
-    		upcDetails = new ScanDetails(extras.getString("upcCode"), extras.getString("upcFormat"));
-        	if(upcDetails.getUpcCode() != null && upcDetails.getUpcCode() != "")
-        	{	
-        		showDialog(SEARCH_DIALOG_ID);
-        		Thread thread = new Thread(this);
-        		sentUpcRequest = true;
-        		thread.start();
-        		return;
-        	}
-        	else
-        	{
-        		//TODO: Error handling, invalid barcode scanned
-        	}
-        }
-    	//Handle failure state
-        TextView mainText = (TextView) findViewById(R.id.beerUpcContent);
-        mainText.setText(this.getString(R.string.noDataEntered));
-    }
-    
     /**
      * Method extended from Runnable class when thread is started. Takes product UPC
      * code and makes an XML-RPC request to UPC database. Once result is found, extracts
@@ -93,9 +76,9 @@ public class UpcResults extends Activity implements Runnable
         			upcDetails.setProductName(apiResult.getString("description"));
         			//Convert links from JSON array to normal array
         			JSONArray apiLinks = apiResult.getJSONArray("links");
-        			String[] links = new String[16];
+        			Vector <String> links = new Vector<String>();
         			for(int i=0; i<apiLinks.length(); i++)
-        				links[i] = apiLinks.getString(i);
+        				links.add(apiLinks.getString(i));
         			upcDetails.setProductLinks(links);
         		}
         		else
@@ -116,25 +99,31 @@ public class UpcResults extends Activity implements Runnable
         catch (Exception e)
         {
         	//TODO: Error handling
-            //product = "Request to server could not be made: " + e.getMessage();
         }
         handler.sendEmptyMessage(0);
     }
     
     /**
-     * Handler for thread control. Handles response from thread (UPC lookup result)
-     * and updates UI
+     * Handler for thread control. Handles response from thread (UPC lookup result), sets
+     * result and finishes activity
      */
     private Handler handler = new Handler() 
     {
-	        @Override
-	        public void handleMessage(Message msg) 
-	        {
-        		dismissDialog(UpcResults.SEARCH_DIALOG_ID);
-        		setResultText();
-	        }
+    	@Override
+	    public void handleMessage(Message msg) 
+	    {
+    		dismissDialog(UpcResults.SEARCH_DIALOG_ID);
+        	Intent intent = new Intent();
+        	intent.putExtra("scanResults", upcDetails);
+        	setResult(Activity.RESULT_OK, intent);
+        	finish();
+	    }
 	};
 	
+	/**
+	 * Default dialog function to create progress dialog
+	 * during search results
+	 */
 	protected Dialog onCreateDialog(int id) 
 	{
 		if(id == SEARCH_DIALOG_ID)
@@ -148,69 +137,4 @@ public class UpcResults extends Activity implements Runnable
 		}
 		return super.onCreateDialog(id);
 	}
-	
-	/**
-	 * Sets text on screen to value of product found and type of UPC code scanned
-	 */
-	private void setResultText()
-	{
-		//TODO: Eventually we need to forward to another activity based on what happened
-		TextView resultContent = (TextView) findViewById(R.id.beerUpcContent);
-		TextView resultLinks = (TextView) findViewById(R.id.beerUpcLink);
-        TextView resultType = (TextView) findViewById(R.id.beerUpcType);
-        
-        resultContent.setText(upcDetails.getProduct());
-        resultLinks.setText(upcDetails.getProductLink());
-        Linkify.addLinks(resultLinks, Linkify.WEB_URLS);
-        resultType.setText(upcDetails.getUpcCode() + " - " + upcDetails.getUpcFormat());
-	}
-
-/***********************************
- * State saving functions
- **********************************/
-	
-	/**
-	 * Saves product results, UPC type, and UPC code so a duplicate request
-	 * does not have to be made to database.
-	 */
-	@Override
-	public void onSaveInstanceState(Bundle savedInstanceState) 
-	{
-		//Save found product in case Activity gets killed (orientation change, etc)
-		savedInstanceState.putString("scannedProduct", upcDetails.getProduct());
-		savedInstanceState.putString("upcType", upcDetails.getUpcFormat());
-		savedInstanceState.putString("upcCode", upcDetails.getUpcCode());
-		savedInstanceState.putStringArray("productLinks", upcDetails.getProductLinks());
-		savedInstanceState.putBoolean("sentUpcRequest", sentUpcRequest);
-		super.onSaveInstanceState(savedInstanceState);
-	}
-	
-	/**
-	 * Attempts to pull saved data out of instance state. If data is found, the
-	 * UI is updated with the results. If no data is found, a request to the UPC
-	 * database is made.
-	 */
-	@Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) 
-    {
-		//Attempt to read out saved data
-        super.onRestoreInstanceState(savedInstanceState);
-        upcDetails = new ScanDetails(savedInstanceState.getString("upcCode"), 
-        							 savedInstanceState.getString("upcType"),
-        							 savedInstanceState.getString("scannedProduct"),
-        							 savedInstanceState.getStringArray("productLinks")
-        							);
-
-        sentUpcRequest = savedInstanceState.getBoolean("sentUpcRequest");
-        
-        //If we've already made a request, display the results. Otherwise request new data
-        if(sentUpcRequest == true)
-        {
-        	setResultText();
-        }
-        else
-        {
-        	startRequestThread();
-        }
-    }
 }
