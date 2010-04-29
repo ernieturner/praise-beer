@@ -1,12 +1,15 @@
 package org.praisebeer.app;
 
-public class ScanDetails 
+import java.util.Vector;
+
+public class ScanDetails implements java.io.Serializable
 {
+	private static final long serialVersionUID = -5208851430378051565L;
 	/**Properties*/
 	private String upcCode;
 	private String upcFormat;
 	private String productName;
-	private String[] productLinks;
+	private Vector<String> productLinks;
 	
 	/**Error conditions*/
 	public static int NO_UPC_RESULTS_FOUND = 1;
@@ -26,7 +29,7 @@ public class ScanDetails
 		this.upcFormat = upcFormat;
 	}
 	
-	ScanDetails(String upcCode, String upcFormat, String productName, String[] productLinks)
+	ScanDetails(String upcCode, String upcFormat, String productName, Vector<String> productLinks)
 	{
 		//Transform UPC code from UPC-E or UPC-A to EAN
 		int upcLength = upcCode.length();
@@ -45,7 +48,7 @@ public class ScanDetails
 	 * Sets links found based on product name
 	 * @param links
 	 */
-	public void setProductLinks(String[] links)
+	public void setProductLinks(Vector<String> links)
 	{
 		productLinks = links;
 	}
@@ -90,7 +93,7 @@ public class ScanDetails
 	 * Returns all product links found
 	 * @return
 	 */
-	public String[] getProductLinks()
+	public Vector<String> getProductLinks()
 	{
 		return productLinks;
 	}
@@ -101,7 +104,7 @@ public class ScanDetails
 	 */
 	public String getProductLink()
 	{
-		return productLinks[0];
+		return productLinks.firstElement();
 	}
 	
 	/**

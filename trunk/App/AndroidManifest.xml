@@ -3,8 +3,11 @@
       package="org.praisebeer.app"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/appName" android:debuggable="true" android:allowClearUserData="true">
-        <activity android:name=".PraiseBeer"
+    <application android:icon="@drawable/icon"
+                 android:label="@string/appName"
+                 android:debuggable="true"
+                 android:allowClearUserData="true">
+        <activity android:name=".FrontController"
                   android:label="@string/appName"
                   android:screenOrientation="portrait">
             <intent-filter>
@@ -12,8 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="PraiseBeer"
+                  android:label="@string/appName"
+                  android:screenOrientation="portrait">
+        </activity>
         <activity android:name="UpcResults" 
-                  android:label="@string/scanResults"
+                  android:label="@string/searchingEllipsis"
                   android:screenOrientation="portrait">
         </activity>
 
