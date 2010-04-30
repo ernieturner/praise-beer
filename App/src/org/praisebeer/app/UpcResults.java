@@ -26,7 +26,6 @@ public class UpcResults extends Activity implements Runnable
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.upc_results);
         Bundle extras = getIntent().getExtras();
         if(extras == null)
         {
@@ -74,6 +73,25 @@ public class UpcResults extends Activity implements Runnable
         		if(success)
         		{
         			upcDetails.setProductName(apiResult.getString("description"));
+        			JSONObject ratings = apiResult.getJSONObject("rating");
+        			if(ratings != null)
+        			{
+        				try{
+        					JSONArray communityRating = ratings.getJSONArray("overall");
+    	        			upcDetails.setCommunityRating(communityRating.getString(0));
+    	        			upcDetails.setCommunityRatingDescription(communityRating.getString(1));
+    	        			upcDetails.setNumberOfRatings(communityRating.getString(2));
+        				}
+        				catch(JSONException e){}
+        				
+        				try{
+        					JSONArray brothersRating = ratings.getJSONArray("bros");
+    	        			upcDetails.setBrothersRating(brothersRating.getString(0));
+    	        			upcDetails.setBrothersRatingDescription(brothersRating.getString(1));
+        				}
+        				catch(JSONException e){}
+        				
+        			}
         			//Convert links from JSON array to normal array
         			JSONArray apiLinks = apiResult.getJSONArray("links");
         			Vector <String> links = new Vector<String>();
@@ -110,7 +128,7 @@ public class UpcResults extends Activity implements Runnable
     private Handler handler = new Handler() 
     {
     	@Override
-	    public void handleMessage(Message msg) 
+	    public void handleMessage(Message msg)
 	    {
     		dismissDialog(UpcResults.SEARCH_DIALOG_ID);
         	Intent intent = new Intent();

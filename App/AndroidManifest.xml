@@ -7,7 +7,7 @@
                  android:label="@string/appName"
                  android:debuggable="true"
                  android:allowClearUserData="true">
-        <activity android:name=".FrontController"
+        <activity android:name="FrontController"
                   android:label="@string/appName"
                   android:screenOrientation="portrait">
             <intent-filter>
@@ -15,8 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="PraiseBeer"
-                  android:label="@string/appName"
+        <activity android:name="ResultsDisplay"
+                  android:label="@string/scanResults"
                   android:screenOrientation="portrait">
         </activity>
         <activity android:name="UpcResults" 

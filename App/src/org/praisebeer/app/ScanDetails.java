@@ -2,6 +2,8 @@ package org.praisebeer.app;
 
 import java.util.Vector;
 
+import android.graphics.Color;
+
 public class ScanDetails implements java.io.Serializable
 {
 	private static final long serialVersionUID = -5208851430378051565L;
@@ -9,6 +11,13 @@ public class ScanDetails implements java.io.Serializable
 	private String upcCode;
 	private String upcFormat;
 	private String productName;
+	private String communityRating;
+	private String brothersRating = "N/A";
+	private String numberOfRatings;
+	private String communityRatingDescription;
+	private String brothersRatingDescription = "N/A";
+	private String beerABV = "Unknown ABV";
+	private String beerStyle = "Unknown Beer Type";
 	private Vector<String> productLinks;
 	
 	/**Error conditions*/
@@ -44,6 +53,23 @@ public class ScanDetails implements java.io.Serializable
 		this.productLinks = productLinks;
 	}
 	
+	public int calculateColorByRating(String rating)
+	{
+		String ratingCore = rating.substring(0, 1);
+		
+		if(ratingCore.equals("A"))
+			return Color.rgb(0x19, 0xe1, 0x1d);
+		if(ratingCore.equals("B"))
+			return Color.rgb(0xb2, 0xda, 0x14);
+		if(ratingCore.equals("C"))
+			return Color.rgb(0xe7, 0xef, 0x0c);
+		if(ratingCore.equals("D"))
+			return Color.rgb(0xf7, 0xb1, 0x2b);
+		if(ratingCore.equals("F"))
+			return Color.rgb(0xf5, 0x0e, 0x0e);
+		return Color.rgb(0x0, 0x0, 0x0);
+	}
+	
 	/**
 	 * Sets links found based on product name
 	 * @param links
@@ -60,6 +86,131 @@ public class ScanDetails implements java.io.Serializable
 	public void setProductName(String name)
 	{
 		productName = name;
+	}
+	
+	/**
+	 * Get overall community rating
+	 */
+	public String getCommunityRating()
+	{
+		return this.communityRating;
+	}
+	
+	/**
+	 * Set overall community rating
+	 * @param String rating Letter grade of the beer
+	 */
+	public void setCommunityRating(String rating)
+	{
+		this.communityRating = rating;
+	}
+	
+	/**
+	 * Get brothers rating
+	 * @return String Letter grade of the beer
+	 */
+	public String getBrothersRating()
+	{
+		return this.brothersRating;
+	}
+	
+	/**
+	 * Set brothers rating
+	 * @param rating String Letter grade of the beer
+	 */
+	public void setBrothersRating(String rating)
+	{
+		this.brothersRating = rating;
+	}
+	
+	/**
+	 * Returns number of ratings for beer
+	 * @return String Number of ratings
+	 */
+	public String getNumberOfRatings()
+	{
+		return this.numberOfRatings;
+	}
+	
+	/**
+	 * Set number of overall community ratings
+	 * @param ratingCount int Number of ratings found
+	 */
+	public void setNumberOfRatings(String ratingCount)
+	{
+		this.numberOfRatings = ratingCount;
+	}
+	
+	/**
+	 * Set community description of rating
+	 * @param description String
+	 */
+	public void setCommunityRatingDescription(String description)
+	{
+		this.communityRatingDescription = description;
+	}
+	
+	/**
+	 * Get community description of rating
+	 * @return
+	 */
+	public String getCommunityRatingDescription()
+	{
+		return this.communityRatingDescription;
+	}
+	
+	/**
+	 * Set brothers description of rating
+	 * @param description String
+	 */
+	public void setBrothersRatingDescription(String description)
+	{
+		this.brothersRatingDescription = description;
+	}
+	
+	/**
+	 * Set beer style
+	 * @param ratingCount int Number of ratings found
+	 */
+	public void setBeerStyle(String style)
+	{
+		this.numberOfRatings = style;
+	}
+	
+	/**
+	 * Get beer style
+	 * @param description String
+	 */
+	public String getBeerStyle()
+	{
+		return this.beerStyle;
+	}
+	
+	/**
+	 * Get beer alcohol by volume
+	 * @return
+	 */
+	public String getBeerABV()
+	{
+		return this.beerABV;
+	}
+	
+	/**
+	 * Set beer alcohol by volume
+	 * @param description String
+	 */
+	public void setBeerABV(String ABV)
+	{
+		this.beerABV = ABV;
+	}
+	
+	/**
+	 * Get brothers description of rating
+	 * @param description String
+	 */
+	public String getBrothersRatingDescription()
+	{
+		return this.brothersRatingDescription;
 	}
 	
 	/**
