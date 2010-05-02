@@ -96,14 +96,14 @@ class MainHandler(webapp.RequestHandler):
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
                     productDescription = result['description']                    
-                    links  = PBUtils.GoogleSearch().getResults(result['description'])
-                    rating = PBUtils.Scraper().doScrape(links[0])
+                    links     = PBUtils.GoogleSearch().getResults(result['description'])
+                    beer_info = PBUtils.Scraper().doScrape(links[0])
                     #size  = result['size']
                 else:
                     error = True
 
                 if error == False:
-                    jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "rating":rating})
+                    jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "beer_info":beer_info})
                 else:
                     jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": NO_UPC_FOUND})
         else:

@@ -26,25 +26,37 @@ class Scraper():
 
 	def doScrape(self,url):
 		try: 				
-			result = urlfetch.fetch(url)
+			result = urlfetch.fetch(url,deadline=10)
 			if result.status_code == 200:		  	
 				content = re.sub('\n|\r','',result.content)
 				pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s]+)')
 				if pat.search(content):
 					m = pat.search(content)
-					ratings = {'overall':m.group(1,2,3), 'bros':m.group(4,5)}
-					return ratings
+					beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
+					
+					pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+					if pat.search(content):
+						m = pat.search(content)
+						beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
+										
+					return beer_info
 		except:
-			try:							  
-				cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'				
-				result = urlfetch.fetch(cache_url)				
+			try:														  
+				cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'
+				result = urlfetch.fetch(cache_url,deadline=10)
 				if result.status_code == 200:		  		
 					content = re.sub('\n|\r','',result.content)
 					pat = re.compile('BA OVERALL<br>([A-Z/]+[+-]?)<br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br>([A-Z/]+[+-]?)<br>([a-z\s!;]+)')
-					if pat.search(content):
-						m = pat.search(content)
-						ratings = {'overall':m.group(1,2,3), 'bros':m.group(4,5)}
-						return ratings
+					if pat.search(content):						
+						m = pat.search(content)						
+						beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
+
+						pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+						if pat.search(content):
+							m = pat.search(content)
+							beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
+						
+						return beer_info
 					else:
 						return 'No matches found.'
 				else:

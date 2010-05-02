@@ -1,4 +1,4 @@
 cron:
 - description: avoid our 500 internal server error
-	url: /cron
-	schedule: every 1 minutes
+  url: /cron
+  schedule: every 1 minutes
