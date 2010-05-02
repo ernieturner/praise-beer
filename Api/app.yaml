@@ -8,3 +8,7 @@ handlers:
   script: upcLookup.py
 - url: /cron
   script: cron.py
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  
