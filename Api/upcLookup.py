@@ -23,6 +23,11 @@ from django.utils import simplejson
 # -----------------------------------------------------------------------------
 
 UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
+INVALID_UPC_CODE = 0;
+NO_UPC_CODE_SENT = 1;
+NO_UPC_FOUND = 2;
+NO_BEER_FOUND = 3;
+RATING_LOOKUP_TIMEOUT = 4;
 
 # -----------------------------------------------------------------------------
 # Custom RPC Transport Class
@@ -35,24 +40,6 @@ class GoogleXMLRPCTransport(object):
         self._use_datetime = use_datetime
 
     def request(self, host, handler, request_body, verbose=0):
-        """
-        Send a complete request, and parse the response. See xmlrpclib.py.
-
-        :Parameters:
-            host : str
-                target host
-                
-            handler : str
-                RPC handler on server (i.e., path to handler)
-                
-            request_body : str
-                XML-RPC request body
-                
-            verbose : bool/int
-                debugging flag. Ignored by this implementation
-
-        """
-
         # issue XML-RPC request
 
         result = None
@@ -99,7 +86,7 @@ class MainHandler(webapp.RequestHandler):
                 upcCode = '0' + upcCode;
 
             if len(upcCode) != 13:
-                jsonResponse = simplejson.dumps({"success": False, "description": "UPC has invalid length. Expected 13 characters but got '%s'" % (upcCode)})
+                jsonResponse = simplejson.dumps({"success": False, "description": "UPC has invalid length. Expected 13 characters but got '%s'" % (upcCode), "error_code": INVALID_UPC_CODE})
             else:
                 productDescription = ''
                 error = False
@@ -118,9 +105,9 @@ class MainHandler(webapp.RequestHandler):
                 if error == False:
                     jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "rating":rating})
                 else:
-                    jsonResponse = simplejson.dumps({"success": False, "errorResponse": result})
+                    jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": NO_UPC_FOUND})
         else:
-            jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No UPC Code Recieved"})
+            jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No UPC Code Recieved", "error_code": NO_UPC_CODE_SENT})
 
         #This probably isn't really neccessary anyway. It also makes it tough to debug in a browser
         #self.response.headers['Content-Type'] = 'text/json'
