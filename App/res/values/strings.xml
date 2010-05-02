@@ -11,4 +11,6 @@
 <string name="scanResults">Scan Results</string>
 
 <string name="searchingEllipsis">Searching...</string>
+<string name="viewStylePage">View Beer Style Page</string>
+<string name="viewProfilePage">View Full Beer Rating Page</string>
 </resources>
