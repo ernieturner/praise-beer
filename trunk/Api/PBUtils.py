@@ -91,8 +91,6 @@ class BossSearch():
 			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
 				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
 				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-			else:									
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
 		return lookup.keys();
 
 	
