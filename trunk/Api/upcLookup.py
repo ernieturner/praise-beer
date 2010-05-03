@@ -96,7 +96,8 @@ class MainHandler(webapp.RequestHandler):
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
                     productDescription = result['description']                    
-                    links     = PBUtils.GoogleSearch().getResults(result['description'])
+                    #links  = PBUtils.GoogleSearch().getResults(result['description'])
+                    links  = PBUtils.BossSearch().getResults(result['description'])
                     beer_info = PBUtils.Scraper().doScrape(links[0])
                     #size  = result['size']
                 else:
@@ -112,7 +113,7 @@ class MainHandler(webapp.RequestHandler):
         #This probably isn't really neccessary anyway. It also makes it tough to debug in a browser
         #self.response.headers['Content-Type'] = 'text/json'
         self.response.headers['Content-Length'] = len(jsonResponse)
-        self.response.out.write(jsonResponse + "<br><br>")               
+        self.response.out.write(jsonResponse)
 
 def main():
     application = webapp.WSGIApplication([('/upclookup', MainHandler)], debug=True)

@@ -18,7 +18,7 @@ from django.utils import simplejson
 # -----------------------------------------------------------------------------
 
 GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
-
+BOSS_SEARCH_API_KEY = 'iwKJ.8nV34GERUNY2z2d3JeFQU8MzQi5vBdoAjzzcCGs175VukcNx1sfKvOlN529tImhNgZrrUE-'
 # -----------------------------------------------------------------------------
 # Scraper - This will scrape the BA site for us, or Google's cache, depending
 # -----------------------------------------------------------------------------
@@ -65,14 +65,44 @@ class Scraper():
 				return "Request timed out"	
 				
 		return "No results found."
-		
+	
+# -----------------------------------------------------------------------------
+# BOSS API Search Handler Class
+# -----------------------------------------------------------------------------
+
+class BossSearch():
+	def getResults(self,description):
+		base   = "http://boss.yahooapis.com/ysearch/web/v1/"
+		params = {
+			'appid':BOSS_SEARCH_API_KEY,
+			'sites':'beeradvocate.com/beer/profile'
+		}
+		payload = urllib.urlencode(params)
+		url     = base + urllib.quote(description) + '?' + payload
+
+		response = StringIO(urlfetch.fetch(url).content)		
+		result   = self._formatResults(simplejson.load(response))
+		return result;
+
+	def _formatResults(self,searchResults):        
+		baBase = 'http://www.beeradvocate.com/beer/profile/'
+		lookup = {};
+		for entry in searchResults['ysearchresponse']['resultset_web']:
+			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
+				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
+				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
+			else:									
+				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
+		return lookup.keys();
+
+	
 # -----------------------------------------------------------------------------
 # Google API Search Handler Class
 # -----------------------------------------------------------------------------
 
 class GoogleSearch():
-	def getResults(self,description):		
-		base   = "http://ajax.googleapis.com/ajax/services/search/web?"		
+	def getResults(self,description):	
+		base   = "http://ajax.googleapis.com/ajax/services/search/web?"
 		params = {
 			'v':'1.0',
 			'key':GOOGLE_SEARCH_API_KEY,
