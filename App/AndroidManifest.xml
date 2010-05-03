@@ -23,6 +23,9 @@
                   android:label="@string/searchingEllipsis"
                   android:screenOrientation="portrait">
         </activity>
+        <activity android:name="ManualUserEntry" 
+                  android:label="@string/upcCodeNotFound">
+        </activity>
 
     </application>
     <uses-sdk android:minSdkVersion="4" />
