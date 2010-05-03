@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/ME_scrollContainer">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/ME_layout" 
+    android:padding="15sp" 
+    android:scrollbars="vertical">
+
+    <TextView
+        android:id="@+id/ME_noResultsFoundMessage"
+        android:text="@string/noUpcResultsFound"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:gravity="center_horizontal"/>
+
+<!-- START Beer name entry section -->
+    <TextView
+        android:id="@+id/ME_beerNameEntryLabel"
+        android:text="@string/beerNameLabel"
+        android:paddingTop="35sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ME_noResultsFoundMessage"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/ME_beerNameEntryDescription"
+        android:text="@string/beerNameEntryDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ME_beerNameEntryLabel"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:gravity="center_horizontal"/>
+    <EditText
+        android:id="@+id/ME_beerNameEntry"
+        android:background="@android:drawable/editbox_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ME_beerNameEntryDescription"
+        android:paddingBottom="15sp"/>
+<!-- END Beer name entry section -->
+        
+<!-- START Beer size entry section -->
+    <TextView
+        android:id="@+id/ME_beerSizeEntryLabel"
+        android:text="@string/beerSizeLabel"
+        android:paddingTop="25sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ME_beerNameEntry"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/ME_beerSizeEntryDescription"
+        android:text="@string/beerSizeEntryDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ME_beerSizeEntryLabel"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:gravity="center_horizontal"/>
+    <EditText
+        android:id="@+id/ME_beerSizeEntry"
+        android:background="@android:drawable/editbox_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:typeface="serif"
+        android:layout_below="@id/ME_beerSizeEntryDescription"
+        android:paddingBottom="15sp"/>
+<!-- END Beer size entry section -->
+        
+<!-- START submit/cancel button section -->
+    <Button
+        android:id="@+id/ME_submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:layout_below="@id/ME_beerSizeEntry"
+        android:text="@string/submit"/>
+    <Button
+        android:id="@+id/ME_cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:layout_below="@id/ME_beerSizeEntry"
+        android:text="@string/cancel"/>
+<!-- END submit/cancel button section -->
+</RelativeLayout>
+</ScrollView>

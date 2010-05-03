@@ -13,4 +13,13 @@
 <string name="searchingEllipsis">Searching...</string>
 <string name="viewStylePage">View Beer Style Page</string>
 <string name="viewProfilePage">View Full Beer Rating Page</string>
+<string name="noUpcResultsFound">Sorry, we weren't able to find any results for that UPC code. If you're up to the task, would you like to make our app better? Please fill out the form below and we'll get you to the ratings for your beer!</string>
+<string name="beerNameLabel">Name of beer</string>
+<string name="submit">Submit</string>
+<string name="cancel">Cancel</string>
+<string name="beerNameEntryDescription">(Please be as descriptive as possible. Include the name of the brewery as well. For example: &quot;New Belgium Brewing Fat Tire Ale&quot;</string>
+<string name="beerSizeLabel">Beer Size</string>
+<string name="beer"></string>
+<string name="beerSizeEntryDescription">(Size of scanned beer, e.g. &quot;6 Pack&quot;, &quot;12 oz bottle&quot;, etc)</string>
+<string name="upcCodeNotFound">UPC Code Not Found</string>
 </resources>
