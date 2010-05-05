@@ -5,7 +5,10 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import memcache
 
 class MainHandler(webapp.RequestHandler):
-    def get(self):                				
+    def get(self):                
+        # flush the memcache
+        memcache.flush_all()
+				
         # Open our file of known UPCs and descriptions for import
         f = open('./known_upc_data.txt', 'r')
 
