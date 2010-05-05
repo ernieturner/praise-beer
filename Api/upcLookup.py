@@ -16,7 +16,7 @@ from google.appengine.api import urlfetch
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from django.utils import simplejson
-
+from google.appengine.ext import db
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -90,9 +90,16 @@ class MainHandler(webapp.RequestHandler):
             else:
                 productDescription = ''
                 error = False
+                datastore_entry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
+                result = {}
                 
-                rpcServer = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
-                result = rpcServer.lookupEAN(upcCode)
+                if( len(datastore_entry) > 0 ):
+                	result['description'] = datastore_entry[0].description
+                	result['found'] = 1
+                else:                
+                	rpcServer = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
+                	result = rpcServer.lookupEAN(upcCode)
+                	
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
                     productDescription = result['description']                    

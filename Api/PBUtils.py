@@ -86,12 +86,14 @@ class BossSearch():
 
 	def _formatResults(self,searchResults):        
 		baBase = 'http://www.beeradvocate.com/beer/profile/'
-		lookup = {};
+		lookup = {}
+		links  = []
 		for entry in searchResults['ysearchresponse']['resultset_web']:
 			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
 				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-		return lookup.keys();
+				if not lookup.has_key(baBase + m.group(1) + '/'+ m.group(2)):
+					links.append(baBase + m.group(1) + '/'+ m.group(2))
+		return links;
 
 	
 # -----------------------------------------------------------------------------
@@ -115,11 +117,11 @@ class GoogleSearch():
 
 	def _formatResults(self,searchResults):        
 		baBase = 'http://www.beeradvocate.com/beer/profile/'		
-		lookup = {};
+		lookup = {}
+		links  = []
 		for entry in searchResults['responseData']['results']:
 			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
 				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-			else:									
-				lookup[baBase + m.group(1) + '/'+ m.group(2)] = 1;
-		return lookup.keys();		
+				if not lookup.has_key(baBase + m.group(1) + '/'+ m.group(2)):
+					links.append(baBase + m.group(1) + '/'+ m.group(2))
+		return links;		
