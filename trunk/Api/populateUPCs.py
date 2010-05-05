@@ -2,9 +2,10 @@ import PBDatabase
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
+from google.appengine.api import memcache
 
 class MainHandler(webapp.RequestHandler):
-    def get(self):				
+    def get(self):                				
         # Open our file of known UPCs and descriptions for import
         f = open('./known_upc_data.txt', 'r')
 

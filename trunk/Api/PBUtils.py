@@ -72,28 +72,33 @@ class Scraper():
 
 class BossSearch():
 	def getResults(self,description):
-		base   = "http://boss.yahooapis.com/ysearch/web/v1/"
+		base   = 'http://boss.yahooapis.com/ysearch/web/v1/'
 		params = {
 			'appid':BOSS_SEARCH_API_KEY,
-			'sites':'beeradvocate.com/beer/profile'
+			'sites':'beeradvocate.com'
 		}
 		payload = urllib.urlencode(params)
-		url     = base + urllib.quote(description) + '?' + payload
-
+		url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload		
+		
 		response = StringIO(urlfetch.fetch(url).content)		
 		result   = self._formatResults(simplejson.load(response))
+		#return url
 		return result;
 
 	def _formatResults(self,searchResults):        
 		baBase = 'http://www.beeradvocate.com/beer/profile/'
 		lookup = {}
 		links  = []
+
 		for entry in searchResults['ysearchresponse']['resultset_web']:
+			print "URL: "+ entry['url']
 			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
-				if not lookup.has_key(baBase + m.group(1) + '/'+ m.group(2)):
-					links.append(baBase + m.group(1) + '/'+ m.group(2))
-		return links;
+				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
+				key = baBase + m.group(1) + '/'+ m.group(2)				
+				if not lookup.has_key(key):
+					lookup[key] = 1
+					links.append(key)
+		return links
 
 	
 # -----------------------------------------------------------------------------
@@ -121,7 +126,9 @@ class GoogleSearch():
 		links  = []
 		for entry in searchResults['responseData']['results']:
 			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])														
-				if not lookup.has_key(baBase + m.group(1) + '/'+ m.group(2)):
-					links.append(baBase + m.group(1) + '/'+ m.group(2))
-		return links;		
+				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
+				key = baBase + m.group(1) + '/'+ m.group(2)														
+				if not lookup.has_key(key):
+					lookup[key] = 1
+					links.append(key)
+		return links	

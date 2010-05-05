@@ -115,11 +115,15 @@ class MainHandler(webapp.RequestHandler):
 
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
-                    productDescription = result['description']                    
-                    #links  = PBUtils.GoogleSearch().getResults(result['description'])
-                    links  = PBUtils.BossSearch().getResults(result['description'])
-                    beer_info = PBUtils.Scraper().doScrape(links[0])
-                    #size  = result['size']
+										productDescription = result['description']                    										
+										links  = PBUtils.BossSearch().getResults(result['description'])
+										if len(links) == 0:
+											links  = PBUtils.GoogleSearch().getResults(result['description'])
+											
+										if len(links) > 0:
+											beer_info = PBUtils.Scraper().doScrape(links[0])
+										else:
+											beer_info = {}
                 else:
                     error = True
 
