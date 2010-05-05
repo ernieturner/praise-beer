@@ -11,12 +11,14 @@ from StringIO import StringIO
 import urllib
 import re
 import PBUtils
+import PBDatabase
 
 from google.appengine.api import urlfetch
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from django.utils import simplejson
 from google.appengine.ext import db
+from google.appengine.api import memcache
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -90,16 +92,27 @@ class MainHandler(webapp.RequestHandler):
             else:
                 productDescription = ''
                 error = False
-                datastore_entry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
                 result = {}
-                
-                if( len(datastore_entry) > 0 ):
-                	result['description'] = datastore_entry[0].description
-                	result['found'] = 1
-                else:                
-                	rpcServer = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
-                	result = rpcServer.lookupEAN(upcCode)
-                	
+                #Check for entry in memcache and local DB. If not found, hit upcdatabase.com and look it up there
+                localResult = self.lookupUpcDescriptionLocally(upcCode)
+                if(localResult is not None):
+                    result['description'] = localResult
+                    result['found'] = True
+                else:
+                    upcDBResult = {}
+                    rpcServer = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
+                    upcDBResult = rpcServer.lookupEAN(upcCode)
+                    #If we've found a result, put the description found into our database and memcache
+                    if type(upcDBResult) == dict and upcDBResult['found']:
+                        upc = PBDatabase.UPC()
+                        upc.code = upcCode
+                        upc.description = upcDBResult['description']
+                        upc.origin = 'upcdblookup'
+                        upc.put()
+                        memcache.set(upcCode, upcDBResult['description'])
+                        result['description'] = upcDBResult['description']
+                        result['found'] = True
+
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
                     productDescription = result['description']                    
@@ -117,10 +130,21 @@ class MainHandler(webapp.RequestHandler):
         else:
             jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No UPC Code Recieved", "error_code": NO_UPC_CODE_SENT})
 
-        #This probably isn't really neccessary anyway. It also makes it tough to debug in a browser
-        #self.response.headers['Content-Type'] = 'text/json'
         self.response.headers['Content-Length'] = len(jsonResponse)
         self.response.out.write(jsonResponse)
+
+    def lookupUpcDescriptionLocally(self, upcCode):
+        upcDescription = memcache.get(upcCode)
+        if upcDescription is not None:
+            return upcDescription
+        else:
+            datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
+            if(len(datastoreEntry) > 0):
+                #If we've found an entry in the DB, stick it into memcache
+                if(datastoreEntry[0].description is not None and datastoreEntry[0].description != ""):
+                    memcache.set(upcCode, datastoreEntry[0].description)
+                    return datastoreEntry[0].description
+        return None
 
 def main():
     application = webapp.WSGIApplication([('/upclookup', MainHandler)], debug=True)
