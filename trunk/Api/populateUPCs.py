@@ -10,6 +10,7 @@ class MainHandler(webapp.RequestHandler):
 
         for line in f:
             line = line.rstrip("\n")
+            line = line.rstrip("\r")
             upc = PBDatabase.UPC()
             [upc.code, upc.description] = line.split("\t")
             upc.origin = 'import'
