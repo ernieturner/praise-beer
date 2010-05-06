@@ -6,6 +6,8 @@ api_version: 1
 handlers:
 - url: /upclookup
   script: upcLookup.py
+- url: /namelookup
+  script: nameLookup.py
 - url: /populateUPCs
   script: populateUPCs.py
 - url: /cron
