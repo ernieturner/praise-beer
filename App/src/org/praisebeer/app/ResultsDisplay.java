@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ResultsDisplay extends Activity
 {
-    private ScanDetails scanResults;
+    private BeerDetails scanResults;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -18,7 +18,7 @@ public class ResultsDisplay extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan_results);
         Bundle extras = getIntent().getExtras();
-        scanResults = (ScanDetails) extras.getSerializable("scanResults");
+        scanResults = (BeerDetails) extras.getSerializable("scanResults");
         setResultValues();
 
         Button goToBeerProfilePage = (Button) findViewById(R.id.viewBeerPage);
@@ -56,7 +56,7 @@ public class ResultsDisplay extends Activity
      */
     private void setResultValues()
     {
-        ((TextView) findViewById(R.id.beerName)).setText(this.scanResults.getProduct());
+        ((TextView) findViewById(R.id.beerName)).setText(this.scanResults.getProductName());
         ((TextView) findViewById(R.id.beerStyle)).setText(this.scanResults.getBeerStyle());
         ((TextView) findViewById(R.id.beerABV)).setText(this.scanResults.getBeerABV() + "%");
 
