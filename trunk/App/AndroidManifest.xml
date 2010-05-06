@@ -19,12 +19,15 @@
                   android:label="@string/scanResults"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name="UpcResults" 
+        <activity android:name="ApiHandler" 
                   android:label="@string/searchingEllipsis"
                   android:screenOrientation="portrait">
         </activity>
         <activity android:name="ManualUserEntry" 
                   android:label="@string/upcCodeNotFound">
+        </activity>
+        <activity android:name="ErrorDisplay" 
+                  android:label="@string/errorOccured">
         </activity>
 
     </application>

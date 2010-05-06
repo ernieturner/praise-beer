@@ -4,13 +4,12 @@ import java.util.Vector;
 
 import android.graphics.Color;
 
-public class ScanDetails implements java.io.Serializable
+public class BeerDetails implements java.io.Serializable
 {
     private static final long serialVersionUID = -5208851430378051565L;
 
     /* UPC Scanned */
     private String upcCode;
-    private String upcFormat;
 
     /* Rating Details */
     private String productName;
@@ -28,7 +27,7 @@ public class ScanDetails implements java.io.Serializable
     private int resultErrorCode;
     private boolean scanSuccess;
 
-    ScanDetails(String upcCode, String upcFormat) {
+    BeerDetails(String upcCode) {
         // Transform UPC code from UPC-E or UPC-A to EAN
         int upcLength = upcCode.length();
         if(upcLength == 12)
@@ -37,7 +36,6 @@ public class ScanDetails implements java.io.Serializable
             upcCode = convertUPCEToEAN(upcCode);
 
         this.upcCode = upcCode;
-        this.upcFormat = upcFormat;
     }
 
     /*
@@ -58,26 +56,6 @@ public class ScanDetails implements java.io.Serializable
         if(ratingCore.equals("F"))
             return Color.rgb(0xf5, 0x0e, 0x0e);
         return Color.rgb(0x0, 0x0, 0x0);
-    }
-
-    /**
-     * Sets links found based on product name
-     * 
-     * @param links
-     */
-    public void setProductLinks(Vector<String> links)
-    {
-        productLinks = links;
-    }
-
-    /**
-     * Sets product name
-     * 
-     * @param name
-     */
-    public void setProductName(String name)
-    {
-        productName = name;
     }
 
     /**
@@ -157,17 +135,6 @@ public class ScanDetails implements java.io.Serializable
     {
         return this.communityRatingDescription;
     }
-
-    /**
-     * Set brothers description of rating
-     * 
-     * @param description String
-     */
-    public void setBrothersRatingDescription(String description)
-    {
-        this.brothersRatingDescription = description;
-    }
-
     /**
      * Set beer style
      * 
@@ -233,15 +200,35 @@ public class ScanDetails implements java.io.Serializable
     {
         return this.brothersRatingDescription;
     }
+    
+    /**
+     * Set brothers description of rating
+     * 
+     * @param description String
+     */
+    public void setBrothersRatingDescription(String description)
+    {
+        this.brothersRatingDescription = description;
+    }
 
     /**
      * Returns product name
      * 
      * @return
      */
-    public String getProduct()
+    public String getProductName()
     {
         return productName;
+    }
+    
+    /**
+     * Sets product name
+     * 
+     * @param name
+     */
+    public void setProductName(String name)
+    {
+        productName = name;
     }
 
     /**
@@ -255,16 +242,6 @@ public class ScanDetails implements java.io.Serializable
     }
 
     /**
-     * Returns the initial UPC code scanned
-     * 
-     * @return
-     */
-    public String getUpcFormat()
-    {
-        return upcFormat;
-    }
-
-    /**
      * Returns all product links found
      * 
      * @return
@@ -272,6 +249,16 @@ public class ScanDetails implements java.io.Serializable
     public Vector<String> getProductLinks()
     {
         return productLinks;
+    }
+    
+    /**
+     * Sets links found based on product name
+     * 
+     * @param links
+     */
+    public void setProductLinks(Vector<String> links)
+    {
+        productLinks = links;
     }
 
     /**

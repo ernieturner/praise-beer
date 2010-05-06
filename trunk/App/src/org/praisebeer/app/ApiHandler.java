@@ -3,6 +3,7 @@ package org.praisebeer.app;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Vector;
 
 import org.json.JSONArray;
@@ -17,11 +18,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-public class UpcResults extends Activity implements Runnable
+public class ApiHandler extends Activity implements Runnable
 {
     public static final int REQUEST_CODE = 0x009c5ca4;
     private static int SEARCH_DIALOG_ID = 1;
-    private ScanDetails upcDetails;
+    private BeerDetails beerDetails;
+    private String requestUrl = "http://praisebeer.appspot.com";
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -30,13 +32,26 @@ public class UpcResults extends Activity implements Runnable
         Bundle extras = getIntent().getExtras();
         if(extras == null)
         {
-            setResult(RESULT_CANCELED);
+            Intent intent = new Intent();
+            setResult(RESULT_CANCELED, intent);
             finish();
         }
-
-        upcDetails = new ScanDetails(extras.getString("upcCode"), extras.getString("upcFormat"));
-
-        if(upcDetails.getUpcCode() != null && upcDetails.getUpcCode() != "")
+        
+        beerDetails = new BeerDetails(extras.getString("upcCode"));
+        String description = extras.getString("descriptionEntered");
+        
+        //Determine if this is a UPC lookup or a name lookup
+        if(description == null || description == "")
+        {
+            this.requestUrl += "/upclookup?upc=" + beerDetails.getUpcCode();
+        }
+        else
+        {
+            beerDetails.setProductName(description);
+            this.requestUrl += "/namelookup?upc=" + beerDetails.getUpcCode() + "&description=" + URLEncoder.encode(beerDetails.getProductName());
+        }
+        
+        if(beerDetails.getUpcCode() != null && beerDetails.getUpcCode() != "")
         {
             showDialog(SEARCH_DIALOG_ID);
             Thread thread = new Thread(this);
@@ -45,8 +60,8 @@ public class UpcResults extends Activity implements Runnable
         }
         else
         {
-            upcDetails.setResultErrorCode(ApiErrorCodes.NO_BARCODE_RECIEVED);
-            upcDetails.setScanSuccess(false);
+            beerDetails.setResultErrorCode(ApiErrorCodes.NO_BARCODE_RECIEVED);
+            beerDetails.setScanSuccess(false);
             sendResultAndFinishActivity();
         }
     }
@@ -58,7 +73,7 @@ public class UpcResults extends Activity implements Runnable
     {
         try
         {
-            URL upcLookup = new URL("http://praisebeer.appspot.com/upclookup?upc=" + upcDetails.getUpcCode());
+            URL upcLookup = new URL(this.requestUrl);
             BufferedReader in = new BufferedReader(new InputStreamReader(upcLookup.openStream()));
 
             String jsonResults = "";
@@ -73,8 +88,8 @@ public class UpcResults extends Activity implements Runnable
                 boolean success = apiResult.getBoolean("success");
                 if(success)
                 {
-                    upcDetails.setScanSuccess(true);
-                    upcDetails.setProductName(apiResult.getString("description"));
+                    beerDetails.setScanSuccess(true);
+                    beerDetails.setProductName(apiResult.getString("description"));
                     JSONObject beerInfo = apiResult.getJSONObject("beer_info");
                     if(beerInfo != null)
                     {
@@ -82,49 +97,49 @@ public class UpcResults extends Activity implements Runnable
                         try
                         {
                             JSONArray communityRating = ratings.getJSONArray("overall");
-                            upcDetails.setCommunityRating(communityRating.getString(0));
-                            upcDetails.setCommunityRatingDescription(communityRating.getString(1));
-                            upcDetails.setNumberOfRatings(communityRating.getString(2));
+                            beerDetails.setCommunityRating(communityRating.getString(0));
+                            beerDetails.setCommunityRatingDescription(communityRating.getString(1));
+                            beerDetails.setNumberOfRatings(communityRating.getString(2));
                         }
                         catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
 
                         try
                         {
                             JSONArray brothersRating = ratings.getJSONArray("bros");
-                            upcDetails.setBrothersRating(brothersRating.getString(0));
-                            upcDetails.setBrothersRatingDescription(brothersRating.getString(1));
+                            beerDetails.setBrothersRating(brothersRating.getString(0));
+                            beerDetails.setBrothersRatingDescription(brothersRating.getString(1));
                         }
                         catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
                         
                         JSONObject stats = beerInfo.getJSONObject("stats");
-                        upcDetails.setBeerABV(stats.getString("abv"));
-                        upcDetails.setBeerStyle(stats.getString("style_name"));
-                        upcDetails.setBeerStyleID(stats.getString("style_id"));
+                        beerDetails.setBeerABV(stats.getString("abv"));
+                        beerDetails.setBeerStyle(stats.getString("style_name"));
+                        beerDetails.setBeerStyleID(stats.getString("style_id"));
                     }
                     // Convert links from JSON array to normal array
                     JSONArray apiLinks = apiResult.getJSONArray("links");
                     Vector<String> links = new Vector<String>();
                     for(int i = 0; i < apiLinks.length(); i++)
                         links.add(apiLinks.getString(i));
-                    upcDetails.setProductLinks(links);
+                    beerDetails.setProductLinks(links);
                 }
                 else
                 {
                     int errorCode = apiResult.getInt("error_code");
-                    upcDetails.setResultErrorCode(errorCode);
-                    upcDetails.setScanSuccess(false);
+                    beerDetails.setResultErrorCode(errorCode);
+                    beerDetails.setScanSuccess(false);
                 }
             }
             catch(JSONException e)
             {
-                upcDetails.setResultErrorCode(ApiErrorCodes.INVALID_JSON_RESPONSE);
-                upcDetails.setScanSuccess(false);
+                beerDetails.setResultErrorCode(ApiErrorCodes.INVALID_JSON_RESPONSE);
+                beerDetails.setScanSuccess(false);
             }
         }
         catch(Exception e)
         {
-            upcDetails.setResultErrorCode(ApiErrorCodes.OUTGOING_REQUEST_FAILURE);
-            upcDetails.setScanSuccess(false);
+            beerDetails.setResultErrorCode(ApiErrorCodes.OUTGOING_REQUEST_FAILURE);
+            beerDetails.setScanSuccess(false);
         }
         handler.sendEmptyMessage(0);
     }
@@ -134,10 +149,7 @@ public class UpcResults extends Activity implements Runnable
      */
     private Handler handler = new Handler(){
         @Override
-        public void handleMessage(Message msg)
-        {
-            sendResultAndFinishActivity();
-        }
+        public void handleMessage(Message msg){sendResultAndFinishActivity();}
     };
 
     /**
@@ -157,11 +169,14 @@ public class UpcResults extends Activity implements Runnable
         return super.onCreateDialog(id);
     }
     
+    /**
+     * Dismissing dialog and sends results back
+     */
     private void sendResultAndFinishActivity()
     {
-        dismissDialog(UpcResults.SEARCH_DIALOG_ID);
+        dismissDialog(ApiHandler.SEARCH_DIALOG_ID);
         Intent intent = new Intent();
-        intent.putExtra("scanResults", upcDetails);
+        intent.putExtra("scanResults", beerDetails);
         setResult(Activity.RESULT_OK, intent);
         finish();
     }
