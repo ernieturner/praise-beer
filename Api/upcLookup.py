@@ -25,11 +25,11 @@ from google.appengine.api import memcache
 # -----------------------------------------------------------------------------
 
 UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
-INVALID_UPC_CODE = 0;
-NO_UPC_CODE_SENT = 1;
-NO_UPC_FOUND = 2;
-NO_BEER_FOUND = 3;
-RATING_LOOKUP_TIMEOUT = 4;
+INVALID_UPC_CODE = 0
+NO_UPC_CODE_SENT = 1
+NO_UPC_FOUND = 2
+NO_BEER_FOUND = 3
+RATING_LOOKUP_TIMEOUT = 4
 
 # -----------------------------------------------------------------------------
 # Custom RPC Transport Class
