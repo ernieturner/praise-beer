@@ -114,7 +114,7 @@ class MainHandler(webapp.RequestHandler):
                         result['found'] = True
 
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
-                if type(result) == dict and result['found']:
+                if type(result) == dict and result.has_key('found'):
                     productDescription = result['description']
                     links  = PBUtils.BossSearch().getResults(result['description'])
                     if len(links) == 0:
