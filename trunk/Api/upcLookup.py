@@ -82,6 +82,7 @@ class MainHandler(webapp.RequestHandler):
     def get(self):
         upcCode = self.request.get('upc')
         if upcCode:
+            errorCode = None
             #Support UPC-A codes by appending a 0 in front. EAN codes are 13
             #digits long so to look up the correct item we need to tweak the data here
             if len(upcCode) == 12:
@@ -91,7 +92,6 @@ class MainHandler(webapp.RequestHandler):
                 jsonResponse = simplejson.dumps({"success": False, "description": "UPC has invalid length. Expected 13 characters but got '%s'" % (upcCode), "error_code": INVALID_UPC_CODE})
             else:
                 productDescription = ''
-                error = False
                 result = {}
                 #Check for entry in memcache and local DB. If not found, hit upcdatabase.com and look it up there
                 localResult = self.lookupUpcDescriptionLocally(upcCode)
@@ -115,22 +115,22 @@ class MainHandler(webapp.RequestHandler):
 
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result['found']:
-										productDescription = result['description']                    										
-										links  = PBUtils.BossSearch().getResults(result['description'])
-										if len(links) == 0:
-											links  = PBUtils.GoogleSearch().getResults(result['description'])
-											
-										if len(links) > 0:
-											beer_info = PBUtils.Scraper().doScrape(links[0])
-										else:
-											beer_info = {}
-                else:
-                    error = True
+                    productDescription = result['description']
+                    links  = PBUtils.BossSearch().getResults(result['description'])
+                    if len(links) == 0:
+                        links  = PBUtils.GoogleSearch().getResults(result['description'])
 
-                if error == False:
+                    if len(links) > 0:
+                        beer_info = PBUtils.Scraper().doScrape(links[0])
+                    else:
+                        errorCode = NO_BEER_FOUND
+                else:
+                    errorCode = NO_UPC_FOUND
+
+                if errorCode is None:
                     jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "beer_info":beer_info})
                 else:
-                    jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": NO_UPC_FOUND})
+                    jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": errorCode})
         else:
             jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No UPC Code Recieved", "error_code": NO_UPC_CODE_SENT})
 
