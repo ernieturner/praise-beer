@@ -18,7 +18,7 @@ from django.utils import simplejson
 # -----------------------------------------------------------------------------
 
 GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
-BOSS_SEARCH_API_KEY = 'iwKJ.8nV34GERUNY2z2d3JeFQU8MzQi5vBdoAjzzcCGs175VukcNx1sfKvOlN529tImhNgZrrUE-'
+BOSS_SEARCH_API_KEY   = 'iwKJ.8nV34GERUNY2z2d3JeFQU8MzQi5vBdoAjzzcCGs175VukcNx1sfKvOlN529tImhNgZrrUE-'
 # -----------------------------------------------------------------------------
 # Scraper - This will scrape the BA site for us, or Google's cache, depending
 # -----------------------------------------------------------------------------
@@ -81,17 +81,15 @@ class BossSearch():
     url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload    
     
     response = StringIO(urlfetch.fetch(url).content)    
-    result   = self._formatResults(simplejson.load(response))
-    #return url
+    result   = self._formatResults(simplejson.load(response))    
     return result;
 
-  def _formatResults(self,searchResults):        
+  def _formatResults(self,searchResults):    
     baBase = 'http://www.beeradvocate.com/beer/profile/'
     lookup = {}
     links  = []
 
-    for entry in searchResults['ysearchresponse']['resultset_web']:
-      print "URL: "+ entry['url']
+    for entry in searchResults['ysearchresponse']['resultset_web']:      
       if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
         m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
         key = baBase + m.group(1) + '/'+ m.group(2)       
