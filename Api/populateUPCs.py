@@ -11,14 +11,18 @@ class MainHandler(webapp.RequestHandler):
 				
         # Open our file of known UPCs and descriptions for import
         f = open('./known_upc_data.txt', 'r')
-
+        line_number = 1
         for line in f:
             line = line.rstrip("\n")
             line = line.rstrip("\r")
             upc = PBDatabase.UPC()
-            [upc.code, upc.description] = line.split("\t")
+            [upc.code, upc.description, upc.ba_link] = line.split("\t")
             upc.origin = 'import'
-            upc.put()	
+            line_number += 1
+            try:
+              upc.put()
+            except:
+            	print "Error on line: "+ str(line_number)
         f.close()
 
 def main():
