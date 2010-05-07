@@ -3,7 +3,7 @@
     
     <string name="appName">Praise Beer</string>
 <string name="scanBeer">Scan Beer</string>
-<string name="quitApp">Quit Application</string>
+<string name="quitApp">Quit App</string>
 <string name="scanContent">Scanned UPC Value: </string>
 
 
@@ -29,4 +29,9 @@
 <string name="error_noUpcCodeSent">Sorry, there was an error sending the UPC code to the lookup server. Please try again.</string>
 <string name="error_requestTimeout">Sorry, the lookup timed out. We must be getting slammed with people looking for beer. Please try again in a little bit.</string>
 <string name="errorOccured">An Error Has Occured</string>
+<string name="pleaseWaitEllipsis">Please Wait...</string>
+<string name="searchingForResults">Searching For Results</string>
+
+<string name="pleaseFillOutDescription">Please fill out a beer description</string>
+<string name="okLabel">OK</string>
 </resources>

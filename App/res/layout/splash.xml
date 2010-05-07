@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/FillParentVertical"
     android:background="#ffffffff">
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
+        style="@style/FillParentAll"
         android:scaleType="center"
         android:src="@drawable/logo" />
 
@@ -18,15 +15,19 @@
         android:layout_height="63dip"
         android:layout_gravity="left|bottom"
         android:background="#AA000000"
+        android:clickable="true"
+        android:textSize="30sp"
         android:textColor="#ffffffff"
-        android:text="@string/scanBeer" />
-        
+        android:text="@string/scanBeer"/>
+
     <Button
         android:id="@+id/quitApp"
+        android:clickable="true"
         android:layout_width="157dip"
         android:layout_height="63dip"
         android:layout_gravity="right|bottom"
         android:background="#AA000000"
+        android:textSize="30sp"
         android:textColor="#ffffffff"
         android:text="@string/quitApp" />
 </FrameLayout>
