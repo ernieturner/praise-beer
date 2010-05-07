@@ -5,4 +5,5 @@ class UPC(db.Model):
     code        = db.StringProperty()
     description = db.StringProperty()
     origin      = db.StringProperty()
+    ba_link     = db.StringProperty()
     date        = db.DateTimeProperty(auto_now_add=True)
