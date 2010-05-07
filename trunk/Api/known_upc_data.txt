@@ -1,18 +1,2386 @@
-0085725165036	Trappistes Rochefort 10
-0892543000278	Russian River Pliny The Elder
-0083820181012	Guinness Draught
-0083820103014	Guinness Draught
-0083820104011	Guinness Draught
-0083820104035	Guinness Draught
-0083820123609	Guinness Draught
-0083820123685	Guinness Draught
-0083820123708	Guinness Draught
-0083820181012	Guinness Draught
-0754527001346	La Folie Wood Aged Beer
-0083645021166	Hoegaarden
-0083645157537	Hoegaarden
-0786150000182	Hoegaarden
-0786150000366	Hoegaarden
-0786150000373	Hoegaarden
-5410228148210	Hoegaarden
-5410228141785	Hoegaarden
+0080020000037	abita turbodog	3/6
+0080020000051	abita purple haze beer	3/7
+0018200150500	natural light	 
+0649440000210	Ommegang abbey ale	 
+0745432310012	agave wheat beer	 
+0000087104004	ah pilsener	 
+0040850000003	alaskan amber	 
+0040850000065	alaskan summer ale	 
+0064294625004	alberta genuine draft beer	 
+0072275000221	ale-8-one	 
+0039061000056	ale-gator wrap	 
+0812465000033	alesmith anvil ale	 
+0812465006660	alesmith horny devil ale	 
+0812465001016	alesmith old numbskull ale	 
+0812465001023	alesmith speedway stout	 
+0812465001047	alesmith wee heavy ale	 
+0812465000040	alesmith yulesmith holiday ale	 
+0062067121029	alexander keith's - brew beer	 
+0062067121357	alexander keith's - india pale ale	 
+0062067121340	alexander keiths india pale ale	 
+0062067528453	alexander keith's light ale	 
+5201261031009	alfa beer	 
+4810038000639	alivardiya desyatka beer	 
+0603675102873	allagash dubble ale	 
+0095753007970	almaza lebanese beer	 
+8023954000300	amaz??nia	 
+0000080455127	amer river amber lager	 
+0000080455561	amer river golden lager	 
+0043237000252	amsterdam bock	 
+0072783000096	anchor brewing our special ale	 
+0072783000508	anchor christmas ale	 
+0072783030000	anchor liberty ale nr	 
+0072783000072	anchor liberty ale single	 
+0072783004001	anchor old foghorn brly ale	 
+0072783000065	anchor porter	 
+0009125000087	anderson valley brewing winter solstice	 
+0009125001305	anderson valley bro davids double abbey ale	 
+0018200967368	anheuser world lager	 
+5021319001873	anheuser-busch beer	 
+0718122511983	annie's amber ale	 
+0636251820120	arrogant bastard ale	 
+0087800000591	artic lt ice beer  	 
+0038766302700	asahi beer	 
+0087200006308	asahi beer	 
+8855366004474	asahi beer	 
+0038766651334	asahi black beer	 
+0038766301604	asahi super dry beerfl 	 
+4031063014365	astra beer l	 
+0761745111139	atlantic brewing coal porter	 
+0088067056529	august schell firebrick vienna style lager	 
+0038832002206	augustiner brau beer	 
+0838832003209	augustinerbrau maximator dark beer	 
+0796363002026	avery brewing co. ellie's brown ale	 
+0603550021732	b-a bock's car	 
+5017343768561	baadoc mongolian beer	 
+0018200003615	bacardi silver o-3	 
+5010548002539	badger first gold ale 	 
+5010548002003	badger golden glory ale 	 
+5010548002911	badger hopping hare ale 	 
+5010548002997	badger poacher's choice ale 	 
+0085343000986	baltika #3 beer	 
+0085343000979	baltika #4 original beer	 
+0085343000962	baltika #9 extra beer	 
+0661540001119	baltika 5 beer	 
+0832125002054	baltika porter beer #6 from russia	 
+5000264010390	banana bread beer wells brewing	 
+0763963310011	banks beer	 
+0763963312213	banks carribean lager	 
+0182608000030	bard's tale beer: dragon's gold	 
+0009125000506	barney flats oatmeal stout	 
+0085000002247	bartles & jaymes flavored malt cooler: lemon-lime	 
+5017011220506	batemans autumn fall multigrain beer 	 
+5017011090505	batemans combined harvest beer 	 
+5017011040500	batemans victory ale 	 
+8714800004114	bavaria special blod beer	 
+5411831400030	bavik beer	 
+0689466272826	bawlmer craft beers - amber's ale	 
+0635779100110	bayern amber lager	 
+0030613000081	bb east india pale ale	 
+5035766020103	beamish irish stout	 
+8714800014182	beerred by bavaria	 
+5013112020038	belhaven fruit beer	 
+5013112954609	belhaven st. andrews ale 	 
+0837654215043	bellaire brown ale	 
+0776213650089	belle gueule  pilsener	 
+0086150061061	belle-vue lambic-ale framboise fermented w/raspberries	 
+0086150171067	belle-vue lambic-ale kriek fermented w/cherries	 
+0740522100511	bell's brewery third coast beer	 
+0740522101037	bell's cherry stout beer	 
+0740522101112	bells expedition stout	 
+0740522104212	bell's hopslam ale	 
+0740522100610	bell's oberon beer	 
+0740522100115	bell's pale ale	 
+0740522100818	bell's two hearted ale	 
+0740522102911	bell's winter white ale	 
+0641765030019	bent river beer	 
+0040382000083	berg koenig beer	 
+0084173321315	berghoff famous bock beer	 
+4100080000931	berliner kindel jubil?ums pilsener	 
+4053400257624	berliner pilsner beer	 
+5010251196181	best  conditioned ale 	 
+0710168026018	biere du bouier golden ale	 
+0815974000112	big horn buttface amber ale	 
+0815974000129	big horn buttface amber ale	 
+0064294000993	big rock warthog ale	 
+0796030214967	big wave golden ale	 
+0056327033238	black horse beer	 
+0073360014314	black label beer  	 
+5024583000016	black sheep ale 	 
+0050245830047	black sheep brewery monty python's holy grail ale	 
+0050245830023	black sheep brewery riggwelter yorkshire ale	 
+5024583000030	black sheep riggwelter ale 	 
+0078250000859	black star golden lager nrb	 
+0739165107018	black toad dark ale	 
+0039000001076	black toad dark ale 	 
+0072720289072	blacklabel beer	 
+0019563602002	blanchard prtzl beer mstd	 
+0073360807510	blatz beer regular	 
+0073360803017	blatz beer.	 
+0073360823015	blatz light beer	 
+0855188000119	blind tiger pale ale	 
+0605881300074	blithering idiot barley-wine style ale	 
+0682845000225	blonde d'epeautre spelt beer	 
+0034241000086	blue boar beer	 
+0070640325979	blue bunny ice cream cups chocolate malt 8 	 
+0661540003519	boom beer czech beer	 
+0009125000063	boonville beer india pale ale	 
+0685165240074	boote beer	 
+0014000103913	borden malt	 
+0858377000273	boris beer	 
+0689076839549	boris the crusher stout beer	 
+0011381020914	bormioli amadeus pilsner	 
+0726959901204	boulavard pale ale	 
+0050939112046	boulder beer mojo	 
+0050939112084	boulder flashback anniversary ale	 
+0050939512037	boulder mojo ipa beer	 
+0726959901426	boulevard dry stout 	 
+0726959901716	boulevard lunar ale	 
+0726959901013	boulevard pale ale	 
+0726959901211	boulevard unfiltered wheat beer	 
+0626990051237	bowen island go juice lager beer	 
+0850483000048	bowmore legend islay single malt scotch whisky	 
+5019291004401	brakspear oxford gold organic beer  vol)	 
+0774837574002	brava beer	 
+0745432181001	breckenridge vanilla porter	 
+0045432471110	breckenridge ipa beer	 
+0018200005800	brew masters beer	 
+0897542010105	brewers best red ale	 
+0773804242067	brewhouse pilsner	 
+0098554000102	bridgeport blue heron ale	 
+0098554000706	bridgeport extra special bitter ale	 
+0098554000607	bridgeport porter beer	 
+0098554000805	bridgeport stout black strap beer	 
+0030613000067	brklyn brew blk choc stout	 
+0021130235025	brown derby beer	 
+0084994006026	brummen lager 	 
+8594403110128	budejovicky czech premium lager 	 
+0050939000084	buffalo gold golden ale	 
+5060176590007	buntingford brewery co 	 
+0704361300013	burning river	 
+0603231109476	butte creek winter ale	 
+0018169801055	byerly beer chez	 
+0037103908599	c porter cutterheadmc	 
+0083820334494	caffrey's draught irish ale	 
+0017698902011	caguama light beer	 
+5020418000954	cain's fine raisin beer 	 
+5020418001319	cain's finest lager	 
+0077779636129	capitol sings cole porter	 
+0087000507814	captain morgan parrot bay matava blue	 
+0704203567895	caramel brewing co. wheat beer	 
+0798713110139	carib lager beer	 
+0098713110116	carib lager oz 4/6 nr	 
+6415600086400	carlsberg  all malt premium	 
+0000057007007	carlsberg pilsner	 
+0000093248327	carlton crown lager 	 
+9320000111638	carlton dry fusion beer	 
+0704203012234	carmel holiday ale	 
+0704203012241	carmel holiday ale	 
+0633864000031	carolina brewing company pale ale	 
+6111045002950	casa beer original	 
+6111045001670	casablanca	 
+6111045001694	casablanca	 
+6111045002141	casablanca	 
+9320000008556	cascade premium light	 
+9320000010467	cascade stout stubbies	 
+0788946102513	casco bay riptide ale	 
+9501100002051	castel beer	 
+5060119990130	castle rock brewery harvest pale blonde beer	 
+0012693000014	catamount amber beer	 
+0012693000045	catamount christms ale	 
+0012693000021	catamount gold beer	 
+0012693000113	catamount oatmeal stout	 
+0012693120101	catamount pale ale	 
+0012693000106	catamount pale ale	 
+0012693500033	catamount porter 	 
+0012693120040	catamount xmas ale	 
+0012693000632	catamountth annivers ale	 
+0021130206001	cedar mountain lager	 
+0735888612068	celis dubble ale	 
+0735888212015	celis pale bock	 
+0735888212060	celis pale bock 	 
+0735888712065	celis pale rider ale 	 
+0017698901021	cerveza caguama beer	 
+0080660000060	cerveza pacifico clara (beer)	 
+0072311132329	cerveza sol imported beer	 
+0659989000022	chaco yon gold ale	 
+5060031051001	chalky's bite beer	 
+5010548001679	champion golden ale 	 
+8850571125648	cheers beer	 
+0010334222221	chelsea checker black ale	 
+0010334111136	chelsea red ale	 
+0081706000020	chimay beer	 
+5905912650310	ciechan beer - wyborne	 
+0042572057150	claus haler non-alch beer	 
+0084173904402	clear creek ice beer	 
+0731760100401	clipper city gold ale	 
+0663881000547	clontarf single malt whisky	 
+0009264000054	coeur d'alene brewing company huckleberry ale	 
+0097549132811	colombian beer	 
+0073360731105	colt ice beer	 
+0073360731136	colt ice beer	 
+0071250401213	coltcool malt	 
+0073360732096	coltlight beer	 
+0071250000140	coltmalt liquor	 
+0071250402050	coltmalt liquor	 
+0073360732089	coltprem beer	 
+0072720024314	columbia beer	 
+0089764510031	connemara malt irish	 
+0186337000828	cookwell bock and brown sugar marinade	 
+0000093302036	coopers brewery - original pale ale	 
+0088119091010	cooper's lager	 
+0088119181186	coopers original pale ale beer	 
+0033000000206	coopers pale aleml	 
+0088119181162	cooper's sparkling ale	 
+0071990110024	coors cutter	 
+0007199000064	coors extra gold lager	 
+0071990770051	coors non-alcoholic	 
+5060094070018	copper dragon scottsale	 
+5031834002262	cotswold way beer	 
+0673923100067	cottonwood low down brown ale	 
+0673923100050	cottonwood pumpkin ale	 
+0071440104016	country club malt liquor	 
+0620114001054	coup de grisou	 
+5035766060116	courage directors ale 	 
+0098794203165	cream ale	 
+0627005064013	creemore springs premium lager	 
+0727344000694	cru d'or organic belgian style ale	 
+0089016006671	cruzan jumbie brew	 
+0008896001262	cusquena perubian beer	 
+0660726220160	cytosport - cyto gainer - lean muscle maximizer	 
+5905053000081	czarnk??w noteckie beer	 
+0015833002220	czechvar pilsner	 
+0815833002202	czechwar  lager	 
+0025078026523	dab original beer	 
+5032041000058	daleside brewery st george's ale 	 
+5708887002203	danish gold export lager	 
+0095310131469	dead guy ale	 
+0608782510009	delerium tremens belgian ale	 
+0734409301894	deptbeer  ornament	 
+3155930005568	desperados beer	 
+3155930006015	desperados beer	 
+0052763000124	diamond bear pale ale	 
+0082393000096	dixie blackend voodoo lager single	 
+8711231130917	dog beer	 
+0638489000046	dogfish head chicory stout	 
+0638489000084	dogfish head immort ale	 
+0638489000213	dogfish head indian brown ale	 
+0638489000015	dogfish head shelter pale ale	 
+0723062000831	dominion oak barrel stout beer	 
+0083835003705	doppel-hirsch bavarian-doppelbock	 
+0602755001013	double barrel ale	 
+0845033012626	draft beer shank	 
+0021475020843	dragon stout	 
+0795978070819	dragon stout	 
+0026102533116	drd on tap pilsner	 
+0702770013005	drop top amber ale	 
+0015942310599	dubuque beer	 
+5023625005033	duchie organics organic summer ale	 
+0070310001776	dundee india pale ale	 
+0070310001714	dundee pale bock lager	 
+0630600302022	dunedin pipers ale 4/	 
+0026102319956	durand 4-pilsner	 
+0081986001397	dutch windmill beer	 
+0081986001403	dutch windmill beer	 
+0872901000218	easy archive photo album by john  porter	 
+0722160122001	easy street wheat beer	 
+0072546032364	echigo beer	 
+0798426606998	ed hardy beer condom love kills slowly	 
+0838319000011	edison light beer (single)	 
+0829153000022	ekstra ale (lithuania)	 
+0829153000015	ekstra castle ale	 
+0708294050014	el toro brewing co. india pale ale	 
+0062067842177	elephant malt liquor	 
+0817904000506	elysian bifrost winter ale	 
+0857802000208	english ales pale ale	 
+4037300109573	erasco suppen der saison exotische sommernacht	 
+4037300109528	erasco suppen der saison mediterraner sommer	 
+4037300109511	erasco suppen der saison sommergarten	 
+0711556022506	erdinger oktoberfest beer	 
+0013865210507	erins rock stout	 
+8410793286123	estrella 	 
+0793573594990	evo lucky 7 porter	 
+0073360138294	ex black ale	 
+0000094130164	export gold	 
+0072130313015	falstaff beer	 
+0056459002225	fat bear stout	 
+0090672040015	fat cat lager beer	 
+0030112310414	fat weasel pale ale	 
+5741000007624	faxe extra strong	 
+5741000007709	faxe extra strong	 
+0830539009942	feeldoe stout vibrator	 
+0094922513069	fegley's brew works pumpkin ale	 
+0000076129810	feldschl??sschen original bier	 
+5039265000130	fifth sense ale 	 
+0796030214974	fire rock pale ale	 
+0630832000048	firemans 4 beer	 
+0769596612010	firestation5 beer	 
+0602755001037	firestone ale	 
+0602755001020	firestone double barrel ale	 
+0080069933341	fischer amber ale	 
+0619917000128	fish tale ales  mud shark porter	 
+0086243611029	flying dog beer	 
+0786243111023	flying dog brewery (doggie style) classic pale ale	 
+0786243999140	flying dog brewery double dog double pale ale	 
+0786243111979	flying dog brewery gonzo imperial porter	 
+0786243111986	flying dog brewery gonzo imperial porter	 
+0786243999119	flying dog brewery horn dog barley wine style ale	 
+0786243999126	flying dog brewery horn dog barley wine style ale	 
+0786243111962	flying dog brewery in-heat wheat ale (hefeweizen)	 
+0786243999188	flying dog brewery kerberos tripel	 
+0786243111153	flying dog brewery old scratch amber lager	 
+0786243111269	flying dog brewery road dog scottish porter	 
+0786243111917	flying dog brewery k-9 cruiser winter ale	 
+0786243111788	flying dog brewery snake dog ipa (india pale ale)	 
+0786243111696	flying dog brewery tire bite golden ale	 
+0786243111993	flying dog brewery wild dog weizenbock ale	 
+0072879078329	fons & porter	 
+0070897183315	foster's special bitter ale	 
+0042860300050	founders backyard beer	 
+0895216001015	four  - malt beverage	 
+0815351001015	four peaks brewing company kiltlifter scottish style ale	 
+0815351001008	four peaks kiltlifter beer	 
+0085725108149	framboise belgian framboise beer	 
+0088394000165	franziskaner club weiss beer	 
+0088394000219	franziskaner hefe weiss dark beer	 
+0034100007065	frederick miller classic chocolate lager	 
+0092150000023	frosters beer 	 
+5412186001170	frueli strawberry beer	 
+0780069211202	frye's leap india pale ale	 
+0071990095369	full moon winter ale 	 
+0024866118631	full sail amber ale	 
+0024866313562	full sail beer nut brown	 
+0024866620929	full sail ipa ale.	 
+0024866524906	full sail wassail ale nr ssnal	 
+0009439601048	fullers esb ale	 
+5011885003661	fuller's esb champion ale	 
+5011885008420	fuller's honey dew ale 	 
+0009439002678	fullers porter	 
+5011885004286	fuller's summer ale 	 
+0009500000916	gablinger's beer	 
+4002208001052	gaffel beer	 
+0832732001327	gaffel kolsch imported beer	 
+0093952011040	gaspars ale oz 4/6 lnnr	 
+0715245123536	geary london porter	 
+0015245123452	gearys ale	 
+0715245123567	geary's anniversary ale	 
+0715245000134	geary's autumn ale	 
+0015245000081	geary's hampshire ale	 
+0070310300053	genesee horse ale	 
+0070310320259	genesee horse ale	 
+0070310357019	genesee light	 
+0070310349113	genny beer	 
+0070310000199	genny red lager	 
+0070310000205	genny red lager 	 
+0070310402115	genny saver beer	 
+0070310402139	genny saver cream ale  rr	 
+0034100005023	genuine draft beer	 
+0610746102212	george gale & co. ltd - prize old ale	 
+0793286223217	german ale	 
+0020507011507	german beer	 
+0086208802257	gerstel non alcoholic classic-mild malt beverage	 
+0688267300547	giant diet sterling gin ale 1ct	 
+0688267300516	giant main st diet rt beerfo	 
+0688267345326	giant sterling g/ale- fo	 
+5060084570764	glebe farm spelt beer	 
+0009191422066	gold stock ale  	 
+4893333069785	goldaen king premiun beer	 
+0080793000265	golden ale	 
+0715915225126	golden bear lager 	 
+0715915225423	golden gate hibernator winter ale	 
+0715915227328	golden gate orig ale 	 
+0685165300075	golden leaf beer	 
+0084662003005	golden promise ale	 
+5024583000061	golden sheep fine pale ale 	 
+7290008464345	goldstar dark lager beer	 
+0736920111136	goose island honker's ale	 
+0736920111310	goose island india pale ale	 
+0736920111174	goose island mild winter beer	 
+0036920111540	goose island oktoberfest	 
+0736920111600	goose island pilsner	 
+0631030000441	gordon biersch blond bock	 
+0631030000229	gordon biersch marzen lager	 
+0631030000113	gordon biersch pilsner lager	 
+0631030000052	gordon biersch winterbock dark double bock lager	 
+5425006240345	gouden carolus easter beer	 
+0041163436442	gouden haven lager beer	 
+0094395021207	grafton beer washed truckle	 
+0639736007207	grand teton brewing bitch creek esb ale	 
+0639736002202	grand teton brewing teton ale	 
+0779446105128	grandville island lager (beer)	 
+0016041100371	grants spiced ale	 
+0790586001293	great divide - hibernation ale	 
+0790586000180	great divide - oak aged yeti imperial stout	 
+0790586001231	great divide brewing co. dpa (denver pale ale)	 
+0704361200016	great lakes brewing company - edmund fitzgerald beer	 
+0704361400010	great lakes christmas ale	 
+0704361930012	great lakes moondog esb	 
+0773804352087	great western pilsner	 
+0837046001407	green flash brewing co. - nut brown ale	 
+0084662005009	greene king abbot ale	 
+5010549301952	greene king st edmunds beer 	 
+5010549302768	greene king suffolk springer premium dark ale	 
+5010549302287	greene king sun dance ale	 
+0605800200010	greene king westgate brewery olde suffolk english ale	 
+0055480003010	griffon rousse ale  	 
+0023458101006	grimbergan double ale	 
+0347581000556	grimbergen double ale	 
+5410263010633	grimbergen double dark abbey ale	 
+0788309800018	gritty mcduff's original pub style pale ale	 
+0788309900220	gritty mcduff's red claws ale	 
+0788309500017	gritty's halloween ale	 
+0083741225024	grolsch light lager	 
+0710168004016	gulden draak ale	 
+0082488127004	haake beck malt beverage non-alcoholic	 
+0082488127103	haake beck malt beverage non-alcoholic	 
+0049483618937	hacker pshorr original oktoberfest	 
+0049483012018	hacker-pschorr weisse bier	 
+0049483112008	hacker-pschorr weisse bier	 
+0072130126011	haffenreffer private stock malt liquor	 
+0032700951184	hairball remedy - malt flavor	 
+0692101401161	haizhu beer	 
+0798644110505	hale's ales northwest's best puget sound gold ale	 
+0634986880006	half acre lager	 
+5035118000005	hambleton ales nightmare stout 	 
+0761946222337	hangtown boysenberry ale	 
+5701598033009	harboe pilsnerpack	 
+5701598032170	harboe premium traditionel pilsner	 
+5010549301884	hardys & hansons olde trip premium ale 	 
+0077740903038	harley davidson (beer)	 
+0041827001610	harpoon brown ale	 
+0041827007124	harpoon ipa	 
+0600519000104	harviestoun brewery bitter & twisted blond beer 	 
+0654580002079	heavy-handed india pale ale bot	 
+0642855212100	he'brew beer messiah bold	 
+0642855322106	he'brew genesis:tenth anniversary ale	 
+0642855422103	he'brew pre$*nt$!	 
+0653817000529	hedonism ale legacy brewing	 
+0702770000104	hefeweizen	 
+0072890000026	heineken dark lager	 
+0034100002015	henry weinhard's ale	 
+0071250000027	henry weinhard's ale	 
+0080872020054	henry weinhards amber ale	 
+0034100001964	henry weinhard's dark beer	 
+0034100002961	henry weinhard's northwest trail blonde lager	 
+0080872014183	henry weinhards porter	 
+0034100002022	henry weinhard's private reserve beer	 
+0097200003542	hinanao tahiti premium beer	 
+0062067027987	hitachino nest white ale	 
+0786714853308	hite beer	 
+0037103913784	hk porter boltcutter clip cut steel	 
+0070462098334	hkm beer	 
+0116360100066	hobgoblin imported english ale	 
+4005686014286	hofbraeu oktoberfest beer	 
+5032864001041	hogs back bsa real ale	 
+0009191423063	holiday ale 	 
+0081986001441	hollandia beer	 
+0070310370971	honey brown lager	 
+0070310000687	honey brown lager	 
+0684105003045	hook & ladder lighter beer	 
+0684105005049	hook and ladder pipe and drum irish ale	 
+5017992000067	hook norton brewery 	 
+5017992101290	hook norton brewery old hooky beer 	 
+5017992000081	hook norton haymaker pale ale 	 
+0763176240228	hop trip pale ale	 
+5032249000102	hopback brewery entire stout 	 
+0631030930007	hopfest pilsner	 
+0890545001019	hopper pale ale / madison river brewing co	 
+0798304078770	hoppin frog frosted frog christmas ale	 
+0740522104205	hopslam ale	 
+0891312002000	hub city brewing company wheat beer	 
+4005998521014	hudora lager	 
+4005998521021	hudora lager	 
+4005998521038	hudora lager	 
+5039265000208	humdinger ale 	 
+0739165107476	humpback honey wheat ale	 
+0018200005329	hurricane high gravity lager	 
+0018200910326	hurricane high gravity lager	 
+0018200005053	hurricane ice malt liquior	 
+0018200005084	hurricane ice malt liquor	 
+0073832001514	ic light premium light beer 	 
+0018200843938	ice draft light  beer	 
+0022100005907	ice man malt liquor	 
+5010482505196	iceland casserole - steak in ale	 
+8717524420017	iki japanese green tea beer 	 
+0064009010828	imperial beer nr	 
+0764009010117	imperial cerveza	 
+0098554000058	india pale ale	 
+5010327658544	innis & gunn original smooth scottish beer	 
+0763176170013	inversion india pale ale	 
+0763176170068	inversion india pale ale	 
+0027916000092	ipa beer	 
+0853759000117	ipa india pale ale	 
+0606813001021	ipswich original ale	 
+0007269501309	irish ale	 
+0606905005203	ithaca beer co. apricot wheat beer	 
+0071440275228	j.r. beer	 
+5012015971003	j.w. lees moonraker strong ale	 
+9318691000812	james boag's premium lager	 
+0776029701562	james readybeer	 
+5030109466105	jennings cumberland ale 	 
+5030109001054	jennings redbreast beer 	 
+5030109356109	jennings sneck lifter strong ale	 
+4008948027000	jever pilsener	 
+0631030910009	joesephs brau oktoberfest lager	 
+0062067347177	john labatt classic lager	 
+0062067347771	john labatt classic lager	 
+0872901000027	john porterxphoto album red/black	 
+0015925664312	generations white ale malt beverage with spices	 
+0833050009972	joose cranberry malt beverage	 
+0833050009989	joose tropical fruit malt beverage	 
+5410228080459	jupilercl beer	 
+0070310001028	jw dundee pale ale	 
+0070310001042	jw dundee's ameri amber lager	 
+0070310001011	jw dundee's pale ale	 
+0070310001240	jw dundee's pale bock	 
+0086243111925	k9 cruiser ale	 
+0740970260102	kalik - beer of the bahamas	 
+0740970262304	kalik - beer of the bahamas	 
+6415600000512	karhu iii beer 	 
+6415600030960	karhu iii beer 	 
+6415600026628	karhu iii beer  	 
+0796535000010	karl strauss amber lager	 
+0835793000025	karlovacko beer	 
+5034743080017	kelpie seaweed ale	 
+0700445121000	kennebunkport blueberry wheat alefl 	 
+0642860300328	kentucky breakfast stout	 
+0687151500018	kenzinger beer	 
+5000264002272	kestrel super lager	 
+0070299725519	key west sunset ale	 
+0087800000560	keystone ice	 
+0071990477028	keystone ice	 
+0071990470081	keystone premium	 
+0071990470043	keystone premium	 
+0018200001307	king cobra malt beer	 
+0182000002601	king cobra malt liquor	 
+0092212111117	kingfisher premium lager beer	 
+0040063150212	kirin lager	 
+0040063116911	kirin lager   	 
+0071670522093	kirkland signature hefeweizen handcrafted ale	 
+0631030160015	kirkland signature pale ale handcrafted beer	 
+3006240105311	kirks kole beer	 
+9300624010531	kirks kole beer	 
+0641974333123	kisz bier classic czech dark	 
+0009500000732	knickerbocker natural	 
+8722700014720	knorr saison-gericht gr?nkohl mit mettwurst	 
+0084694000010	koch's golden anniversary beer	 
+6415600026994	koff beer 	 
+0796030214943	kona brewing - longboard island lager	 
+0796030014970	kona fire rock pale ale	 
+0018200003912	kona longboard lager (hawaiian)	 
+0088573533330	kosmos reserve lager	 
+0085343001006	kotayk lager beer	 
+4810014003760	krinitsa export beer	 
+4810014001582	krinitsa motsnaye beer	 
+4810014006075	krinitsa porter beer	 
+4008287054224	krombacher pils german lagerml	 
+0851621000012	kronenbourg beer	 
+3080210008253	kronenbourgbier	 
+0036881380672	kurt busch stock car	 
+0772285051007	la fin du monde - ale on lees	 
+0608782667161	la moneuse special winter ale	 
+0062067914577	labatt extra dry	 
+0062067088179	labatt honey lager	 
+0062067333026	labatt maximum ice	 
+0062067509438	labatt nordic	 
+0062067009778	labatt nordic	 
+0060383088996	lager brew unalcoholized beer	 
+0024327996662	lager print atla	 
+0723830000155	laginutas sirius hi-gravity cream ale	 
+0723830000087	lagunitas amber ale 	 
+0723830000148	lagunitas undercover investigation shut-down ale	 
+0723830004207	lagunitas censored rich copper ale	 
+0723830000094	lagunitas india pale ale 	 
+0723830000100	lagunitas india pale ale 	 
+0723830000018	lagunitas pale ale	 
+0723830000056	lagunitas pale ale 	 
+0723830000117	lagunitas pilsner	 
+0723830000032	lagunitas seasonal ale	 
+0723830000025	lagunitas stout	 
+0788028100017	lake tahoe crystal red ale 	 
+0788028012006	lake tahoe hefeweizen	 
+0788028200007	lake tahoe hefeweizen	 
+0788028100031	lake tahoe nutty winter ale	 
+0788028100000	lake tahoe red ale	 
+0788028100048	lake tahoe stout	 
+0746546000219	lakefront brewery eastside dark lager	 
+0074837541166	laker strong beer	 
+0099482248000	lamar street pale ale	 
+0087229111137	lammerlaw single malt	 
+0872291111372	lammerlaw single malt	 
+0018200007798	land shark  island style lager	 
+0739165002009	landmark premium beer	 
+0735380167448	lantc beer bat hadoc	 
+0071439962009	latrobe amer pale ale  nr	 
+0071439965000	latrobe bohemian pilsner 6p	 
+0046302140730	lawrence welk: salute to cole	 
+5281012013065	lazia malt drink	 
+0895359001019	lazy boy porter	 
+5410228091448	leffe beer	 
+0786150000311	leffe blonde beer	 
+0793866400021	left hand brewing company imperial stout	 
+0793866360011	left hand brewing company milk stout	 
+0793866480016	left hand brewing company oktoberfest beer	 
+0793866420029	left hand haystack wheat beer	 
+0793866360028	left hand milk stout beer	 
+0093866480017	left hand oktoberfest beer	 
+0793866500028	left handlb monkey / beer	 
+0783271003009	legend brown ale	 
+0783271003108	legend brown ale	 
+0034100795054	leine ice beer 	 
+0034100004521	leinenkugals light	 
+0034100483449	leinenkugel original	 
+0034100002527	leinenkugel original	 
+0034100592059	leinenkugel red	 
+0034100005375	leinenkugel red	 
+0034100595050	leinenkugel red	 
+0034100595746	leinenkugel red	 
+0031100007774	leinenkugel's creamy dark	 
+8850999141008	leo beer	 
+0026359885822	les sopranos - l'integrale de la quatrieme saison	 
+0074442422362	lighthouse lager	 
+0085725108040	lindemans framboise lambic	 
+0085725108019	lindemans gueuze lambic	 
+0085725108071	lindemans pomme lambic	 
+0793807002000	lion lager	 
+4791059042849	lion lager	 
+0810730000207	lion lager imported	 
+0085053000054	lionshead deluxe pilsner beer	 
+0070896893260	lite beer dle	 
+0034100646028	lite ice beer-pack 	 
+9328731000115	little creatures pilsener	 
+0689076925891	loco-motive ale	 
+0073360186615	lone star beer	 
+0073360187544	lone star beer	 
+0073360180026	lone star beer	 
+0073360183416	lone star beer 	 
+0073360197529	lone star light	 
+0019256000054	long trail ale	 
+0719256000053	long trail ale	 
+0719256000275	long trail ale	 
+0719256001005	long trail beer - belgian white	 
+0719256000589	long trail double bag ale 	 
+0719256000558	long trail double bag beer	 
+0719256000824	long trail hefeweizen	 
+0089924193340	lord chesterfield ale	 
+0751249111230	lost coast amber ale	 
+0051249111217	lost coast pale ale  	 
+0751249111216	lost coast pale ale  	 
+0051249111248	lost coast stout	 
+0751249111247	lost coast stout nr	 
+0062067013713	lowenbrau premium lager	 
+0659989000046	lunasea esb ale	 
+0025682000094	lvivske	 
+4823005000174	lvivske	 
+0088130885636	mackeson triple stout	 
+0095374500003	mactarnahan's blackwatch cream porter	 
+0095374333014	mactarnahan's india pale ale	 
+0095374999838	mactarnahans's amber ale	 
+0735256042107	mad river john barleycorn barleywine ale	 
+0009191425067	maerzen oktoberfest	 
+0837732000103	maharaja premium indian pilsner	 
+0046504190120	mainstas garden porter gardens opy	 
+0021130460519	malt liquor	 
+0895216001046	malt liquor	 
+0039000004015	malt syrup	 
+5039265000154	maple moon ale 	 
+7310511251406	marabou co-co dubbel	 
+0071440405229	mardi gras beer - second edition	 
+0859996000170	maredsous	 
+0859996000132	maredsous triple tripel	 
+0097558000903	marin blueberry ale	 
+0742499000405	marin celts golden ale	 
+0742499000801	marin india pale ale	 
+0742499001006	marin kiltlifter scotch ale	 
+0097558001009	marin san qntn breakout stout	 
+0754489031061	maritime pacific brewing co islander pale ale	 
+0754489031016	maritime pacific islander pale ale	 
+0748862070259	marke weltenburger hefe-weizen dunkel beer	 
+5025898001231	marston's owd rodger strong ale	 
+5025898000371	marston's oyster stout 	 
+5025898000975	marston's pedigree ale 	 
+5025898000395	marston's strong pale ale 	 
+0037552987589	martens beer	 
+5010388800845	martlet malt extract	 
+5010658302772	mathers blk beer cncntrtd mlt lqr	 
+0071670432019	matt prem lt beer	 
+0071670000027	matt premium beer  	 
+0071670323010	matt's prem beer	 
+0071670475016	matts prem lt beer  	 
+0689076075558	maui brewing co. bikini blonde lager	 
+0070260004353	mc sorleys ale	 
+0070260104466	mc sorleys ale double dark	 
+0070260104961	mc sorley's wintertime ale	 
+0055480003003	mcauslan brewing - griffon ale 	 
+0088345100029	mcewans scotch ale	 
+0076260004355	mcsorleys ale	 
+5060013161803	meantime london pale ale	 
+0618513000013	mega malt non alcoholic malt beverage	 
+0092212111049	mendocino black hawk stout	 
+0092212111056	eye of the hawk select ale	 
+0092212121055	eye of the hawk select ale	 
+0092212121239	mendocino seasonal beer	 
+0605881300036	merry monk's belgian style golden ale	 
+0018200006708	michelob gold light beer	 
+0018200009204	michelob hefeweizen	 
+0018200019227	michelob hefeweizen	 
+0018200019920	michelob hefeweizen	 
+0018200000287	michelob honey lager 	 
+0018200019876	michelob honey lager 	 
+0018200682766	michelob honey lager 	 
+0018200412189	michelob lager	 
+0018200180484	michelob lt beer 	 
+0018200000492	michelob pale ale	 
+0018200019906	michelob pale ale	 
+0018200000324	michelob porter 	 
+0018200029882	michelob winter spiced ale	 
+0018200982767	michelob winter spiced ale	 
+0073360448119	mickey's ice ale	 
+0091600000323	mickey's ice ale	 
+0034100002084	mickey's ice ale	 
+0007000007534	miller beer	 
+0034100923402	miller beer 	 
+0034100000301	miller beer  nrf wrap	 
+0034100002916	miller chill - light beer chelada style	 
+0034100004873	miller clear beer	 
+0034100622152	miller icehouse beer	 
+0034100006549	milwaukee's best light	 
+0034100073060	milwaukee's best light	 
+0034100073411	milwaukee's best light	 
+0084173090167	minhas creek classic lager beer 	 
+0032692044550	miss oktoberfest teen plus xl-	 
+0032692044536	miss oktoberfest teen plus xxl-	 
+0073360512049	mississippi mud famous black and tan beer	 
+0000090135491	mohren pfiff bier	 
+0056327962545	molson black ice	 
+0068213054111	molson cadian light	 
+0068213052216	molson candan light	 
+0056327703018	molson dry	 
+0056327703230	molson dry	 
+0056327703414	molson dry	 
+0068213000057	molson golden	 
+0068213091116	molson ice	 
+0068213091819	molson ice	 
+0050245005025	monty python's holy grale ale	 
+0070893023325	moo magic-sf choc malt stick	 
+5029742000104	moorhouse's blond witch beer 	 
+0700283010030	moose drool beer	 
+0700283010016	moose drool brown ale	 
+0700283010108	moose drool brown ale	 
+0776029700480	moosehead premium dry	 
+0019751202045	moretti (larossa) beer nr	 
+0019751201017	moretti beer  nr	 
+5010251290339	morrisons/titanic brewery green hop beer	 
+5060180560003	morrissey fox blonde beer	 
+0830165002225	mr. garden kvas (malt beverage)	 
+0056820004858	m-steaz orgnc rt beer grn tea	 
+0097558000101	mt.tam pale ale n.r.	 
+0714588002935	munton's malt extract amber	 
+0714588002942	munton's malt extract dark	 
+0714588000610	munton's malt extract premium lager	 
+0071250000300	national bohemian beer	 
+0000180000944	natural ice beer	 
+0018200150470	natural light beer	 
+0018200006876	natural pilsner-	 
+0727916200156	naughty nellie's ale	 
+0080660000039	negra modelo dark ale	 
+0080660957852	negra modelo dark ale	 
+0725829400014	nevada city ale nr	 
+0043237003000	new amsterdam amber lt beer	 
+0043237000245	new amsterdam seasonal beer	 
+0754527001216	new belgium 1554	 
+0754527001223	new belgium 1554	 
+0754527000417	new belgium brewing abbey ale	 
+0754527000820	new belgium brewing biere du mars	 
+0754527001117	new belgium brewing loft	 
+0754527000127	new belgium brewing sunshine wheat beer	 
+0754527000813	new belgium ranger india pale ale 	 
+0754527000110	new belgium sunshine wheat beer	 
+0746546000387	new grist gluten free beer	 
+0614036003333	new holland pumpkin beer 	 
+0675796010115	newport storm hurrie amber ale	 
+0042995150261	night porter	 
+0754489021017	nightwatch maritime pacific dark ale beer	 
+0660376723585	nimbus brewing company brown ale	 
+0660376374558	nimbus brewing company oatmeal stout	 
+0660376374664	nimbus brewing company old monkeyshine	 
+0660376374442	nimbus brewing company red ale cerveza	 
+0892376002036	ninkasi oatis oatmeal stout	 
+4043800000111	no 1 welde german super premium pilsner	 
+0069596012125	nor'east blacksmith porter	 
+0069596002126	nor'easter best bitter ale	 
+0727344000045	north coast brewing co. red seal ale	 
+0795563100051	northampton pale ale	 
+0606905003209	nut brown ale	 
+0670492100610	oak creek brewing co. pale ale	 
+0670492100429	oak creek brewing company nut brown ale	 
+0050939122106	obovoid emperical stout - boulder beer company	 
+0085343000955	ochackoff classic beer	 
+0085343000948	ochackoff lager beer	 
+0722160121004	odell brewing co	 
+0722160123008	odell brewing co. levity amber ale	 
+0722160120151	odell brewing company - burbon barrel stout	 
+0722160061201	odell's double pilsner	 
+0022160061301	odell's special red beer	 
+0056435006018	oh creek copper ale	 
+0801333000022	o'hara's irish stout  abv)	 
+5900014002104	okocim porter	 
+0801571112310	oktoberfest	 
+0819942000067	old chub scottish style ale	 
+0034100006228	old english beer	 
+0034100006389	old english malt beverage.	 
+0034100006099	old englsh malt liq-ice	 
+0796363001081	old jubilation ale	 
+0086243111161	old scratch ale	 
+0073360117565	old style beer	 
+0608782669967	olfabrikkengram india pale ale	 
+0094922681843	o'malley' cream ale beer	 
+0084598114509	oranjeboom premium beer	 
+0097096317679	oregon pale ale	 
+0080157111248	org munich lager	 
+0033944333019	original margarita ice malt beverage	 
+0072546030513	orion beer	 
+0026102164716	otb drnd bulk classic pilsner	 
+0756435001029	otter creek alpine ale	 
+0756435001012	otter creek copper ale	 
+0088067056413	pale ale	 
+0000054057067	palm bier - fles	 
+0009485451239	pappy beer marinade	 
+0087000507876	parrot bay waverunner	 
+0043279001002	party ball beer pump	 
+0892582001014	patriots beer bratwurst	 
+0080157101942	paulaner hefe-weizen natural wheat beer/ale	 
+0801571102588	paulaner lager nr	 
+0080157116755	paulaner octoberfest marzen beer	 
+0080157411232	paulaner oktoberfest	 
+0022100000636	pbr beer	 
+0661540001409	pernstejn beer	 
+0181954000015	peroni beer	 
+0086208801953	peter's brand classics dutch style pilsener	 
+0085498155562	pete's pub lager	 
+0085498155593	pete's pub lager	 
+0085498456706	pete's seasonals summer brew winter brew oktoberfest	 
+0085498737362	pete's signature pilsner	 
+0790672000056	piedmont brand porter	 
+0727916000077	pike extra stout	 
+0727916000336	pike old bawdy barley wine ale	 
+0727916000206	pike tandem double ale	 
+0085725340013	pindus organic munster	 
+0085725340020	pinkus organic pils	 
+0662502335242	pinstripe red ale	 
+0796030214936	pipeline porter	 
+0761946100116	placerville pale ale	 
+0070080081107	plochmans kosciusko beer mstr	 
+0088733002010	point honey light beer	 
+0088733206418	point special beer	 
+0087194000146	polar beer	 
+0793866410037	polestar pilsner	 
+0085725108170	pomme lambic belgian pomme beer apple	 
+0660588100105	poor richard's tavern spruce ale yards brewing company	 
+0856636001009	porkslap pale ale. farmhouse ale	 
+0689926000150	port brrewing hopale	 
+0071493062172	porter 	 
+0011661209947	porter george - runnin' partner	 
+0026734003025	porter's friend metal polishing cream	 
+0094254000138	post road pumpkin ale	 
+0685165310012	potosi light beer	 
+0700283090018	powder hound winter ale	 
+0700283090032	powder hound winter ale	 
+0727344000380	pranqster belgian style golden ale	 
+0073360147111	premium light beer	 
+0019057001564	presidente beer  nr	 
+0046010000074	presidente light cerveza pilsener	 
+0060383674229	president's choice spruce beer cola	 
+0855956000136	prestige beer	 
+0690926000217	prohibition ale speakeasy ales & lagers	 
+0095374001012	pumpkin ale	 
+5060140900009	pure ubu premium amber ale	 
+0076420911035	pyramid crystal wheat ale	 
+0076420811021	pyramid pale ale	 
+0076420911028	pyramid pale ale 	 
+0652778010004	quilmes argentina beer	 
+0052900034043	quinlan beer pretzels	 
+0052900034388	quinlan beer pretzels	 
+0086243622025	railyard ale	 
+0788534101065	raincross ale	 
+0754527000479	ranger india pale ale new belgium brewing	 
+0649440000029	rare vos belgian-style ale	 
+0785181284028	rattlesnake ale	 
+0045238000644	razor edge lager	 
+0630832641111	real ale pale rye ale	 
+0795751021212	red brick peachtree pale ale	 
+0056910401017	red bull beer (ada)	 
+0035235000075	red bull malt liquor.z	 
+0072720054311	red cap ale	 
+4801032211077	red horse beer	 
+0732731000065	red nectar ale nr	 
+0009331000062	red oval classic lager	 
+0727344000014	red seal ale	 
+0727344000052	red seal ale nr	 
+7766333000065	red trolley ale 	 
+0018200007293	redbridge beer	 
+0021242000023	redhook blackhook porter	 
+0021242600049	redhook copperhook	 
+0021242000030	redhook long hammer	 
+0709326008034	redrock amber ale	 
+0084994002516	reibenbach light pilsner	 
+0009500000244	rheingold extra dry	 
+0009500000206	rheingold extra light	 
+0055158021292	rheingold xdry lager 	 
+0722130468016	ricardos red rocket ale	 
+0056327673939	ricard's red beer	 
+0041163429918	ricochet premium malt beverage	 
+0608782668175	ridgeway brewing bad elf winter's ale	 
+0608782668144	ridgeway brewing warm welcome nut browned ale	 
+7044610047508	rignes beer	 
+7044610047003	ringnes beer  den ekte pilsener	 
+5032563000161	ringwood brewery old thumper beer	 
+0087396004621	rks la hitaire hors saison	 
+0086243111277	road dog ale	 
+5035641000688	roaring meg premium blonde beer	 
+5015759000220	robinson's old tom strong ale 	 
+0811380000616	rock art white tail ale	 
+0095301131485	rogue double dead guy ale	 
+0095301130273	rogue hazelnut brown nectar	 
+0095301130594	rogue kells irish style lager	 
+0095301131010	rogue red ale	 
+0095301131003	rogue st. rogue dry hopped red ale	 
+0095301130280	rogue yellow snow ale	 
+0095301130662	rogue: festive ale - belgian style saison ale	 
+0017698971017	romulan ale	 
+0017698971062	romulan ale	 
+0838469002002	romulan ale (novelty)	 
+0095301130037	rougue brewing shakespear stout 	 
+0011150535212	roundy's pl beer bratwurst	 
+0798713400056	royal extra stout	 
+5741000111840	royal pilsner	 
+5023887000432	ruddles county ale 	 
+0060114604259	sagres beer nr	 
+0785515400025	saint arnold christmas ale	 
+0785515100307	saint arnold divine reserve beer	 
+0785515100208	saint arnold elissa ipa - india pale ale	 
+0785515140006	saint arnold xmas ale 	 
+0605734277775	saison 7 belgium style ale	 
+0023604231076	sal con limon lime beer salt	 
+0022100000964	salado creek honey bock	 
+0085000007037	sam adams beer	 
+0087692100010	sam adams boston lager	 
+0087692112167	sam adams boston lager	 
+0087692774006	sam adams chocolate bock	 
+0087692881025	sam adams hefeweizen 	 
+0087692281009	sam adams old fezziwig beer	 
+0087692531005	sam adams pale ale	 
+0876592421031	sam adams spring ale	 
+0008769210999	sam adams summer ale	 
+0085725115260	sam smith organic lager	 
+0087692100140	samuel adams beer	 
+0087692961024	samuel adams black lager	 
+0087692961000	samuel adams black lager	 
+0087692000082	samuel adams boston lager	 
+0087692000051	samuel adams boston lager	 
+0087692100126	samuel adams boston lager	 
+0087692261001	samuel adams scotch ale	 
+0087692500100	samuel adams cran lambic nrb	 
+0087692400103	samuel adams cream stout	 
+0087692391005	samuel adams golden pilsner beer	 
+0087692881001	samuel adams hefeweizen ale	 
+0087692321002	samuel adams holiday porter	 
+0087692791003	samuel adams irish red beer	 
+0087692011033	samuel adams summer ale	 
+0087692300502	samuel adams summer ale	 
+5010149200945	samuel smith's organic cherry beer	 
+0085725115116	samuel smith's winter welcome ale	 
+0041163402355	san lucas beer	 
+4801032171067	san mig light - san miguel light beer	 
+5000104133838	san miguel beer	 
+5010153773671	san miguel beer	 
+0038609117645	san miguel lager	 
+4801032111025	san miguel pale pilsen beer	 
+0638609110266	san miguel premium lager	 
+0731627220037	san rafael amber ale	 
+0731627220020	san rafael golden ale	 
+0087975003502	sapporo draft beer	 
+0087975026501	sapporo imported original draft	 
+0087975006305	sapporo premium beer	 
+0056910600304	sapporo premium beer  alc./vol.)	 
+0009468000072	saranac adirondack amber lager	 
+0071670833014	saranac adirondack lager	 
+0009450000004	saranac black forest - bavarian style beer	 
+0009450000073	saranac imperial stout	 
+0071670000058	saranac india pale ale	 
+0071670822018	saranac lager	 
+0009450000066	saranac lager 	 
+0071670082351	saranac stout	 
+0009450071585	saranac trad lager	 
+0071670842009	saranac trail mix sampler	 
+0071671082350	saratoga stout 	 
+0116360600009	scarecrow organic golden pale ale	 
+0088067056406	schell beer	 
+0088067055324	schell deer beer	 
+0811912010199	schilling bridge scottish ale 	 
+0737530010017	schlafly pale ale	 
+0052300005735	schlitz red bull	 
+0052300004035	schlitz red bull	 
+0070260000355	schmidts bock	 
+0073360461989	schmidt's ice	 
+0737398018200	schneider aventinus wheat doppelbock	 
+0737398016206	schneider weisse hefe-weizenbeer	 
+0088067055492	schnell bock	 
+0727344000069	scrimshaw pilsner style beer	 
+0700445020129	sea dog apricot beer	 
+0700445800066	sea dog blueberry wheat beer	 
+0700445800127	sea dog blueberry wheat beer	 
+0000445060027	sea dog brown ale	 
+0700445010038	sea dog india pale ale	 
+0000445060034	sea dog india pale ale 	 
+0700445010076	sea dog pumpkin ale	 
+0700445060071	sea dog pumpkin ale	 
+0700445010090	sea dog raspberry beer	 
+0071670652011	seasons best beer nrb	 
+7311041022788	seidel pilsner beer	 
+0024866000479	session premium lager	 
+5045095033460	shapers sparkling gnger beer 	 
+5012686006004	shepherd neame bishops finger kentish strong ale	 
+5012686077301	shepherd neame christmas ale 	 
+5012686072603	shepherd neame early bird spring hop ale 	 
+5012686072702	shepherd neame goldings summer hop ale 	 
+5012686075000	shepherd neame whitstable organic ale 	 
+0722160061003	shilling colorado ale	 
+0088500000737	shiner holiday cheer	 
+0088573700022	shiner honey wheat	 
+0088573800029	shiner winter ale nr	 
+0751124020039	shipton mill org 3 malt & sunfl brown fl	 
+0780369919990	shipyard handcrafted ale	 
+0780369800069	shipyard summer ale	 
+0780369800120	shipyard summer ale	 
+0027826372371	short & stout santa	 
+0026392061498	shpr pilsner.z	 
+0026392061504	shpr pilsner.zct	 
+0083783000061	sierra nevada brewing porter	 
+0000150000035	sierra nevada celebration ale	 
+0083783228229	sierra nevada celebration ale	 
+0083783628128	sierra nevada harvest ale	 
+0083783331011	sierra nevada kellerweis hefeweizen 	 
+0083783000092	sierra nevada kellerweis hefeweizen 	 
+0083783428223	sierra nevada pale bock	 
+0083783000078	sierra nevada stout nrb	 
+0000150000042	sierra nevada unfiltered wheat beer	 
+0094922168641	silver moon snake bite porter	 
+0009218000086	simpler times lager	 
+0084543631037	singha beer	 
+8850999111001	singha beer	 
+0084543571036	singha lager beer	 
+0087800000898	single pale moon beer	 
+0021130206025	single. of cedar mountain light beer.	 
+5039265000277	sixex ale 	 
+0662502378478	ska brewing co. ten pin porter!	 
+0056910230068	sleeman honey lager	 
+0780348000039	slo brew ale 	 
+0780348000077	slo brew blueberry ale	 
+0780348000503	slo brew blueberry ale	 
+0635709702025	smb amber lager nr	 
+0635709702032	smb amber lager nr	 
+0635709701028	smb golden pilsner nr	 
+0635709701035	smb golden pilsner nr	 
+0082000727538	smirnoff twisted orange malt beverage	 
+0082000727545	smirnoff twisted raspberry malt beverage	 
+0082000746980	smirnoff xbt malt beverage cut with citrus flavors	 
+5000213011232	smithwick's imported premium irish ale	 
+0795563102116	smuttynose big beer series	 
+0795563102208	smuttynose gravitation ale	 
+0795563000108	smuttynose hanami ale	 
+0795563100105	smuttynose hanami ale	 
+0795563000023	smuttynose old brown dog ale	 
+0795563100044	smuttynose portsmouth lager	 
+0795563200010	smuttynose shoals pale ale	 
+0617605223460	snowshoe grizzly ale	 
+0617605223453	snowshoethompson pale ale	 
+0687151900023	southampton publick house altbier	 
+0853759000032	southern tier raspberry wheat ale	 
+0034100935283	southpaw light beer	 
+0034100936020	southpaw light beer	 
+0034100000400	southpaw light beer 	 
+0034100935054	southpaw light beer 	 
+0087396999248	spanish peaks ale	 
+0087396999125	spanish peaks black dog ale	 
+0087396991129	spanish peaks brewery winter cheer ale	 
+0087396999378	spanish peaks honey raspberry ale	 
+0078250003867	sparks premium malt beverage	 
+0078250004598	sparks premium malt beverage	 
+0088394000073	spaten bock	 
+0088394000080	spaten bock	 
+0088394000103	spaten lager  	 
+0088394000028	spaten lager  	 
+0690926000316	big daddy i.p.a. (india pale ale)	 
+0690926000545	double daddy  imperial india pale ale)	 
+0690926000514	speakeasy double daddy imperial india pale ale	 
+0022899820972	spec 0-4-0 saddle tank porter westside lumber g	 
+0799761013625	spotlight on the music of cole porter [compact disc]	 
+0045243001049	sprecher black bavarian style lager	 
+0045243001056	sprecher oktoberfest lager	 
+0060383674243	spruce beer	 
+0649245700018	squatters st. provo girl beer	 
+0055480001009	st ambroise pale ale nr	 
+0078250002242	st ides 	 
+0078250002204	st ides gold premium beer	 
+0007949000115	st james ale	 
+0688444500159	st peters cream stout	 
+0034000002375	st peter's indian pale ale	 
+0688444500326	st peter's indian pale ale	 
+0078250000286	st. ides beer	 
+0080660959351	st. pauli brauerei beer	 
+0080660959375	st. pauli brauerei beer	 
+0080660959450	st. pauli brauerei beer dark	 
+0080660959559	st. pauli brauerei malt beverage non-alcoholic	 
+0080660944333	st. pauli girl beer	 
+0688444500180	st. peter's english ale	 
+0088630117718	st. stans amber malt nr	 
+0088630111754	st. stans red sky ale nr	 
+0088630117756	st. stans red sky ale nr	 
+0011860117760	st. stans whistle stop pale ale	 
+0785515300004	st.arnold brown ale	 
+4014807001029	st?rtebeker beer	 
+0072720061333	stag beer	 
+4810014006006	starazhitnae temnaye beer	 
+4810014006020	starazhitnae temnaye beer	 
+0082488151009	staropramen beer	 
+8593868000302	staropramen premium beer 	 
+0858106001083	starr hill dark starr stout	 
+0856820004854	steaz orgnc rt beer gr tea	 
+0078250003348	steel reserve high gravity beer	 
+0078250003287	steel reserve high gravity lager	 
+0735256022109	steelhead extra stout	 
+0735256012308	steelhead pale ale	 
+0735256022307	steelhead stout	 
+7311120136122	stockholm fine festival beer 	 
+0085343999983	stolichnoye beer	 
+0085343999990	stolichnoye beer lager	 
+0636251780004	stone brewing company arrogant bastard ale	 
+0636251770005	stone brewing company ipa india pale ale	 
+0636251770128	stone brewing company ipa india pale ale	 
+0636257790120	stone brewing company levitation ale	 
+0636251820243	stone brewing company oaked arrogant bastard ale	 
+0636251750120	stone brewing company pale ale	 
+0636251770357	stone brewing company ruination ipa india pale ale	 
+0636251760006	stone brewing company smoked porter	 
+0636251404047	stone brewing company vertical epic ale	 
+0636251776120	stone india pale ale 	 
+0759325272332	stonecat esb	 
+0745480012128	stoney creek lager	 
+0745480022127	stoney creek vanilla porter	 
+0751249241128	stout - lost coast brewery	 
+5016089280498	stryke 5 strong premium lager	 
+0722405211118	stuudts triple belgian abbey-style ale	 
+0767084354473	sublime tangeria malt beverage	 
+0743834000821	sudwerk doppel bock	 
+0743834000128	sudwerk lager	 
+0743834000722	sudwerk maibock	 
+0743834000227	sudwerk pilsner	 
+0036920111182	summertime beer	 
+0025560041928	summit extra special bitter ale	 
+0025569197107	summit grand beer	 
+0025569714106	summit great northern porter	 
+0025569241558	summit pale ale beer	 
+0654058123459	sunday river brewing co. black bear porter	 
+0086700674413	sunridge chocolate malt balls	 
+5000128393041	super strength lager (beer)   alc. vol	 
+0072311630139	superior beer 	 
+0017698061060	suprema el salvador famous beer	 
+0893354001034	surly cynicale beer	 
+0768180000011	sutter creek pwdr house ale	 
+0768180000028	sutter creek scottish  ale	 
+4770349223748	svyturio extra beer	 
+4711588341060	taiwan beer	 
+0080201000078	taj mahal lager	 
+0765068273901	talking beer clock	 
+0092212113173	talon - true style barley wine ale	 
+0025753021379	tampa m beer batter shrimpw/	 
+0025753021287	tampa m beer batter til tend	 
+0751249111292	tangerine wheat beer	 
+5010548001549	tangle foot premium ale 	 
+0604797026269	taylor-made ragin red ale	 
+0056459000221	ten springs fat bear stout	 
+5010017061494	tennents lager	 
+0774558001405	terbury dark mild beer	 
+0899539000007	terrapin	 
+0899539000205	terrapin rye squared imperial pale ale	 
+5000436797999	tesco imported lager beer	 
+5000436798064	tesco imported premium lager	 
+0071440285227	texas select non-alcoholic beer	 
+0037038012958	the beer enthusiast's guide	 
+0034100006693	the crusher milwaukee's best ice beer	 
+0806860794086	the dalmore cigar malt scot	 
+0087236400385	the famous grouse malt whiskeyyear	 
+0769596008011	the governator ale single bot	 
+0083326001111	the ram brewery - young's special london ale	 
+0605800840018	the tanner's jack fine ale	 
+0659989000015	third stone brown ale	 
+0008392100087	thomas kemper amber lager	 
+0008392100049	thomas kemper white ale	 
+0008392100056	thomas kemper white ale	 
+5060087640037	three b's brewery doff cocker beer 	 
+5060087640020	three b's brewery knocker up porter 	 
+5060087640044	three b's brewery shuttle ale 	 
+0652682012026	three floyds gumball head beer	 
+0652682012019	three floyds gumball head wheat beer	 
+0649440000142	three philosophers beer: brewery ommegang	 
+0663995624011	three stooges beer	 
+0765068287502	three stooges talking beer opener	 
+5039265000024	thunder holt ale 	 
+5010144001189	thwaites flying shuttle ale	 
+5010144001561	thwaites golden w??nder beer 	 
+5010144000496	thwaites lancashire brown ale 	 
+5010144001011	thwaites liberation premium ale  vol)	 
+5010144001349	thwaites wainwright golden ale 	 
+0691139000025	tijuana morena beer	 
+5031283000017	timothy taylor landlord strong pale ale 	 
+0086243111673	tire biter ale	 
+5060052780041	tirril brewery brougham ale 	 
+5060052780010	tirril brewery old faithful ale	 
+5060075775024	titanic stout 	 
+0702596100019	tona beer 	 
+0000093239707	tooheys extra dry lager 	 
+0688267500541	tops  dt sterling gin ale	 
+0688267500510	tops main st diet rt beerfo	 
+0085181284142	tornado ale	 
+5039265000116	touchwood ale 	 
+0631030720004	trader joe's bohemian lager	 
+0030112130319	trader joe's frugal joe beer	 
+0008351000076	trader joe's vintage ale	 
+0631030750001	trader joe's winterfest dark double bock lager	 
+0064294001402	traditional ale	 
+0085725165050	trappistes rochefort 6 belgian ale	 
+0776213000129	tremblay blonde lager 	 
+0605748020121	tremont freedom trail india pale ale	 
+0000054050082	tripel karmeliet	 
+0088573440010	trumer pils beer	 
+0072720074319	tuborg	 
+5942045117013	tuborg	 
+0087600100019	tuborg	 
+7310070137708	tuborg	 
+5740700060083	tuborg	 
+4006298023109	tucher pilsener	 
+4006298023116	tucher pilsener	 
+0642842000017	tuckerman pale ale	 
+0642842000024	tuckerman pale ale	 
+0017200000624	tusker lager	 
+0023604231021	twang beer salt lemon-lime flavored	 
+0023604231052	twang beer salt salcon limon flavored	 
+0023604231014	twang lemon-lime beer salt	 
+0763176800019	twilight seasonal ale	 
+0740522100832	two hearted ale	 
+0835609001017	tyskie beer	 
+0835609001024	tyskie polands best premium lager	 
+0027100001003	ufo hefeweizen	 
+0772285131006	unibroue - don de dieu ale on lees (beer)	 
+0772285251001	unibroue - ephemere: beer on lees with nberry must	 
+0772285101009	unibroue - trois pistoles beer	 
+0013615010029	upper ada lager	 
+0013615130024	upper ada rebellion ale	 
+0071670185014	utica club beer 	 
+0071670000003	utica club beer  	 
+0071670104008	utica club lt beer	 
+0071670000089	utica club lt beer  	 
+0071670000096	utica club n/a beer  	 
+0071250000607	van lauter bavarian beer	 
+8594404001968	velkopopovicky czech dark beer	 
+4005249000886	veltins pilsener 	 
+9320000008570	victoria bitter beer	 
+0630279465011	victory brewing golden monkey tripel	 
+0630279465752	victory brewing golden monkey tripel	 
+0630279788011	victory brewing st. victorious doppelbock 	 
+0630279724224	victory helios ale	 
+0630279925010	victory hop wallop ale	 
+0630279467060	victory hopdevil ale	 
+0061954000065	vitasoy malt drink	 
+5013949000241	wadworth old timer strong ale	 
+0044000019457	wall malt	 
+0082054107515	warsteiner oktoberfest beer	 
+0015203421019	wasach winterfest seasonal ale	 
+0015203000078	wasatch ale 	 
+0015203000054	wasatch polygamy porter	 
+0015200002044	wasatch unoff ambr ale	 
+0894776000452	waving wheat belgian-style wheat ale	 
+3333297443920	weeds saison	 
+0073360918186	weinhards ice ale	 
+0748862070457	weltenburger kloster dunkel beer	 
+3417320026066	wendelbrau premium lager	 
+4015444001267	wernesgruener pilsner	 
+0898373000013	wernesgruener pilsner	 
+0898373000020	wernesgruener pilsner	 
+0830746001807	west coast india pale ale	 
+0085725154061	westmalle trappist ale tripel	 
+5412343201337	westmalle tripel	 
+0084662006006	wexford irsh ale	 
+0605881300449	weyerbacher insanity ale aged in oak barrels	 
+0626990088066	whistler brewing company pale ale	 
+0626990088028	whistler premium export lager	 
+0088130414645	whitbread pale ale	 
+4079600360209	wick?ler pilsener	 
+5060124240213	wickwar brewing co. bankers draft beer	 
+0702770000005	widmer brothers hefeweizen	 
+0702770004003	widmer drfter pale ale	 
+0002770000013	widmer hefeweizen	 
+0702770000029	widmer hefeweizen	 
+0020970000015	widmer hefeweizen	 
+0702770000012	widmer hefeweizen	 
+0702770004010	widmer hop jack pale ale	 
+0702770034017	widmer hop jack pale ale	 
+0708985905043	wild buffalo gout select beer 	 
+0685165350001	wild cat malt liquor	 
+0078250001771	wild huckleberry beer	 
+0089961444504	wild rice beer	 
+0634986751054	wild ride india pale ale	 
+0892540000905	wild rose cherry porter	 
+0708985902745	wild west malt licquor	 
+0023037216015	will herring beer	 
+5014923395018	william worthington's white shield india pale ale	 
+3526570005230	wine and beer hydrometer	 
+0041163436497	wing walker lager beer	 
+0041163436473	wingwalker pale ale	 
+0021242000047	winterhook ale nrb	 
+0018200005558	winter's bourbon cask ale	 
+0644381101309	wolaver's india pale ale	 
+0603930600021	woodstock inn brewery pemi pale ale	 
+0780346300056	woody's ice - hard blueberry malt bev	 
+0026911002049	wrw-esb 4-w wht wrapround	 
+0026991002045	wrw-esb 4-w wht wrapround	 
+5023625005378	wychwood bah humbug!	 
+5023625004449	wychwood bah humbug!	 
+5023625004746	wychwood black wych stout 	 
+5023625004852	wychwood brewery - hobgoblin	 
+5031323005606	wychwood circlemaster golden pale ale 	 
+5023625004357	wychwood fiddler's elbow beer 	 
+5023625005774	wychwood goliath beer 	 
+5023625004487	wychwood hobgoblin strong dark ale 	 
+5023625004760	wychwood osprey strong ale 	 
+5023625004937	wychwood wychcraft blonde beer 	 
+5023625004951	wychwood wychcraft blonde beer 	 
+5012136006509	wyre piddle brewery piddle in the hole traditional cask ale	 
+0851295000035	xingu black beer 	 
+0048511946486	xingu the black beer	 
+0722130468061	xp pale ale	 
+0852153001065	yazoo hefeweizen	 
+5033323000049	york minster ale	 
+5000264012899	young's bitter conditioned ale	 
+5011876001201	young's christmas pudding ale 	 
+0083326001517	young's double chocolate stout	 
+0700330000182	young's double chocolate stout	 
+0083326002118	youngs double chocolate stout 	 
+5000264012851	young's kew gold  conditioned ale	 
+5011876001294	young's lord's beer 	 
+0089924266907	yuengling black & tan beer	 
+0089924496205	yuengling black and tan beer	 
+0089924319832	yuengling porter	 
+0089924214021	yuengling premium beer	 
+0000042205135	Yuletide Cherry Porter	 
+0095753007239	zavzak beer	 
+0018200000331	ziegen bock beer	 
+0088067056581	zommerfest beer	 
+0088067055799	pilsner urquell	1/429
+0084404500014	pilsner urquell	1/429
+8594404005744	pilsner urquell	1/429
+0072311133036	pilsner urquell	1/429
+0072311130011	pilsner urquell 	1/429
+0072311630016	pilsner urquell 	1/429
+0041827000149	harpoon summer beer	10097/307
+0041827001467	harpoon summer beer	10097/307
+0041827014122	harpoon summer beer	10097/307
+0041827000019	harpoon ale	10097/312
+0041827000163	harpoon ale	10097/312
+0034100001322	red dog	105/1207
+0034100001346	red dog	105/1207
+0034100001414	red dog	105/1207
+0034100001445	red dog	105/1207
+0034100675288	red dog	105/1207
+0034100676025	red dog	105/1207
+0034100001377	red dog	105/1207
+0034100673062	red dog	105/1207
+0034100673406	red dog	105/1207
+0034100673413	red dog	105/1207
+0034100001285	red dog	105/1207
+0034100001292	red dog	105/1207
+0616374007066	milwaukee's best	105/1286
+0810817010150	milwaukee's best	105/1286
+0034100001544	milwaukee's best	105/1286
+0034100001551	milwaukee's best	105/1286
+0034100313067	milwaukee's best	105/1286
+0034100313418	milwaukee's best	105/1286
+0034100008796	icehouse	105/1299
+0034100625283	icehouse	105/1299
+0034100626020	icehouse	105/1299
+0034100623067	icehouse	105/1299
+0034100623401	icehouse	105/1299
+0034100623418	icehouse	105/1299
+0034100625054	icehouse	105/1299
+0034100008802	icehouse	105/1299
+0034100001049	meister brau 	105/1366
+0034100293062	meister brau 	105/1366
+0034100296025	meister brau 	105/1366
+0034100296827	meister brau  	105/1366
+0034100000165	milwaukee's best ice	105/1484
+0034100006679	milwaukee's best ice	105/1484
+0034100303068	milwaukee's best ice	105/1484
+0034100005610	miller genuine draft beer	105/2280
+0034100005696	miller genuine draft beer	105/2280
+0034100005818	miller genuine draft beer	105/2280
+0034100173401	miller genuine draft beer	105/2280
+0034100173418	miller genuine draft beer	105/2280
+0034100175283	miller genuine draft beer	105/2280
+0034100176020	miller genuine draft beer	105/2280
+0034100005627	miller genuine draft beer 	105/2280
+0034100172565	miller genuine draft beer 	105/2280
+0034100173067	miller genuine draft beer 	105/2280
+0034100173241	miller genuine draft beer 	105/2280
+0034100175054	miller genuine draft beer 	105/2280
+0034100005795	miller high life light	105/2295
+0034100033064	miller high life light	105/2295
+0034100033408	miller high life light	105/2295
+0034100033415	miller high life light	105/2295
+0034100036027	miller high life light	105/2295
+0034100035280	miller high life light	105/2295
+0034100005870	miller high life light	105/2295
+0034100009793	miller lite ice	105/2908
+0034100643409	miller lite ice	105/2908
+0034100643416	miller lite ice	105/2908
+0034100645250	miller lite ice	105/2908
+0034100645281	miller lite ice	105/2908
+0034100645052	miller lite ice	105/2908
+0034100003524	miller lite	105/332
+0034100003531	miller lite	105/332
+0034100003555	miller lite	105/332
+0034100003579	miller lite	105/332
+0034100003586	miller lite	105/332
+0034100003593	miller lite	105/332
+0034100003609	miller lite	105/332
+0034100003692	miller lite	105/332
+0034100003821	miller lite	105/332
+0034100004620	miller lite	105/332
+0034100573218	miller lite	105/332
+0034100573409	miller lite	105/332
+0034100573416	miller lite	105/332
+0034100573447	miller lite	105/332
+0034100575281	miller lite	105/332
+0034100576028	miller lite	105/332
+0034100576325	miller lite	105/332
+0034100003548	miller lite	105/332
+0034100573249	miller lite	105/332
+0034100575052	miller lite	105/332
+0034100573065	miller lite	105/332
+0034100572259	miller lite	105/332
+0034100009045	miller genuine draft light beer	105/43043
+0034100153410	miller genuine draft light beer	105/43043
+0034100155285	miller genuine draft light beer	105/43043
+0034100156022	miller genuine draft light beer	105/43043
+0034100009120	miller genuine draft light beer 	105/43043
+0034100152567	miller genuine draft light beer 	105/43043
+0034100153069	miller genuine draft light beer 	105/43043
+0034100153243	miller genuine draft light beer 	105/43043
+0034100155056	miller genuine draft light beer 	105/43043
+0034100000042	miller high life	105/580
+0034100000097	miller high life	105/580
+0034100000196	miller high life	105/580
+0034100000318	miller high life	105/580
+0034100012151	miller high life	105/580
+0034100013400	miller high life	105/580
+0034100013417	miller high life	105/580
+0034100016029	miller high life	105/580
+0034100013066	miller high life	105/580
+0034100013240	miller high life	105/580
+0034100000080	miller high life	105/580
+0034100000219	miller high life	105/580
+0034100015053	miller high life	105/580
+0034100000035	miller high life	105/580
+0034100000547	magnum malt liquor	105/809
+0034100000554	magnum malt liquor	105/809
+0034100000578	magnum malt liquor	105/809
+0034100000691	magnum malt liquor	105/809
+0034100000813	magnum malt liquor	105/809
+0034100000912	magnum malt liquor	105/809
+0034100186029	magnum malt liquor	105/809
+0034100774400	mickeys malt liquor	105/810
+0034100001780	mickeys malt liquor	105/810
+0034100001858	mickeys malt liquor	105/810
+0073360442087	mickeys malt liquor	105/810
+0073360442162	mickeys malt liquor	105/810
+0034100001834	mickeys malt liquor	105/810
+0034100383060	meister brau light beer	105/9979
+0034100386023	meister brau light beer	105/9979
+0052300000129	schlitz	106/263
+0052300000143	schlitz	106/263
+0052300045410	schlitz	106/263
+0052300003267	schlitz	106/263
+0052300000440	schlitz	106/263
+0052300000457	schlitz	106/263
+0052300000471	schlitz	106/263
+0052300000426	schlitz	106/263
+0052300000464	schlitz	106/263
+0086891069128	Mythos Hellenic Lager Beer	1084/3245
+0086891069555	Mythos Hellenic Lager Beer	1084/3245
+5201309108014	Mythos Hellenic Lager Beer	1084/3245
+5201309608125	Mythos Hellenic Lager Beer	1084/3245
+0727344000779	brother thelonious ale	112/30282
+0009191424060	samuel smith's oatmeal stout 	113/571
+0085725115093	samuel smith's oatmeal stout 	113/571
+0085725115048	samuel smith's oatmeal stout 	113/571
+5010149200433	samuel smith's oatmeal stout 	113/571
+0085725115239	samuel smith's india ale	113/573
+0085725115222	samuel smith's india ale	113/573
+5010149200334	samuel smith's old brewery pale ale 	113/575
+5010149200396	samuel smith's nut brown ale 	113/576
+0085725315288	samuel smith's organic ale 	113/781
+0085725115291	samuel smith's imperial stout	113/782
+0085725115055	samuel smith's imperial stout	113/782
+0085725315059	samuel smith's imperial stout	113/782
+0085498200019	pete's wicked ale	126/1397
+0085498444413	pete's wicked ale	126/1397
+0085498738376	pete's wicked ale	126/1397
+0085498000091	pete's wicked ale	126/1397
+0095301130044	rogue chocolate stout	132/1118
+0650055142479	rogue chocolate stout	132/1118
+0095301131454	rogue dead guy ale	132/355
+0095301130174	rogue dead guy ale	132/355
+0095301130488	rogue dead guy ale	132/355
+0021242240085	redhook blonde	1330/69
+0039442240088	redhook blonde	1330/69
+0039442600080	redhook blonde	1330/69
+0095301130617	rogue brutal bitter ale	1330/69
+0095301131058	rogue brutal bitter ale	1330/69
+0095301131065	rogue brutal bitter ale	1330/69
+0700445010069	bluepaw wild blueberry wheat ale	137/345
+0083783375121	sierra nevada pale ale	140/276
+0083783375220	sierra nevada pale ale	140/276
+0083783900019	sierra nevada pale ale	140/276
+0083783375213	sierra nevada pale ale 	140/276
+0083783000054	sierra nevada pale ale 	140/276
+0088394000011	spaten premium lager	142/1944
+0088394000264	spaten premium lager	142/1944
+0088394000271	spaten premium lager	142/1944
+0088394000288	spaten premium lager	142/1944
+0088394000295	spaten premium lager	142/1944
+0088394000356	spaten premium lager	142/1944
+0088394000363	spaten premium lager	142/1944
+0088394000370	spaten premium lager	142/1944
+0088394000226	spaten pils	142/1945
+0088394000134	franziskaner hefe-weisse	142/1946
+0088394000141	franziskaner hefe-weisse	142/1946
+0088394000189	franziskaner hefe-weisse	142/1946
+0088394000332	franziskaner hefe-weisse	142/1946
+0088394000349	franziskaner hefe-weisse	142/1946
+0088394000172	franziskaner hefe-weisse	142/1946
+0088394000059	spaten oktoberfest	142/582
+0088394000127	spaten oktoberfest	142/582
+0088394000318	spaten oktoberfest	142/582
+0088394000400	spaten oktoberfest	142/582
+0088394000417	spaten oktoberfest	142/582
+0088394000424	spaten oktoberfest	142/582
+0088394000431	spaten oktoberfest	142/582
+0088394000448	spaten oktoberfest	142/582
+0088394000387	spaten optimator	142/99
+0088394000394	spaten optimator	142/99
+0085165220012	sechs light beer	1422/20189
+0085165220029	sechs light beer	1422/20189
+0685165220052	sechs light beer	1422/20189
+0088573500028	shiner blonde	143/1075
+0088573500110	shiner blonde	143/1075
+0088573533323	shiner blonde	143/1075
+0088573000078	shiner bock	143/1352
+0088573331011	shiner bock	143/1352
+0088573331066	shiner bock	143/1352
+0088573332001	shiner bock	143/1352
+0088573433333	shiner bock	143/1352
+0088573444445	shiner bock	143/1352
+0088570000033	shiner hefeweizen	143/1552
+0088573900040	shiner hefeweizen	143/1552
+0088573900057	shiner hefeweizen	143/1552
+9369999001629	lucky beer	15898/36237
+0071520053517	lucky beer	15898/36237
+0062067355349	lucky beer	15898/36237
+0071520012248	lucky beer	15898/36237
+0077580012242	lucky beer	15898/36237
+0606813005029	ipswich india pale ale	162/259
+0606813005050	ipswich india pale ale	162/259
+5201261000029	amstel lager	163/1414
+0072890000590	amstel lager	163/1414
+0000087120226	amstel lager	163/1414
+0073832003617	amstel light 	163/436
+0072890100115	amstel light 	163/436
+0072890000040	amstel light 	163/436
+0072890000064	amstel light 	163/436
+0072890100177	amstel light 	163/436
+0072890100160	amstel light 	163/436
+5010017083182	stella artois	169/449/
+0786150000052	stella artois	169/449/
+0786150000380	stella artois	169/449/
+0010228156724	stella artois	169/449/
+5010017083700	stella artois	169/449/
+0086150000015	stella artois	169/449/
+0786150000236	stella artois	169/449/
+0786150000229	stella artois	169/449/
+4600721004293	stella artois	169/449/
+5010548002621	stinger beer	169/449/
+0071439701936	rolling rock bock	174/1851
+0071439600000	rolling rock light 	174/41822
+0071439000077	rolling rock light 	174/41822
+0071439347240	rolling rock light 	174/41822
+0071439300030	rolling rock light  	174/41822
+0071439320069	rolling rock light  	174/41822
+0071439320120	rolling rock light  	174/41822
+0071439000053	rolling rock extra pale	174/567
+0071439000060	rolling rock extra pale	174/567
+0071439000244	rolling rock extra pale	174/567
+0071439220338	rolling rock extra pale	174/567
+0071439344188	rolling rock extra pale	174/567
+0071439344508	rolling rock extra pale	174/567
+0071439344607	rolling rock extra pale	174/567
+0071439346205	rolling rock extra pale	174/567
+0071439400167	rolling rock extra pale	174/567
+0071439000466	rolling rock extra pale	174/567
+0071439457123	rolling rock extra pale	174/567
+0021242120066	redhook esb	18134/1119
+0007100007595	redhook esb	18134/1119
+0021242240061	redhook esb	18134/1119
+0039442240064	redhook esb	18134/1119
+0039442600066	redhook esb	18134/1119
+0021242600063	redhook esb	18134/1119
+0021242000061	redhook esb	18134/1119
+0080923000066	yuengling traditional lager	182/1351
+0089924000068	yuengling traditional lager	182/1351
+0089924278948	yuengling traditional lager	182/1351
+0089924278962	yuengling traditional lager	182/1351
+0089924788874	yuengling traditional lager	182/1351
+0089924410034	yuengling traditional lager 	182/1351
+0089924000112	yuengling chesterfield ale	182/2842
+0089924182900	yuengling chesterfield ale	182/2842
+0089924182948	yuengling chesterfield ale	182/2842
+0089924700326	yuengling light lager	182/3347
+0089924278917	yuengling light lager	182/3347
+0089924000075	yuengling light lager	182/3347
+0089924201113	yuengling light lager	182/3347
+0083324230407	yuengling light lager	182/3347
+0754527000516	new belgium brewing trippel belgian style ale	192/1054
+0754527000523	new belgium brewing trippel belgian style ale	192/1054
+0754527000516	new belgium brewing trippel belgian style ale	192/1054
+0754527001346	La Folie Wood Aged Beer	192/1917
+0754527000226	fat tire amber ale	192/607
+0754527000202	fat tire amber ale	192/607
+0754527000219	fat tire amber ale 	192/607
+0754527001018	new belgium blue paddle pilsner	192/933
+0605800500028	old speckled hen ale	203/637
+0605800500042	old speckled hen ale	203/637
+0605800500011	old speckled hen ale	203/637
+5038635016566	old speckled hen ale	203/637
+5010549105604	abbot ale	203/910
+5010549104614	abbot ale 	203/910
+0095374970028	blueberry oatmeal stout	205/40177
+0085725165036	Trappistes Rochefort 10	207/645
+0083820181074	Guinness 250th Anniversary Stout	209/49122
+0083820725520	kaliber ale non-alcoholic	209/5333
+0083820725537	kaliber ale non-alcoholic	209/5333
+0083820725544	kaliber ale non-alcoholic	209/5333
+0083820123555	guinness extra stout (Original)	209/650
+0083820123937	guinness extra stout (Original)	209/650
+0083820124552	guinness extra stout (Original)	209/650
+0083820223552	guinness extra stout (Original)	209/650
+0083820224559	guinness extra stout (Original)	209/650
+0083820234800	guinness extra stout (Original)	209/650
+4000856006214	guinness extra stout (Original)	209/650
+4000856106211	guinness extra stout (Original)	209/650
+0033200002420	Guinness Draught	209/754
+5000213008515	Guinness Draught	209/754
+0083820123869	Guinness Draught	209/754
+0083820181012	Guinness Draught	209/754
+0083820103014	Guinness Draught	209/754
+0083820104011	Guinness Draught	209/754
+0083820104035	Guinness Draught	209/754
+0083820123609	Guinness Draught	209/754
+0083820123685	Guinness Draught	209/754
+0083820123708	Guinness Draught	209/754
+0083820181012	Guinness Draught	209/754
+0622153433315	harp lager	209/862
+0083820234121	harp lager	209/862
+0083820234657	harp lager	209/862
+0083820234664	harp lager	209/862
+0083820234732	harp lager	209/862
+5000213009871	harp lager	209/862
+5410908000135	chimay cinq cents	215/1346
+0081706000136	Chimay Tripel (White)	215/1346
+0081706000037	chimay grande (blue)	215/2512
+0081706000044	Chimay Première (Red)	215/672
+0081706000044	Chimay Première (Red)	215/672
+0815351002012	8th street ale	2171/6815
+4003886359626	Red Stripe Jamaican Lager	221/689
+0083820567960	Red Stripe Jamaican Lager	221/689
+0021475020836	Red Stripe Jamaican Lager	221/689
+0083820138931	Red Stripe Jamaican Lager	221/689
+0083820359626	Red Stripe Jamaican Lager	221/689
+0083820567939	Red Stripe Jamaican Lager	221/689
+0083706014137	duvel belgian golden ale	222/695
+0072890001269	murphy's irish stout	240/703
+0002725000105	murphy's irish stout	240/703
+0002725000112	murphy's irish stout	240/703
+0007850472261	murphy's irish stout	240/703
+0062274058705	murphy's irish stout	240/703
+0002725000167	murphy's irish red	240/913
+0002725000174	murphy's irish red	240/913
+0000046368096	red tail ale	2516/631
+0092212111032	red tail ale	2516/631
+0092212131030	red tail ale	2516/631
+0652682003024	three floyds pilsner	26/38
+0039837050025	3 monts flanders golden ale	260/1308
+0005816000084	dale's pale ale	2681/6518
+0081994000054	dale's pale ale	2681/6518
+0819942000036	dale's pale ale	2681/6518
+0034227000086	dale's pale ale 	2681/6518
+0072783000089	anchor summer beer	28/2550
+0072783010002	anchor steam beer	28/63
+0072783000041	anchor steam beer	28/63
+6901035605601	tsingtao	281/767
+0033544000052	tsingtao	281/767
+6901035605274	tsingtao	281/767
+6923740100059	tsingtao	281/767
+0033544944059	tsingtao	281/767
+0033544944653	tsingtao	281/767
+0018200003103	michelob amber bock	29/1252
+0018200703812	michelob amber bock	29/1252
+0018200019913	michelob amber bock	29/1252
+0018200762772	michelob amber bock	29/1252
+0018200009747	michelob amber bock	29/1252
+0018200762765	michelob amber bock	29/1252
+0018200704567	michelob amber bock	29/1252
+0018200000553	michelob amber bock	29/1252
+0018200002793	bud light	29/1320
+0002082000077	bud light 	29/1320
+0018200001604	bud light 	29/1320
+0018200004681	bud light 	29/1320
+0062067567018	bud light 	29/1320
+0062067567346	bud light 	29/1320
+0018200541667	bud light 	29/1320
+0018200533082	bud light 	29/1320
+0182000076992	bud light 	29/1320
+0018200003530	bud light 	29/1320
+0018200181061	bud light 	29/1320
+0008200009892	busch light	29/1390
+0018200860317	busch light	29/1390
+0018200861673	busch light	29/1390
+0018200864186	busch light	29/1390
+0018200001895	busch light 	29/1390
+0018200004612	busch light 	29/1390
+0018200009891	busch light 	29/1390
+0018200018824	busch light 	29/1390
+0018200860355	busch light 	29/1390
+0018200008016	busch light 	29/1390
+0018200007378	busch light 	29/1390
+0018200002892	busch light 	29/1390
+0018200008030	busch light 	29/1390
+0018200863080	busch light 	29/1390
+0018200863608	busch light 	29/1390
+0018200862489	busch light 	29/1390
+0018200860379	busch light 	29/1390
+0018200860515	busch light 	29/1390
+0018200002427	busch light 	29/1390
+0018200005435	busch light 	29/1390
+0018200001888	busch light  	29/1390
+0018200860232	busch light  	29/1390
+0000100000801	natural light beer	29/1524/
+0018200004162	natural light beer	29/1524/
+0099993106905	natural light beer	29/1524/
+0018200009495	natural light beer	29/1524/
+0080200002462	bud ice 	29/1642
+0018200004896	bud ice	29/1642
+0018200004063	budweiser select  	29/20732
+0018200007620	bud dry 	29/2825
+0018200000751	busch ice	29/3474
+0018200007521	busch ice	29/3474
+0018200003066	busch ice 	29/3474
+0018200009570	busch ice 	29/3474
+0018200662188	busch ice  	29/3474
+0018200003950	busch ice  	29/3474
+0018200049910	busch ice  	29/3474
+0018200661686	busch ice  	29/3474
+0018200001512	busch ice  	29/3474
+0018200109881	wild hop organic lager	29/39011
+0018200005916	wild hop organic lager	29/39011
+0018200965807	wild hop organic lager	29/39011
+0018200002199	bud american ale	29/43118
+0018200159992	bud light golden wheat 	29/51464
+0018200008399	o'douls	29/5727
+0018200015724	o'douls	29/5727
+0018200709470	o'douls	29/5727
+0079246181576	o'douls	29/5727
+0018200007842	o'douls	29/5727
+0018200009266	budweiser	29/65
+0018200112355	budweiser	29/65
+0018200002083	budweiser	29/65
+0018200149986	budweiser	29/65
+0018200159824	budweiser	29/65
+0018200180422	budweiser	29/65
+0018200007989	budweiser	29/65
+0018200009952	budweiser	29/65
+0018200001680	budweiser	29/65
+0018200180088	budweiser	29/65
+0018200113086	budweiser	29/65
+0018200111020	budweiser	29/65
+0000523002130	budweiser 	29/65
+0001820011047	budweiser 	29/65
+0018200001260	budweiser 	29/65
+0018200004667	budweiser 	29/65
+0018200008344	budweiser 	29/65
+0018200110122	budweiser 	29/65
+0018200110474	budweiser 	29/65
+0018200111037	budweiser 	29/65
+0018200180163	budweiser 	29/65
+0018200532009	budweiser 	29/65
+0018200966668	budweiser 	29/65
+0062067335457	budweiser 	29/65
+0062067335815	budweiser 	29/65
+0018200003523	budweiser  	29/65
+0018200001635	budweiser  	29/65
+0018200180187	budweiser  	29/65
+0018200537165	budweiser  	29/65
+0062067335013	budweiser  	29/65
+0062067335037	budweiser  	29/65
+0000180000067	natural ice beer	29/653
+0018200000676	natural ice beer	29/653
+0018200001031	natural ice beer	29/653
+0018200009334	natural ice beer	29/653
+0018200003592	natural ice beer	29/653
+0018200004261	busch beer	29/670
+0018200611681	busch beer	29/670
+0018200612183	busch beer	29/670
+0182000009891	busch beer	29/670
+0018200610363	busch beer	29/670
+0011100000630	busch beer	29/670
+0018200000249	busch beer	29/670
+0018200000638	busch beer	29/670
+0018200610479	busch beer	29/670
+0018200610424	busch beer	29/670
+0018200006203	busch beer	29/670
+0018200670343	busch beer	29/670
+0018200002700	busch beer	29/670
+0018200006142	busch beer	29/670
+0018200672460	busch beer	29/670
+0018200180514	busch beer	29/670
+0018200007682	busch beer	29/670
+0018200008184	busch beer	29/670
+0018200613081	busch beer	29/670
+0018200610974	busch beer	29/670
+0018200610448	busch beer	29/670
+0018200000706	busch beer	29/670
+0018200610325	busch beer	29/670
+0018200610301	busch beer	29/670
+0018200611278	busch beer	29/670
+0018200610349	busch beer	29/670
+0018200613609	busch beer	29/670
+0018200612008	busch beer	29/670
+0018200000515	busch beer 	29/670
+0018200001468	busch beer 	29/670
+0018200001796	busch beer 	29/670
+0018200002311	busch beer 	29/670
+0018200005428	busch beer 	29/670
+0018200612466	busch beer 	29/670
+0018200410307	michelob	29/7313
+0018200412462	michelob	29/7313
+0099993107711	michelob	29/7313
+0018200009082	michelob	29/7313
+0018200007934	michelob	29/7313
+0762274072311	bass pale ale	293/811
+0762274071314	bass pale ale	293/811
+0083820171310	bass pale ale	293/811
+0762274071413	bass pale ale	293/811
+0762274180139	bass pale ale	293/811
+0083820077315	bass pale ale	293/811
+0083820072310	bass pale ale	293/811
+0083820071313	bass pale ale	293/811
+0083820071412	bass pale ale	293/811
+0083820071429	bass pale ale	293/811
+0083820075311	bass pale ale	293/811
+0010870000079	bass pale ale 	293/811
+0080020242215	abita pecan harvest ale	3/35134
+0080020117063	abita pecan harvest ale	3/35134
+0080020000044	abita ale christmas ale	3/45866
+0070310309131	genesee cream ale	302/1376
+0070310000090	genesee cream ale	302/1376
+0070310000120	genesee cream ale	302/1376
+0070310000410	genesee cream ale	302/1376
+0070310400333	genesee cream ale	302/1376
+0070310000052	genesee cream ale	302/1376
+0070310000014	genesee cream ale  	302/1376
+0070310000021	genesee cream ale  	302/1376
+0070310355336	genesee ice beer	302/3293
+0070310359389	genesee ice beer	302/3293
+0070310001684	genesee bock	302/41422
+0070310000083	genesee bock	302/41422
+0070310000069	genesee light	302/855
+0070310000342	genesee light	302/855
+0070310000038	genesee light	302/855
+0070310000045	genesee beer	302/865
+0070310000076	genesee beer	302/865
+0070310003718	genesee beer	302/865
+0070310009710	genesee beer	302/865
+0070310309117	genesee beer	302/865
+0070310505519	genesee beer	302/865
+0070310000007	genesee beer  	302/865
+0070310307014	genesee beer  	302/865
+0070310400319	genesee beer  	302/865
+0070310000113	genesee beer  	302/865
+0087800000737	blue moon belgian white ale 	306/1212
+0071990095116	blue moon belgian white ale 	306/1212
+0071990000073	coors 	306/1276
+0071990000479	coors 	306/1276
+0071990100209	coors 	306/1276
+0071990100070	coors 	306/1276
+0071990100339	coors 	306/1276
+0041100000118	keystone light	306/1341
+0071990480240	keystone light	306/1341
+2018696480196	keystone light	306/1341
+0071990480011	keystone light	306/1341
+0071990480066	keystone light	306/1341
+0071990480080	keystone light	306/1341
+0071990480196	keystone light	306/1341
+0071990480110	keystone light	306/1341
+0087800000201	keystone light	306/1341
+0071990095321	blue moon honeymoon ale	306/36692
+0071990095314	blue moon rising moon ale	306/40528
+0048100006072	coors light	306/837
+0071990300173	coors light	306/837
+0071990300241	coors light	306/837
+0071990300258	coors light	306/837
+0071990300364	coors light	306/837
+0071990300654	coors light	306/837
+0071990300944	coors light	306/837
+0087800000263	coors light	306/837
+0071990000080	coors light	306/837
+0071990000257	coors light	306/837
+0071990000288	coors light	306/837
+0071990000486	coors light	306/837
+0071990300302	coors light	306/837
+0071990000004	coors light	306/837
+0071990300050	coors light	306/837
+0071990300692	coors light	306/837
+0071990700027	george killian's irish red lager 	306/909
+0071990000448	george killian's irish red lager 	306/909
+0071990764005	george killian's irish red lager 	306/909
+0082488145008	beck's non-alcoholic beer	32/11093
+0082100004522	becks dark	32/1165
+0082488126304	becks dark	32/1165
+0022422126304	becks dark	32/1165
+0082488124003	becks dark	32/1165
+0082488124201	becks dark	32/1165
+0082488000079	beck's dark	32/1165
+0082488123563	beck's dark	32/1165
+0000041001318	beck's	32/2435
+0000042040613	beck's	32/2435
+0020210000034	beck's	32/2435
+5010017030773	beck's	32/2435
+0082488000055	beck's	32/2435
+0082488000062	beck's	32/2435
+0082488000086	beck's	32/2435
+0082488123006	beck's	32/2435
+0082488123105	beck's	32/2435
+0082488123440	beck's	32/2435
+0082488123457	beck's	32/2435
+0082488123808	beck's	32/2435
+0082488123815	beck's	32/2435
+0082488126007	beck's	32/2435
+0082488130004	beck's	32/2435
+9311890246616	beck's	32/2435
+4100130922572	beck's	32/2435
+4100130923784	beck's	32/2435
+0082488128100	beck's light	32/3008
+0082488128209	beck's light	32/3008
+0008248812843	beck's light	32/3008
+0082488128308	beck's light	32/3008
+0021000001170	beck's green lemon	32/38341
+0082488129008	beck's oktoberfest	32/83
+0082488129107	beck's oktoberfest	32/83
+0082488129206	beck's oktoberfest	32/83
+0034100006006	hamm's beer	320/870
+0034100809027	hamm's beer	320/870
+0071500000517	hamm's beer	320/870
+0022100189706	hamm's beer	320/870
+0088394001032	dinkel acker dark beer	3340/4032
+0088394001049	dinkel acker dark beer	3340/4032
+0088394001117	dinkel acker dark beer	3340/4032
+0088394001018	dinkel acker pils beer	3340/4033
+0088394001025	dinkel acker pils beer	3340/4033
+0088394001100	dinkel acker pils beer	3340/4033
+0088394001124	dinkel acker pils beer	3340/4033
+0088394001131	dinkel acker pils beer	3340/4033
+0077940000018	new york harbore ale	342/639
+0088345100555	newcastle brown ale	342/639
+0083000004100	newcastle brown ale	342/639
+0088345100531	newcastle brown ale	342/639
+0088345100548	newcastle brown ale	342/639
+0088345100753	newcastle brown ale	342/639
+0088345100593	newcastle brown ale	342/639
+0088345100517	newcastle brown ale	342/639
+0077872000056	newcastle brown ale	342/639
+0088345100050	newcastle brown ale	342/639
+0088345100760	newcastle brown ale	342/639
+5010118317841	newcastle brown ale	342/639
+5035766580386	newcastle brown ale	342/639
+0769596227504	angelique	3521/19257
+0085725140019	Orval Trappist Ale	37/129
+0072311000062	moosehead beer canadian lager	379/1053
+0072311330091	moosehead beer canadian lager	379/1053
+0072311330770	moosehead beer canadian lager	379/1053
+0072311630092	moosehead beer canadian lager	379/1053
+0072311930406	moosehead beer canadian lager	379/1053
+0776029700282	moosehead beer canadian lager	379/1053
+0776029700015	moosehead beer canadian lager	379/1053
+0072311630108	moosehead beer canadian lager	379/1053
+0648311106655	bourbon barrel stout	395/29687
+0176420911087	pyramid hefeweizen 	403/1237
+0076420911073	pyramid hefeweizen 	403/1237
+0076420911172	pyramid hefeweizen 	403/1237
+0076420911196	pyramid apricot ale	403/25649
+0076420911394	pyramid apricot ale	403/25649
+0076420911097	pyramid apricot ale	403/25649
+0649440000135	hennepin saison ale	42/141
+0649440000036	hennepin saison ale	42/141
+0649440000012	ommegang abbey ale	42/142
+0649440000111	ommegang abbey ale	42/142
+0098554000508	bridgeport india pale ale	43/466
+0098554050008	bridgeport india pale ale	43/466
+0600961981921	molson canadian lager	433/1312
+0056327072558	molson canadian lager	433/1312
+0056327073937	molson canadian lager	433/1312
+0068213034199	molson canadian lager	433/1312
+0068213031129	molson canadian lager	433/1312
+0068213031112	molson canadian lager	433/1312
+0068213034113	molson canadian lager	433/1312
+0056327073234	molson canadian lager	433/1312
+0056327073241	molson canadian lager	433/1312
+0056327593237	molson canadian lager	433/1312
+0068213012159	molson export	433/1837
+0068213012173	molson export	433/1837
+0068213012272	molson export	433/1837
+0068213012227	molson export	433/1837
+0068213011169	molson export	433/1837
+0070897062146	old vienna	433/4477
+0070897063259	old vienna	433/4477
+0070897061231	old vienna	433/4477
+0070897062559	old vienna	433/4477
+0056327002890	carling black label	433/8617
+0056327113237	carling black label	433/8617
+0056327111011	carling black label	433/8617
+0056327003149	carling black label	433/8617
+0074440011032	schaefer	442/1318
+0072480000016	schaefer	442/1318
+0072480024036	schaefer	442/1318
+0072480024074	schaefer	442/1318
+0072480080001	schaefer	442/1318
+0072480060041	schaefer	442/1318
+0072480000061	schaefer	442/1318
+0022100000049	pabst blue ribbon	447/1331
+0022100000742	pabst blue ribbon	447/1331
+0022100001572	pabst blue ribbon	447/1331
+0022100001831	pabst blue ribbon	447/1331
+0022100000711	pabst blue ribbon	447/1331
+0022100013902	pabst blue ribbon	447/1331
+0022100112193	pabst blue ribbon	447/1331
+0022100000032	pabst blue ribbon	447/1331
+0022100069909	pabst blue ribbon	447/1331
+0022100000872	pabst blue ribbon	447/1331
+0052300000242	old milwaukee	447/1332
+0056910002160	old milwaukee	447/1332
+0052300023067	old milwaukee	447/1332
+0052300003533	old milwaukee	447/1332
+0072620010585	rainier ale	447/1723
+0072620010660	rainier ale	447/1723
+0072620040292	rainier ale	447/1723
+0072620040308	rainier ale	447/1723
+0070260012082	schmidt's light	447/3284
+0070260000348	schmidt's light	447/3284
+0070260000447	schmidt's light	447/3284
+0073360461057	schmidt's	447/3455
+0070260000508	schmidt's	447/3455
+0070260000805	schmidt's	447/3455
+0070260024009	schmidt's	447/3455
+0073360461033	schmidt's	447/3455
+0070260000300	schmidt's	447/3455
+0070260000409	schmidt's	447/3455
+0022100007505	olympia beer	447/3906
+0022100075009	olympia beer	447/3906
+0773804432062	olympia beer	447/3906
+0022100072503	olympia beer	447/3906
+0074440014095	piels	447/5259
+0074440011094	piels	447/5259
+0074440000098	piels	447/5259
+0074440111039	piels light	447/7188
+0074440000036	piels light	447/7188
+0074440060047	piels light	447/7188
+0074440114030	piels light	447/7188
+0005691040250	old milwaukee ice	447/7484
+0092000000517	old milwaukee ice	447/7484
+0072130231067	ballantine ale	447/876
+0072130122013	ballantine ale	447/876
+0072100001300	ballantine ale	447/876
+0072130538012	ballantine ale 	447/876
+0072130321010	ballantine ale  	447/876
+0030613000043	brooklyn brown ale	45/146
+0030610000039	brooklyn brown ale	45/146
+0030613000074	brooklyn east india pale ale	45/147 
+0030200006137	brooklyn lager	45/148
+0030613000012	brooklyn lager	45/148
+0030613000500	brooklyn winter ale	45/34069
+0062067380310	labatt ice lager	478/1367
+0062067380341	labatt ice lager	478/1367
+0062067380419	labatt ice lager	478/1367
+0062067380426	labatt ice lager	478/1367
+0062067380433	labatt ice lager	478/1367
+0062067380556	labatt ice lager	478/1367
+0062067380594	labatt ice lager	478/1367
+0062067380617	labatt ice lager	478/1367
+0062067380723	labatt ice lager	478/1367
+0062067380778	labatt ice lager	478/1367
+0062067509728	labatt blue	478/1371
+0062067509773	labatt blue	478/1371
+0062067110559	labatt blue	478/1371
+0062067000058	labatt blue	478/1371
+0062067051319	labatt blue	478/1371
+0062067051425	labatt blue	478/1371
+0062067051432	labatt blue	478/1371
+0062067051531	labatt blue	478/1371
+0062067051555	labatt blue	478/1371
+0062067051593	labatt blue	478/1371
+0062067051616	labatt blue	478/1371
+0062067051722	labatt blue	478/1371
+0062067051777	labatt blue	478/1371
+0062067051814	labatt blue	478/1371
+0062067043611	labatt blue	478/1371
+0062067011511	labatt blue	478/1371
+0062067005152	labatt blue	478/1371
+0062067011757	labatt blue	478/1371
+0062067351013	labatt blue	478/1371
+0062067049798	labatt blue light	478/1823
+0062067000065	labatt blue light	478/1823
+0062067049415	labatt blue light	478/1823
+0062067049422	labatt blue light	478/1823
+0062067049439	labatt blue light	478/1823
+0062067049552	labatt blue light	478/1823
+0062067049590	labatt blue light	478/1823
+0062067049613	labatt blue light	478/1823
+0062067049729	labatt blue light	478/1823
+0062067049774	labatt blue light	478/1823
+0062067000089	kokanee glacier beer	478/2472
+0062067374340	kokanee glacier beer	478/2472
+0062067374425	kokanee glacier beer	478/2472
+0062067374432	kokanee glacier beer	478/2472
+0062067374555	kokanee glacier beer	478/2472
+0062067374722	kokanee glacier beer	478/2472
+0062067374777	kokanee glacier beer	478/2472
+0062067000126	kokanee glacier beer 	478/2472
+0081986001199	bavaria beer	498/1422
+0081986001540	bavaria beer	498/1422
+8714800019521	bavaria beer	498/1422
+0081986001182	bavaria beer	498/1422
+0081986002387	bavaria beer	498/1422
+8714800007191	bavaria holland beer 	498/9165
+0083741150012	grolsch premium lager	506/1426
+0083741330018	grolsch premium lager	506/1426
+0083741000058	grolsch premium lager	506/1426
+0083741000065	grolsch premium lager	506/1426
+0083741000072	grolsch premium lager	506/1426
+0083741000089	grolsch premium lager	506/1426
+0083741100123	grolsch premium lager	506/1426
+0083741111525	grolsch premium lager	506/1426
+0000087167269	grolsch premium lager	506/1426
+0083741141201	grolsch amber ale	506/2223
+0083741141294	grolsch amber ale	506/2223
+0083741180033	grolsch blonde	506/2861
+0083741180026	grolsch blonde	506/2861
+0739165004034	pig's eye	5107/11167
+0739165004263	pig's eye	5107/11167
+0000020045173	Finkbrau Pilsener	5142/41770
+0089826700011	bohemia beer	57/1283
+0089826000074	bohemia beer	57/1283
+0072311330114	dos equis amber lager	57/171
+0072311331401	dos equis amber lager	57/171
+0072311630115	dos equis amber lager	57/171
+0072311931403	dos equis amber lager	57/171
+0072311230124	dos equis special lager	57/1907
+0072311330121	dos equis special lager	57/1907
+0072311630122	dos equis special lager	57/1907
+0072311130127	dos equis special lager	57/1907
+0072311412131	dos equis special lager	57/1907
+0089826900015	carta blanca beer	57/26338
+0089826000043	carta blanca beer	57/26338
+0089826600014	carta blanca beer	57/26338
+0072311630221	sol	57/2803
+0072311130219	sol	57/2803
+0072311230216	sol	57/2803
+0072311630214	sol	57/2803
+0072311930215	sol	57/2803
+0000014435898	tecate	57/848
+0089826000418	tecate	57/848
+0089826900022	tecate	57/848
+0089826900039	tecate	57/848
+0898226900330	tecate	57/848
+0074549000050	tecate	57/848
+0089826000050	tecate	57/848
+0089826000098	tecate	57/848
+0089826301232	tecate	57/848
+0089826500017	tecate	57/848
+0089826500024	tecate	57/848
+0089826530229	tecate	57/848
+0089826900336	tecate	57/848
+0089826901838	tecate	57/848
+5035766180043	foster's lager	575/918
+9320000102100	foster's lager	575/918
+5010055100001	foster's lager	575/918
+5035766181446	foster's lager	575/918
+0070897011212	foster's lager	575/918
+0070897011229	foster's lager	575/918
+0070897011236	foster's lager	575/918
+0070897011250	foster's lager	575/918
+0070897013018	foster's lager	575/918
+0070897013056	foster's lager	575/918
+0070897013216	foster's lager	575/918
+0070897013223	foster's lager	575/918
+0070897013315	foster's lager	575/918
+0070897013353	foster's lager	575/918
+0070897013711	foster's lager	575/918
+0070897013759	foster's lager	575/918
+5035766181279	foster's lager	575/918
+0000041024300	bitburger premium	613/1641
+0000041024355	bitburger premium	613/1641
+0686212700152	zywiec beer	623/1666
+0699278140008	zywiec beer	623/1666
+0062067025044	holsten premium	628/2197
+0000040678542	holsten premium	628/2197
+0000040678924	holsten premium	628/2197
+0062067027284	holsten premium	628/2197
+0763176300014	mirror pond pale ale	63/195
+0763176230229	mirror pond pale ale	63/195
+0763176800248	mirror pond pale ale	63/195
+0763176300069	mirror pond pale ale	63/195
+0763176300120	mirror pond pale ale	63/195
+0763176500018	deschutes obsidian stout	63/197
+0763176200062	black butte porter	63/198
+0063200001482	black butte porter	63/198
+0763176200017	black butte porter	63/198
+0638489000411	dogfish head punkin ale	64/6260
+0638489000428	dogfish head punkin ale	64/6260
+0062274813939	boddingtons pub ale	655/1798/
+0062067412059	boddingtons pub ale	655/1798/
+0762274202923	boddingtons pub ale	655/1798/
+0762274813938	boddingtons pub ale	655/1798/
+0073360914324	henry weinhards hefeweizen	719/2132
+0034100002077	henry weinhards hefeweizen	719/2132
+0073360914348	henry weinhards hefeweizen 	719/2132
+0062067029189	carlsberg lager	721/2270
+0062067029714	carlsberg lager	721/2270
+9320000125932	carlsberg lager	721/2270
+5010153607044	carlsberg lager	721/2270
+5010153763672	carlsberg lager	721/2270
+5010153779932	carlsberg lager	721/2270
+0086428210030	tiger lager beer	727/2176
+0086428260332	tiger lager beer	727/2176
+0617563140007	tiger lager beer	727/2176
+8850571821649	tiger lager beer	727/2176
+6920938111330	tiger lager beer	727/2176
+0086428230007	tiger lager beer	727/2176
+0086428200642	tiger lager beer	727/2176
+5035766060468	tiger lager beer	727/2176
+0080675000055	modelo especial beer	75/1321
+0064793000050	modelo especial beer	75/1321
+0080660957555	modelo especial beer	75/1321
+0080660957654	modelo especial beer	75/1321
+0080660000015	corona extra	75/232
+0016100000512	corona extra	75/232
+0041100003386	corona extra	75/232
+0050200000218	corona extra	75/232
+0080695000066	corona extra	75/232
+0000075002121	corona extra	75/232
+0001064102150	corona extra	75/232
+0001064106158	corona extra	75/232
+7501064101410	corona extra	75/232
+7501064113024	corona extra	75/232
+7501064196034	corona extra	75/232
+0080660956053	corona extra	75/232
+0080660956152	corona extra	75/232
+0080660956411	corona extra	75/232
+0080660956091	corona extra	75/232
+0080660954011	corona extra	75/232
+0080660000015	corona extra	75/232
+0001064200153	corona light	75/233
+0080660000022	corona light	75/233
+0080660956251	corona light	75/233
+0080660956756	corona light	75/233
+0774558004000	pacifico	75/2755
+0080660953083	pacifico	75/2755
+0080660953151	pacifico	75/2755
+0080660953014	pacifico	75/2755
+0603231413559	butte creek gold ale	762/2308
+5016878000160	adnams broadside strong original ale	779/12305
+5016878000191	adnams explorer	779/20121
+5016878000115	adnams the bitter	779/23975
+5016878000238	adnams east green carbon neutral beer	779/42754
+5016878000276	adnams gunhill	779/49413
+0649374000119	brothers hny brewed amber ale	795/2406
+0072890001634	heineken premium light lager	81/22478
+0072890001566	heineken premium light lager	81/22478
+0072890001948	heineken premium light lager	81/22478
+0072890001863	heineken premium light lager	81/22478
+0000087120158	heineken lager beer	81/246
+0072200008919	heineken lager beer	81/246
+0072890000217	heineken lager beer	81/246
+0072890000224	heineken lager beer	81/246
+0089049000073	heineken lager beer	81/246
+6111045000703	heineken lager beer	81/246
+6111045000741	heineken lager beer	81/246
+0072890000347	heineken lager beer	81/246
+0072890002006	heineken lager beer	81/246
+0086428400646	heineken lager beer	81/246
+8712000010232	heineken lager beer	81/246
+7310400024470	heineken lager beer	81/246
+8712000022662	heineken lager beer	81/246
+0000093497466	heineken lager beer	81/246
+0000094157475	heineken lager beer	81/246
+0012000900259	heineken lager beer	81/246
+0072890000033	heineken lager beer	81/246
+0072890000118	heineken lager beer	81/246
+0072890000804	heineken lager beer	81/246
+9327721000005	heineken lager beer	81/246
+0072890001504	heineken lager beer	81/246
+0072890000019	heineken lager beer	81/246
+0072890000163	heineken lager beer	81/246
+0072890000361	heineken lager beer	81/246
+0072890000439	heineken lager beer	81/246
+5410228148210	hoegaarden	83/248
+5410228141785	hoegaarden	83/248
+0083645157537	hoegaarden	83/248
+0786150000182	hoegaarden	83/248
+0083645021166	hoegaarden	83/248
+0083645021166	hoegaarden	83/248
+0083645157537	hoegaarden	83/248
+0786150000182	hoegaarden	83/248
+0786150000366	hoegaarden	83/248
+0786150000373	hoegaarden	83/248
+5410228148210	hoegaarden	83/248
+5410228141785	hoegaarden	83/248
+0892543000087	Russian River Supplication	863/22227
+0892543000278	Russian River Pliny The Elder	863/7971
+0021130206032	 beer from cedar mountain light	892/19776
+0072509000058	steinlager beer	915/2945
+0072509000089	steinlager beer	915/2945
+0072509040061	steinlager beer	915/2945
+0072509040122	steinlager beer	915/2945
+4078600090970	lowenbrau original	95/280
+0821820000007	lowenbrau original	95/280
+0821820000014	lowenbrau original	95/280
+0821820000021	lowenbrau original	95/280
+0062067041518	lowenbrau premium dark	95/281
+0062067041716	lowenbrau premium dark	95/281
+0062067013515	lowenbrau premium lager	95/281
+0071670000034	saranac caramel porter	99/902
+0009468000058	saranac black and tan	99/906
+0071670820038	saranac black and tan	99/906
+0009468000096	saranac black and tan	99/906
+0009450000097	saranac pale ale	99/914
+0009468000065	saranac pale ale	99/914
+0009468031373	saranac pale ale	99/914
+0071670040641	saranac pale ale 	99/914
+8023400007372	birra dolomiti-premium italian beer	
