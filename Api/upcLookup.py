@@ -25,6 +25,7 @@ from google.appengine.api import memcache
 # -----------------------------------------------------------------------------
 
 UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
+BA_BEER_PROFILE_URL  = 'http://www.beeradvocate.com/beer/profile/'
 INVALID_UPC_CODE = 0
 NO_UPC_CODE_SENT = 1
 NO_UPC_FOUND = 2
@@ -95,30 +96,29 @@ class MainHandler(webapp.RequestHandler):
                 result = {}
                 #Check for entry in memcache and local DB. If not found, hit upcdatabase.com and look it up there
                 localResult = self.lookupUpcDescriptionLocally(upcCode)
-                if(localResult is not None):
-                    result['description'] = localResult
-                    result['found'] = True
+                if(len(localResult) > 0 and localResult[0] is not None):                    
+                    result['description'] = localResult[0]
+                    result['ba_link']     = localResult[1] or None
+                    result['found']       = True
                 else:
                     upcDBResult = {}
                     rpcServer   = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
                     upcDBResult = rpcServer.lookupEAN(upcCode)
-                    #If we've found a result, put the description found into our database and memcache
+                    
                     if type(upcDBResult) == dict and upcDBResult['found']:
-                        upc = PBDatabase.UPC()
-                        upc.code = upcCode
-                        upc.description = upcDBResult['description']
-                        upc.origin = 'upcdblookup'
-                        upc.put()
-                        memcache.set(upcCode, upcDBResult['description'])
                         result['description'] = upcDBResult['description']
-                        result['found'] = True
+                        result['found']       = True
 
                 #self.response.out.write('%s = %r %s' % (result, result, type(result)))
                 if type(result) == dict and result.has_key('found'):
                     productDescription = result['description']
-                    links  = PBUtils.BossSearch().getResults(result['description'])
-                    if len(links) == 0:
-                        links  = PBUtils.GoogleSearch().getResults(result['description'])
+                    
+                    if result.has_key('ba_link') and result['ba_link'] is not None:
+                      links = [BA_BEER_PROFILE_URL + result['ba_link']]
+                    else:
+                      links  = PBUtils.BossSearch().getResults(result['description'])
+                      if len(links) == 0:
+                          links  = PBUtils.GoogleSearch().getResults(result['description'])
 
                     if len(links) > 0:
                         beer_info = PBUtils.Scraper().doScrape(links[0])
@@ -128,6 +128,23 @@ class MainHandler(webapp.RequestHandler):
                     errorCode = NO_UPC_FOUND
 
                 if errorCode is None:
+                    baLink = ''                
+                    if re.search(r"\/(\d+)\/(\d+)\/?",links[0]):
+                      m = re.search(r"\/(\d+)\/(\d+)\/?",links[0])                      
+                      baLink = m.group(1) + '/'+ m.group(2)                
+                
+                    #If we've found a result, and we don't already have it, put the description found into our database and memcache
+                    existingResult = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
+                    if(len(existingResult) == 0):
+                      upc             = PBDatabase.UPC()
+                      upc.code        = upcCode
+                      upc.description = productDescription
+                      upc.origin      = 'upcdblookup'
+                      upc.ba_link     = baLink
+                      upc.put()
+                    
+                    # not sure if this should be a 'set' or an 'add'
+                    memcache.set(upcCode, [productDescription, baLink])                    
                     jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "beer_info":beer_info})
                 else:
                     jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": errorCode})
@@ -137,18 +154,19 @@ class MainHandler(webapp.RequestHandler):
         self.response.headers['Content-Length'] = len(jsonResponse)
         self.response.out.write(jsonResponse)
 
-    def lookupUpcDescriptionLocally(self, upcCode):
-        upcDescription = memcache.get(upcCode)
-        if upcDescription is not None:
-            return upcDescription
-        else:
+    def lookupUpcDescriptionLocally(self, upcCode):        
+        cachedData = memcache.get(upcCode)        
+        if cachedData is not None and len(cachedData) > 0:
+            return [cachedData[0], (cachedData[1] if len(cachedData) > 1 else '')]
+        else:            
             datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
             if(len(datastoreEntry) > 0):
                 #If we've found an entry in the DB, stick it into memcache
-                if(datastoreEntry[0].description is not None and datastoreEntry[0].description != ""):
-                    memcache.set(upcCode, datastoreEntry[0].description)
-                    return datastoreEntry[0].description
-        return None
+                if(datastoreEntry[0].description is not None and datastoreEntry[0].description != ""):                                        
+                    memcache.set(upcCode, [datastoreEntry[0].description, (datastoreEntry[0].ba_link if datastoreEntry[0].ba_link != '' else '') ])                    
+                    return [datastoreEntry[0].description, (datastoreEntry[0].ba_link if datastoreEntry[0].ba_link != '' else '') ]
+        return []
+        #return None
 
 def main():
     application = webapp.WSGIApplication([('/upclookup', MainHandler)], debug=True)
