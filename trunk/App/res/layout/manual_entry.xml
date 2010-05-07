@@ -1,77 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#FFFFFF"
+    style="@style/FillParentAll"
     android:id="@+id/ME_scrollContainer">
 
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:id="@+id/ME_layout" 
-    android:padding="15sp" 
-    android:scrollbars="vertical">
+	<RelativeLayout
+        android:id="@+id/ME_layout"
+        style="@style/FillParentAll"
+        android:padding="15sp"
+        android:scrollbars="vertical">
+	
+        <TextView
+            android:id="@+id/ME_noResultsFoundMessage"
+            android:text="@string/noUpcResultsFound"
+            android:textSize="18sp"
+            style="@style/Center"/>
 
-    <TextView
-        android:id="@+id/ME_noResultsFoundMessage"
-        android:text="@string/noUpcResultsFound"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#000000"
-        android:typeface="serif"
-        android:gravity="center_horizontal"/>
+    <!-- START Beer name entry section -->
+        <TextView
+            android:id="@+id/ME_beerNameEntryLabel"
+            android:text="@string/beerNameLabel"
+            android:textSize="25sp"
+            style="@style/Center"
+            android:paddingTop="35sp"
+            android:layout_below="@id/ME_noResultsFoundMessage"/>
+        <TextView
+            android:id="@+id/ME_beerNameEntryDescription"
+            android:text="@string/beerNameEntryDescription"
+            android:textSize="16sp"
+            style="@style/Center"
+            android:layout_below="@id/ME_beerNameEntryLabel"/>
+        <EditText
+            android:id="@+id/ME_beerNameEntry"
+            style="@style/Center"
+            android:background="@android:drawable/editbox_background"
+            android:layout_below="@id/ME_beerNameEntryDescription"/>
+    
+    <!-- END Beer name entry section -->
+    
+        <TextView 
+            android:id="@+id/ME_spacer"
+            android:paddingTop="35sp"
+            style="@style/Center"
+            android:layout_below="@id/ME_beerNameEntryDescription"/>
 
-<!-- START Beer name entry section -->
-    <TextView
-        android:id="@+id/ME_beerNameEntryLabel"
-        android:text="@string/beerNameLabel"
-        android:paddingTop="35sp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ME_noResultsFoundMessage"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:typeface="serif"
-        android:gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/ME_beerNameEntryDescription"
-        android:text="@string/beerNameEntryDescription"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ME_beerNameEntryLabel"
-        android:textSize="12sp"
-        android:textColor="#000000"
-        android:typeface="serif"
-        android:gravity="center_horizontal"/>
-    <EditText
-        android:id="@+id/ME_beerNameEntry"
-        android:background="@android:drawable/editbox_background"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ME_beerNameEntryDescription"
-        android:paddingBottom="15sp"/>
-<!-- END Beer name entry section -->
+    <!-- START submit/cancel button section -->
+        <Button
+	        android:id="@+id/ME_submitButton"
+	        style="@style/SideButtons"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@id/ME_spacer"
+	        android:text="@string/submit"/>
+	    <Button
+	        android:id="@+id/ME_cancelButton"
+	        style="@style/SideButtons"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/ME_spacer"
+	        android:text="@string/cancel"/>
         
-<!-- START submit/cancel button section -->
-    <Button
-        android:id="@+id/ME_submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="40sp"
-        android:paddingRight="40sp"
-        android:layout_below="@id/ME_beerNameEntry"
-        android:text="@string/submit"/>
-    <Button
-        android:id="@+id/ME_cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:paddingLeft="40sp"
-        android:paddingRight="40sp"
-        android:layout_below="@id/ME_beerNameEntry"
-        android:text="@string/cancel"/>
-<!-- END submit/cancel button section -->
-</RelativeLayout>
+    <!-- END submit/cancel button section -->
+    </RelativeLayout>
 </ScrollView>

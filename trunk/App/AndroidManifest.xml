@@ -3,7 +3,8 @@
       package="org.praisebeer.app"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon"
+    <application android:theme="@android:style/Theme.Light"
+                 android:icon="@drawable/icon"
                  android:label="@string/appName"
                  android:debuggable="true"
                  android:allowClearUserData="true">
@@ -19,8 +20,9 @@
                   android:label="@string/scanResults"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name="ApiHandler" 
-                  android:label="@string/searchingEllipsis"
+        <activity android:theme="@android:style/Theme.Dialog"
+                  android:name="ApiHandler"
+                  android:label=""
                   android:screenOrientation="portrait">
         </activity>
         <activity android:name="ManualUserEntry" 

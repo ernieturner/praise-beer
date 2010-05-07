@@ -1,138 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/FillParentVertical"
     android:background="@drawable/rating">
 
 <!-- START Beer name and information -->
   <LinearLayout 
-    android:orientation="vertical" 
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent" 
+    style="@style/FillParentVertical"
     android:layout_weight="9">
     <TextView
         android:id="@+id/beerName"
-        android:textColor="#ffffff"
+        style="@style/WhiteRowCenterText"
         android:textSize="22sp"
         android:layout_marginTop="15sp"
-        android:typeface="serif"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="2"
-        android:gravity="center_horizontal" />
+        android:layout_weight="2"/>
               
      <TextView 
         android:id="@+id/beerStyle"
-        android:textColor="#ffffff"
+        style="@style/WhiteRowCenterText"
         android:textSize="12sp"
-        android:typeface="serif"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4"
-        android:gravity="center_horizontal" />
+        android:layout_weight="4"/>
      
      <TextView
         android:id="@+id/beerABV"
+        style="@style/WhiteRowCenterText"
         android:textColor="#ffffff"
         android:textSize="12sp"
-        android:typeface="serif"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="4"
-        android:gravity="center_horizontal" />
+        android:layout_weight="4"/>
   </LinearLayout>
 <!-- END Beer name and information -->
   
 <!-- START Layout Spacer-->
   <LinearLayout 
     android:id="@+id/layoutSpacer"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/FillParentVertical"
     android:layout_weight="10">
   </LinearLayout>
 <!-- END Layout Spacer-->
 
 <!-- START Ratings Section-->
   <LinearLayout 
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/FillParentVertical"
     android:layout_weight="9">
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        style="@style/FillParentHorizontal"
         android:layout_weight="2">
         <TextView
             android:id="@+id/communityRating"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:typeface="serif"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"/>
+            style="@style/BlackRowCenterLargeText"
+            android:layout_weight="1"/>
                 
         <TextView 
             android:id="@+id/brothersRating"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:typeface="serif"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"/>
+            style="@style/BlackRowCenterLargeText"
+            android:layout_weight="1"/>
     </LinearLayout>
     
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        style="@style/FillParentHorizontal"
         android:layout_weight="3">
         <TextView
             android:id="@+id/communityRatingName"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textSize="23sp"
-            android:gravity="center_horizontal"
-            android:textColor="#000000"
-            android:typeface="serif"
+            style="@style/BlackRowCenterMediumText"
             android:layout_weight="1"/>
         
         <TextView
             android:id="@+id/brothersRatingName"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textSize="23sp"
-            android:gravity="center_horizontal"
-            android:textColor="#000000"
-            android:typeface="serif"
+            style="@style/BlackRowCenterMediumText"
             android:layout_weight="1"/>
     </LinearLayout>
     
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        style="@style/FillParentHorizontal"
         android:layout_weight="3">
         <TextView
             android:id="@+id/communityRatingCount"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#000000"
-            android:typeface="serif"
-            android:layout_weight="1" 
-            android:gravity="center_horizontal"/>
+            style="@style/BlackRowCenterSmallText"
+            android:layout_weight="1"/>
        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textSize="23sp"
-            android:gravity="center_horizontal"
-            android:textColor="#000000"
-            android:typeface="serif"
+            style="@style/BlackRowCenterSmallText"
             android:layout_weight="1"/>
     </LinearLayout>
   </LinearLayout>
@@ -141,29 +86,17 @@
 <!-- START Button Link-->
   <LinearLayout 
     android:id="@+id/layoutSpacer"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    style="@style/FillParentVertical"
     android:layout_weight="11">
     <Button
         android:text="@string/viewProfilePage"
         android:id="@+id/viewBeerPage"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:textSize="12sp"
-        android:textColor="#000000"
-        android:gravity="center_horizontal"
-        android:typeface="serif"
+        style="@style/BlackRowCenterSmallText"
         android:layout_weight="1"/>
       <Button
         android:text="@string/viewStylePage"
         android:id="@+id/findOtherSimilarStyles"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:gravity="center_horizontal"
-        android:typeface="serif"
+        style="@style/BlackRowCenterSmallText"
         android:layout_weight="1"/>
   </LinearLayout>
 <!-- END Button Link-->

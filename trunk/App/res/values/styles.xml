@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FillParentAll">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    
+    <style name="WrapContentAll">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FillParentVertical" parent="@style/FillParentAll">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="FillParentHorizontal" parent="@style/FillParentAll">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Center">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="WhiteRowCenterText" parent="@style/Center">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:typeface">serif</item>
+    </style>
+    
+    <style name="BlackRowCenterLargeText" parent="@style/WhiteRowCenterText">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:typeface">serif</item>
+    </style>
+    
+    <style name="BlackRowCenterMediumText" parent="@style/BlackRowCenterLargeText">
+        <item name="android:textSize">23sp</item>
+    </style>
+    
+    <style name="BlackRowCenterSmallText" parent="@style/BlackRowCenterLargeText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SideButtons" parent="@style/WrapContentAll">
+        <item name="android:paddingLeft">40sp</item>
+        <item name="android:paddingRight">40sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">fill_horizontal</item>
+    </style>
+</resources>

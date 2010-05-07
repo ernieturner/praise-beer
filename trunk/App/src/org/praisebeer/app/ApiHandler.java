@@ -160,8 +160,8 @@ public class ApiHandler extends Activity implements Runnable
         if(id == SEARCH_DIALOG_ID)
         {
             ProgressDialog loadingDialog = new ProgressDialog(this);
-            loadingDialog.setTitle("Please Wait...");
-            loadingDialog.setMessage("Searching for results");
+            loadingDialog.setTitle(getString(R.string.pleaseWaitEllipsis));
+            loadingDialog.setMessage(getString(R.string.searchingForResults));
             loadingDialog.setIndeterminate(true);
             loadingDialog.setCancelable(false);
             return loadingDialog;

@@ -34,9 +34,9 @@ public class ManualUserEntry extends Activity
                 if(beerDescription.toString().trim().equals(""))
                 {
                     AlertDialog.Builder alert = new AlertDialog.Builder(ManualUserEntry.this);
-                    alert.setMessage("Please fill out a beer description.")
+                    alert.setMessage(getString(R.string.pleaseFillOutDescription))
                            .setCancelable(false)
-                           .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                           .setNegativeButton(getString(R.string.okLabel), new DialogInterface.OnClickListener() {
                                public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
                                }
