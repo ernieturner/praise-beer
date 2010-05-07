@@ -73,7 +73,7 @@ class GoogleXMLRPCTransport(object):
         return u.close()
 
 
-					
+          
 # -----------------------------------------------------------------------------
 # Web Request Handler Class
 # -----------------------------------------------------------------------------
@@ -100,7 +100,7 @@ class MainHandler(webapp.RequestHandler):
                     result['found'] = True
                 else:
                     upcDBResult = {}
-                    rpcServer = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
+                    rpcServer   = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
                     upcDBResult = rpcServer.lookupEAN(upcCode)
                     #If we've found a result, put the description found into our database and memcache
                     if type(upcDBResult) == dict and upcDBResult['found']:

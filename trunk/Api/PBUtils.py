@@ -24,111 +24,111 @@ BOSS_SEARCH_API_KEY = 'iwKJ.8nV34GERUNY2z2d3JeFQU8MzQi5vBdoAjzzcCGs175VukcNx1sfK
 # -----------------------------------------------------------------------------
 class Scraper():
 
-	def doScrape(self,url):
-		try: 				
-			result = urlfetch.fetch(url,deadline=10)
-			if result.status_code == 200:		  	
-				content = re.sub('\n|\r','',result.content)
-				pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s]+)')
-				if pat.search(content):
-					m = pat.search(content)
-					beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
-					
-					pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
-					if pat.search(content):
-						m = pat.search(content)
-						beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
-										
-					return beer_info
-		except:
-			try:														  
-				cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'
-				result = urlfetch.fetch(cache_url,deadline=10)
-				if result.status_code == 200:		  		
-					content = re.sub('\n|\r','',result.content)
-					pat = re.compile('BA OVERALL<br>([A-Z/]+[+-]?)<br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br>([A-Z/]+[+-]?)<br>([a-z\s!;]+)')
-					if pat.search(content):						
-						m = pat.search(content)						
-						beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
+  def doScrape(self,url):
+    try:        
+      result = urlfetch.fetch(url,deadline=10)
+      if result.status_code == 200:       
+        content = re.sub('\n|\r','',result.content)
+        pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s]+)')
+        if pat.search(content):
+          m = pat.search(content)
+          beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
+          
+          pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+          if pat.search(content):
+            m = pat.search(content)
+            beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
+                    
+          return beer_info
+    except:
+      try:                              
+        cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'
+        result = urlfetch.fetch(cache_url,deadline=10)
+        if result.status_code == 200:         
+          content = re.sub('\n|\r','',result.content)
+          pat = re.compile('BA OVERALL<br>([A-Z/]+[+-]?)<br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br>([A-Z/]+[+-]?)<br>([a-z\s!;]+)')
+          if pat.search(content):           
+            m = pat.search(content)           
+            beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
 
-						pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
-						if pat.search(content):
-							m = pat.search(content)
-							beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
-						
-						return beer_info
-					else:
-						return 'No matches found.'
-				else:
-					return 'An error occurred during URL fetch ('+ result.status.code +').'		
-			except:
-				return "Request timed out"	
-				
-		return "No results found."
-	
+            pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+            if pat.search(content):
+              m = pat.search(content)
+              beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
+            
+            return beer_info
+          else:
+            return 'No matches found.'
+        else:
+          return 'An error occurred during URL fetch ('+ result.status.code +').'   
+      except:
+        return "Request timed out"  
+        
+    return "No results found."
+  
 # -----------------------------------------------------------------------------
 # BOSS API Search Handler Class
 # -----------------------------------------------------------------------------
 
 class BossSearch():
-	def getResults(self,description):
-		base   = 'http://boss.yahooapis.com/ysearch/web/v1/'
-		params = {
-			'appid':BOSS_SEARCH_API_KEY,
-			'sites':'beeradvocate.com'
-		}
-		payload = urllib.urlencode(params)
-		url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload		
-		
-		response = StringIO(urlfetch.fetch(url).content)		
-		result   = self._formatResults(simplejson.load(response))
-		#return url
-		return result;
+  def getResults(self,description):
+    base   = 'http://boss.yahooapis.com/ysearch/web/v1/'
+    params = {
+      'appid':BOSS_SEARCH_API_KEY,
+      'sites':'beeradvocate.com'
+    }
+    payload = urllib.urlencode(params)
+    url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload    
+    
+    response = StringIO(urlfetch.fetch(url).content)    
+    result   = self._formatResults(simplejson.load(response))
+    #return url
+    return result;
 
-	def _formatResults(self,searchResults):        
-		baBase = 'http://www.beeradvocate.com/beer/profile/'
-		lookup = {}
-		links  = []
+  def _formatResults(self,searchResults):        
+    baBase = 'http://www.beeradvocate.com/beer/profile/'
+    lookup = {}
+    links  = []
 
-		for entry in searchResults['ysearchresponse']['resultset_web']:
-			print "URL: "+ entry['url']
-			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
-				key = baBase + m.group(1) + '/'+ m.group(2)				
-				if not lookup.has_key(key):
-					lookup[key] = 1
-					links.append(key)
-		return links
+    for entry in searchResults['ysearchresponse']['resultset_web']:
+      print "URL: "+ entry['url']
+      if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
+        m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
+        key = baBase + m.group(1) + '/'+ m.group(2)       
+        if not lookup.has_key(key):
+          lookup[key] = 1
+          links.append(key)
+    return links
 
-	
+  
 # -----------------------------------------------------------------------------
 # Google API Search Handler Class
 # -----------------------------------------------------------------------------
 
 class GoogleSearch():
-	def getResults(self,description):	
-		base   = "http://ajax.googleapis.com/ajax/services/search/web?"
-		params = {
-			'v':'1.0',
-			'key':GOOGLE_SEARCH_API_KEY,
-			'q':'site:beeradvocate.com/beer/profile/ '+ description
-		}
-		payload = urllib.urlencode(params)
-		url     = base + payload
-					
-		response = StringIO(urlfetch.fetch(url).content)		
-		result   = self._formatResults(simplejson.load(response))
-		return result;					
+  def getResults(self,description): 
+    base   = "http://ajax.googleapis.com/ajax/services/search/web?"
+    params = {
+      'v':'1.0',
+      'key':GOOGLE_SEARCH_API_KEY,
+      'q':'site:beeradvocate.com/beer/profile/ '+ description
+    }
+    payload = urllib.urlencode(params)
+    url     = base + payload
+          
+    response = StringIO(urlfetch.fetch(url).content)    
+    result   = self._formatResults(simplejson.load(response))
+    return result;          
 
-	def _formatResults(self,searchResults):        
-		baBase = 'http://www.beeradvocate.com/beer/profile/'		
-		lookup = {}
-		links  = []
-		for entry in searchResults['responseData']['results']:
-			if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-				m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
-				key = baBase + m.group(1) + '/'+ m.group(2)														
-				if not lookup.has_key(key):
-					lookup[key] = 1
-					links.append(key)
-		return links	
+  def _formatResults(self,searchResults):        
+    baBase = 'http://www.beeradvocate.com/beer/profile/'    
+    lookup = {}
+    links  = []
+    for entry in searchResults['responseData']['results']:
+      if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
+        m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
+        key = baBase + m.group(1) + '/'+ m.group(2)                           
+        if not lookup.has_key(key):
+          lookup[key] = 1
+          links.append(key)
+    return links  
