@@ -20,9 +20,8 @@
                   android:label="@string/scanResults"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:theme="@android:style/Theme.Dialog"
+        <activity android:theme="@android:style/Theme.Panel"
                   android:name="ApiHandler"
-                  android:label=""
                   android:screenOrientation="portrait">
         </activity>
         <activity android:name="ManualUserEntry" 
