@@ -13,28 +13,31 @@ public class ErrorDisplay extends Activity
         setContentView(R.layout.error);
         Bundle extras = getIntent().getExtras();
         int errorCode = extras.getInt("errorCode");
-        String errorMessage = "";
+        String errorMessage = extras.getString("errorMessage");
+        String convertedErrorMessage = "";
         switch(errorCode)
         {
             case ApiErrorCodes.NO_BARCODE_RECIEVED:
-                errorMessage = getString(R.string.error_noBarCodeRecieved);
+                convertedErrorMessage = getString(R.string.error_noBarCodeRecieved);
                 break;
             case ApiErrorCodes.OUTGOING_REQUEST_FAILURE:
-                errorMessage = getString(R.string.error_requestFailure);
+                convertedErrorMessage = getString(R.string.error_requestFailure);
                 break;
             case ApiErrorCodes.INVALID_JSON_RESPONSE:
-                errorMessage = getString(R.string.error_invalidJsonResponse);
+                convertedErrorMessage = getString(R.string.error_invalidJsonResponse);
                 break;
             case ApiErrorCodes.INVALID_UPC_CODE:
-                errorMessage = getString(R.string.error_invalidUpcCode);
+                convertedErrorMessage = getString(R.string.error_invalidUpcCode);
                 break;
             case ApiErrorCodes.NO_UPC_CODE_SENT:
-                errorMessage = getString(R.string.error_noUpcCodeSent);
+                convertedErrorMessage = getString(R.string.error_noUpcCodeSent);
                 break;
             case ApiErrorCodes.RATING_LOOKUP_TIMEOUT:
-                errorMessage = getString(R.string.error_requestTimeout);
+                convertedErrorMessage = getString(R.string.error_requestTimeout);
                 break;
         }
-        ((TextView) findViewById(R.id.errorText)).setText(errorMessage);
+        if(errorMessage != "")
+            convertedErrorMessage = " - " + errorMessage;
+        ((TextView) findViewById(R.id.errorText)).setText(convertedErrorMessage);
     }
 }
