@@ -71,76 +71,78 @@ public class ApiHandler extends Activity implements Runnable
      */
     public void run()
     {
+        String jsonResults = "";
+        String inputLine;
         try
         {
             URL upcLookup = new URL(this.requestUrl);
             BufferedReader in = new BufferedReader(new InputStreamReader(upcLookup.openStream()));
-
-            String jsonResults = "";
-            String inputLine;
-
+            
             while((inputLine = in.readLine()) != null)
                 jsonResults += inputLine;
             in.close();
-            try
-            {
-                JSONObject apiResult = new JSONObject(jsonResults);
-                boolean success = apiResult.getBoolean("success");
-                if(success)
-                {
-                    beerDetails.setScanSuccess(true);
-                    beerDetails.setProductName(apiResult.getString("description"));
-                    JSONObject beerInfo = apiResult.getJSONObject("beer_info");
-                    if(beerInfo != null)
-                    {
-                        JSONObject ratings = beerInfo.getJSONObject("ratings");
-                        try
-                        {
-                            JSONArray communityRating = ratings.getJSONArray("overall");
-                            beerDetails.setCommunityRating(communityRating.getString(0));
-                            beerDetails.setCommunityRatingDescription(communityRating.getString(1));
-                            beerDetails.setNumberOfRatings(communityRating.getString(2));
-                        }
-                        catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
-
-                        try
-                        {
-                            JSONArray brothersRating = ratings.getJSONArray("bros");
-                            beerDetails.setBrothersRating(brothersRating.getString(0));
-                            beerDetails.setBrothersRatingDescription(brothersRating.getString(1));
-                        }
-                        catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
-                        
-                        JSONObject stats = beerInfo.getJSONObject("stats");
-                        beerDetails.setBeerABV(stats.getString("abv"));
-                        beerDetails.setBeerStyle(stats.getString("style_name"));
-                        beerDetails.setBeerStyleID(stats.getString("style_id"));
-                    }
-                    // Convert links from JSON array to normal array
-                    JSONArray apiLinks = apiResult.getJSONArray("links");
-                    Vector<String> links = new Vector<String>();
-                    for(int i = 0; i < apiLinks.length(); i++)
-                        links.add(apiLinks.getString(i));
-                    beerDetails.setProductLinks(links);
-                }
-                else
-                {
-                    int errorCode = apiResult.getInt("error_code");
-                    beerDetails.setResultErrorCode(errorCode);
-                    beerDetails.setScanSuccess(false);
-                }
-            }
-            catch(JSONException e)
-            {
-                beerDetails.setResultErrorCode(ApiErrorCodes.INVALID_JSON_RESPONSE);
-                beerDetails.setScanSuccess(false);
-            }
         }
         catch(Exception e)
         {
             beerDetails.setResultErrorCode(ApiErrorCodes.OUTGOING_REQUEST_FAILURE);
+            beerDetails.setResultErrorMessage(e.getMessage());
             beerDetails.setScanSuccess(false);
         }
+        try
+        {
+            JSONObject apiResult = new JSONObject(jsonResults);
+            boolean success = apiResult.getBoolean("success");
+            if(success)
+            {
+                beerDetails.setScanSuccess(true);
+                beerDetails.setProductName(apiResult.getString("description"));
+                JSONObject beerInfo = apiResult.getJSONObject("beer_info");
+                if(beerInfo != null)
+                {
+                    JSONObject ratings = beerInfo.getJSONObject("ratings");
+                    try
+                    {
+                        JSONArray communityRating = ratings.getJSONArray("overall");
+                        beerDetails.setCommunityRating(communityRating.getString(0));
+                        beerDetails.setCommunityRatingDescription(communityRating.getString(1));
+                        beerDetails.setNumberOfRatings(communityRating.getString(2));
+                    }
+                    catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
+
+                    try
+                    {
+                        JSONArray brothersRating = ratings.getJSONArray("bros");
+                        beerDetails.setBrothersRating(brothersRating.getString(0));
+                        beerDetails.setBrothersRatingDescription(brothersRating.getString(1));
+                    }
+                    catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
+                    
+                    JSONObject stats = beerInfo.getJSONObject("stats");
+                    beerDetails.setBeerABV(stats.getString("abv"));
+                    beerDetails.setBeerStyle(stats.getString("style_name"));
+                    beerDetails.setBeerStyleID(stats.getString("style_id"));
+                }
+                // Convert links from JSON array to normal array
+                JSONArray apiLinks = apiResult.getJSONArray("links");
+                Vector<String> links = new Vector<String>();
+                for(int i = 0; i < apiLinks.length(); i++)
+                    links.add(apiLinks.getString(i));
+                beerDetails.setProductLinks(links);
+            }
+            else
+            {
+                int errorCode = apiResult.getInt("error_code");
+                beerDetails.setResultErrorCode(errorCode);
+                beerDetails.setScanSuccess(false);
+            }
+        }
+        catch(JSONException e)
+        {
+            beerDetails.setResultErrorCode(ApiErrorCodes.INVALID_JSON_RESPONSE);
+            beerDetails.setResultErrorMessage(e.getMessage());
+            beerDetails.setScanSuccess(false);
+        }
+        
         handler.sendEmptyMessage(0);
     }
 

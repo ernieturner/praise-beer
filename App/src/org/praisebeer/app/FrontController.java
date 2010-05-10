@@ -129,6 +129,7 @@ public class FrontController extends Activity
                 {
                     Intent i = new Intent(this, ErrorDisplay.class);
                     i.putExtra("errorCode", scanResults.getResultErrorCode());
+                    i.putExtra("errorMessage", scanResults.getResultErrorMessage());
                     startActivity(i);
                 }
             }

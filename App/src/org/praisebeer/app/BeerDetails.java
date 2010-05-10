@@ -25,6 +25,7 @@ public class BeerDetails implements java.io.Serializable
 
     /** Result Errors and Success */
     private int resultErrorCode;
+    private String resultErrorMessage = "";
     private boolean scanSuccess;
 
     BeerDetails(String upcCode) {
@@ -68,8 +69,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Set overall community rating
-     * 
-     * @param String rating Letter grade of the beer
      */
     public void setCommunityRating(String rating)
     {
@@ -78,8 +77,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Get brothers rating
-     * 
-     * @return String Letter grade of the beer
      */
     public String getBrothersRating()
     {
@@ -88,8 +85,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Set brothers rating
-     * 
-     * @param rating String Letter grade of the beer
      */
     public void setBrothersRating(String rating)
     {
@@ -98,8 +93,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Returns number of ratings for beer
-     * 
-     * @return String Number of ratings
      */
     public String getNumberOfRatings()
     {
@@ -108,8 +101,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Set number of overall community ratings
-     * 
-     * @param ratingCount int Number of ratings found
      */
     public void setNumberOfRatings(String ratingCount)
     {
@@ -117,38 +108,23 @@ public class BeerDetails implements java.io.Serializable
     }
 
     /**
-     * Set community description of rating
-     * 
-     * @param description String
-     */
-    public void setCommunityRatingDescription(String description)
-    {
-        this.communityRatingDescription = description;
-    }
-
-    /**
      * Get community description of rating
-     * 
-     * @return
      */
     public String getCommunityRatingDescription()
     {
         return this.communityRatingDescription;
     }
+    
     /**
-     * Set beer style
-     * 
-     * @param ratingCount int Number of ratings found
+     * Set community description of rating
      */
-    public void setBeerStyle(String style)
+    public void setCommunityRatingDescription(String description)
     {
-        this.beerStyle = style;
+        this.communityRatingDescription = description;
     }
-
+    
     /**
      * Get beer style
-     * 
-     * @param description String
      */
     public String getBeerStyle()
     {
@@ -156,21 +132,27 @@ public class BeerDetails implements java.io.Serializable
     }
     
     /**
-     * Set beer style ID to build up style URL later
-     * 
-     * @param styleID String Number of style
+     * Set beer style
      */
-    public void setBeerStyleID(String styleID)
+    public void setBeerStyle(String style)
     {
-        this.beerStyleID = styleID;
+        this.beerStyle = style;
     }
-
+    
     /**
      * Get beer style ID
      */
     public String getBeerStyleID()
     {
         return this.beerStyleID;
+    }
+    
+    /**
+     * Set beer style ID to build up style URL later
+     */
+    public void setBeerStyleID(String styleID)
+    {
+        this.beerStyleID = styleID;
     }
 
     /**
@@ -183,8 +165,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Set beer alcohol by volume
-     * 
-     * @param description String
      */
     public void setBeerABV(String ABV)
     {
@@ -193,8 +173,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Get brothers description of rating
-     * 
-     * @param description String
      */
     public String getBrothersRatingDescription()
     {
@@ -203,8 +181,6 @@ public class BeerDetails implements java.io.Serializable
     
     /**
      * Set brothers description of rating
-     * 
-     * @param description String
      */
     public void setBrothersRatingDescription(String description)
     {
@@ -213,8 +189,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Returns product name
-     * 
-     * @return
      */
     public String getProductName()
     {
@@ -223,8 +197,6 @@ public class BeerDetails implements java.io.Serializable
     
     /**
      * Sets product name
-     * 
-     * @param name
      */
     public void setProductName(String name)
     {
@@ -233,8 +205,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Returns the UPC code set
-     * 
-     * @return
      */
     public String getUpcCode()
     {
@@ -243,8 +213,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Returns all product links found
-     * 
-     * @return
      */
     public Vector<String> getProductLinks()
     {
@@ -253,8 +221,6 @@ public class BeerDetails implements java.io.Serializable
     
     /**
      * Sets links found based on product name
-     * 
-     * @param links
      */
     public void setProductLinks(Vector<String> links)
     {
@@ -263,8 +229,6 @@ public class BeerDetails implements java.io.Serializable
 
     /**
      * Returns the first, i.e. most relavent, product link found
-     * 
-     * @return
      */
     public String getProductLink()
     {
@@ -272,43 +236,51 @@ public class BeerDetails implements java.io.Serializable
     }
 
     /**
-     * Sets error code returned from API
-     * 
-     * @param error
-     */
-    public void setResultErrorCode(int error)
-    {
-        this.resultErrorCode = error;
-    }
-
-    /**
      * Returns error code set in results
-     * 
-     * @return
      */
     public int getResultErrorCode()
     {
         return this.resultErrorCode;
     }
-
+    
     /**
-     * Sets whether scan was successful or not
-     * 
-     * @param error
+     * Sets error code returned from API
      */
-    public void setScanSuccess(boolean result)
+    public void setResultErrorCode(int error)
     {
-        this.scanSuccess = result;
+        this.resultErrorCode = error;
+    }
+    
+    /**
+     * Returns error message set during request
+     */
+    public String getResultErrorMessage()
+    {
+        return this.resultErrorMessage;
+    }
+    
+    /**
+     * Sets error message to display
+     */
+    public void setResultErrorMessage(String errorMessage)
+    {
+        this.resultErrorMessage = errorMessage;
     }
 
     /**
      * Returns whether or not the scan results were succcessful, i.e. a beer UPC/rating was found
-     * 
-     * @return
      */
     public boolean getScanSuccess()
     {
         return this.scanSuccess;
+    }
+    
+    /**
+     * Sets whether scan was successful or not
+     */
+    public void setScanSuccess(boolean result)
+    {
+        this.scanSuccess = result;
     }
 
     /**
