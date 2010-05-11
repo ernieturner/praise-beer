@@ -34,7 +34,7 @@ class Scraper():
           m = pat.search(content)
           beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
           
-          pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+          pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()/]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
           if pat.search(content):
             m = pat.search(content)
             beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
@@ -51,7 +51,7 @@ class Scraper():
             m = pat.search(content)           
             beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
 
-            pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+            pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()/]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
             if pat.search(content):
               m = pat.search(content)
               beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
@@ -79,7 +79,7 @@ class BossSearch():
     }
     payload = urllib.urlencode(params)
     url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload    
-    
+
     response = StringIO(urlfetch.fetch(url).content)    
     result   = self._formatResults(simplejson.load(response))    
     return result;
@@ -88,16 +88,19 @@ class BossSearch():
     baBase = 'http://www.beeradvocate.com/beer/profile/'
     lookup = {}
     links  = []
-
-    for entry in searchResults['ysearchresponse']['resultset_web']:      
-      if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
-        m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
-        key = baBase + m.group(1) + '/'+ m.group(2)       
-        if not lookup.has_key(key):
-          lookup[key] = 1
-          links.append(key)
-    return links
-
+        
+    if int(searchResults['ysearchresponse']['count']) > 0:
+      for entry in searchResults['ysearchresponse']['resultset_web']:      
+        if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
+          m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
+          key = baBase + m.group(1) + '/'+ m.group(2)       
+          if not lookup.has_key(key):
+            lookup[key] = 1
+            links.append(key)
+      return links
+    else:
+      return []
+      
   
 # -----------------------------------------------------------------------------
 # Google API Search Handler Class
@@ -113,7 +116,7 @@ class GoogleSearch():
     }
     payload = urllib.urlencode(params)
     url     = base + payload
-          
+    
     response = StringIO(urlfetch.fetch(url).content)    
     result   = self._formatResults(simplejson.load(response))
     return result;          

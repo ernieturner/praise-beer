@@ -117,6 +117,7 @@ class MainHandler(webapp.RequestHandler):
                       links = [BA_BEER_PROFILE_URL + result['ba_link']]
                     else:
                       links  = PBUtils.BossSearch().getResults(result['description'])
+                                                                                        
                       if len(links) == 0:
                           links  = PBUtils.GoogleSearch().getResults(result['description'])
 
