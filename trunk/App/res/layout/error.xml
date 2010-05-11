@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/FillParentAll"
-    android:layout_weight="1"
-    android:padding="15sp"
-    android:id="@+id/errorLayout">
+    android:id="@+id/errorScrollContainer">
 
-    <TextView
-        android:id="@+id/errorText"
-        android:textSize="22sp"
-        android:layout_marginTop="15sp"
-        android:layout_weight="1"
-        style="@style/FillParentAll"
-        android:gravity="center"/>
-</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/errorLayout"
+	    android:orientation="vertical"
+	    style="@style/FillParentAll"
+	    android:layout_weight="1"
+	    android:padding="15sp">
+	
+	    <TextView
+	        android:id="@+id/errorText"
+	        android:textSize="22sp"
+	        android:layout_marginTop="15sp"
+	        android:layout_weight="1"
+	        style="@style/FillParentAll"
+	        android:gravity="center"/>
+	</LinearLayout>
+</ScrollView>
