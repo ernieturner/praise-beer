@@ -22,7 +22,7 @@ NO_UPC_CODE_SENT = 1
 NO_DESCRIPTION_PROVIDED = 2
 NO_BEER_FOUND = 3
 RATING_LOOKUP_TIMEOUT = 4
-					
+          
 # -----------------------------------------------------------------------------
 # Web Request Handler Class
 # -----------------------------------------------------------------------------
@@ -59,10 +59,10 @@ class MainHandler(webapp.RequestHandler):
         #Check if we already have an entry for this UPC code, if we don't, add it
         #datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
         #if(len(datastoreEntry) == 0):
-        #    upcEntry = PBDatabase.UPC()
-        #    upcEntry.code = upcCode
+        #    upcEntry             = PBDatabase.UPC()
+        #    upcEntry.code        = upcCode
         #    upcEntry.description = description
-        #    upcEntry.origin = 'manualentry'
+        #    upcEntry.origin      = 'manualentry'
         #    upcEntry.put()
 
         jsonResponse = simplejson.dumps({"success": True, "description": description, "links": links, "beer_info":beerInfo})
