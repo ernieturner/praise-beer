@@ -35,6 +35,9 @@ public class ErrorDisplay extends Activity
             case ApiErrorCodes.RATING_LOOKUP_TIMEOUT:
                 convertedErrorMessage = getString(R.string.error_requestTimeout);
                 break;
+            case ApiErrorCodes.NAME_LOOKUP_NO_DESCRIPTION_PROVIDED:
+                convertedErrorMessage = getString(R.string.error_noDescription)
+                break;
         }
         if(errorMessage != "")
             convertedErrorMessage = " - " + errorMessage;

@@ -19,10 +19,10 @@ from google.appengine.api import memcache
 # -----------------------------------------------------------------------------
 
 NO_UPC_CODE_SENT = 1
-NO_DESCRIPTION_PROVIDED = 2
 NO_BEER_FOUND = 3
 RATING_LOOKUP_TIMEOUT = 4
-          
+NAME_LOOKUP_NO_DESCRIPTION_PROVIDED = 5
+
 # -----------------------------------------------------------------------------
 # Web Request Handler Class
 # -----------------------------------------------------------------------------
