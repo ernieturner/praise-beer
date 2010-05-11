@@ -10,4 +10,5 @@ public class ApiErrorCodes
     public static final int NO_UPC_FOUND = 2;
     public static final int NO_BEER_FOUND = 3;
     public static final int RATING_LOOKUP_TIMEOUT = 4;
+    public static final int NAME_LOOKUP_NO_DESCRIPTION_PROVIDED = 5;
 }
