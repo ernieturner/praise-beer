@@ -100,6 +100,13 @@ class MainHandler(webapp.RequestHandler):
                     result['description'] = localResult[0]
                     result['ba_link']     = localResult[1] or None
                     result['found']       = True
+                    if type(localResult[2]) == dict and localResult[2].has_key('beer_info'):
+                      beer_info = localResult[2]
+                      jsonResponse = simplejson.dumps({"success": True, "description": result['description'], "links":[BA_BEER_PROFILE_URL + result['ba_link']], "beer_info":beer_info['beer_info']})
+                      self.response.headers['Content-Length'] = len(jsonResponse)
+                      self.response.out.write(jsonResponse)
+                      return
+                    	
                 else:
                     upcDBResult = {}
                     rpcServer   = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
@@ -145,7 +152,7 @@ class MainHandler(webapp.RequestHandler):
                       upc.put()
                     
                     # not sure if this should be a 'set' or an 'add'
-                    memcache.set(upcCode, [productDescription, baLink])                    
+                    memcache.set(upcCode, [productDescription, baLink, {"beer_info":beer_info}])
                     jsonResponse = simplejson.dumps({"success": True, "description": productDescription, "links": links, "beer_info":beer_info})
                 else:
                     jsonResponse = simplejson.dumps({"success": False, "errorResponse": result, "error_code": errorCode})
@@ -158,14 +165,14 @@ class MainHandler(webapp.RequestHandler):
     def lookupUpcDescriptionLocally(self, upcCode):        
         cachedData = memcache.get(upcCode)        
         if cachedData is not None and len(cachedData) > 0:
-            return [cachedData[0], (cachedData[1] if len(cachedData) > 1 else '')]
+            return [cachedData[0], (cachedData[1] if len(cachedData) > 1 else ''), (cachedData[2] if len(cachedData) > 2 else '')]
         else:            
             datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
             if(len(datastoreEntry) > 0):
                 #If we've found an entry in the DB, stick it into memcache
                 if(datastoreEntry[0].description is not None and datastoreEntry[0].description != ""):                                        
                     memcache.set(upcCode, [datastoreEntry[0].description, (datastoreEntry[0].ba_link if datastoreEntry[0].ba_link != '' else '') ])                    
-                    return [datastoreEntry[0].description, (datastoreEntry[0].ba_link if datastoreEntry[0].ba_link != '' else '') ]
+                    return [datastoreEntry[0].description, (datastoreEntry[0].ba_link if datastoreEntry[0].ba_link != '' else ''), '' ]
         return []
         #return None
 
