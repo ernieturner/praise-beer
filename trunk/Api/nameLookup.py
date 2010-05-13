@@ -7,6 +7,7 @@ import wsgiref.handlers
 import sys
 import PBUtils
 import PBDatabase
+import re
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
@@ -55,15 +56,27 @@ class MainHandler(webapp.RequestHandler):
         else:
             self.response.out.write(simplejson.dumps({"success": False, "error_code": NO_BEER_FOUND}))
             return
-
-        #Check if we already have an entry for this UPC code, if we don't, add it
-        #datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
-        #if(len(datastoreEntry) == 0):
-        #    upcEntry             = PBDatabase.UPC()
-        #    upcEntry.code        = upcCode
-        #    upcEntry.description = description
-        #    upcEntry.origin      = 'manualentry'
-        #    upcEntry.put()
+        
+        if type(beerInfo) != dict:
+          jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No Beer Found", "error_code": "3"})
+          self.response.headers['Content-Length'] = len(jsonResponse)
+          self.response.out.write(jsonResponse)
+          return
+          
+        #Check if we already have an entry for this UPC code, if we don't, add it        
+        datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
+        if(len(datastoreEntry) == 0):
+            baLink = ''                
+            if re.search(r"\/(\d+)\/(\d+)\/?",links[0]):
+              m = re.search(r"\/(\d+)\/(\d+)\/?",links[0])
+              baLink = m.group(1) + '/'+ m.group(2)
+              
+            upcEntry             = PBDatabase.UPC()
+            upcEntry.code        = upcCode
+            upcEntry.description = description
+            upcEntry.origin      = 'manualentry:pending'
+            upcEntry.ba_link     = baLink
+            upcEntry.put()
 
         jsonResponse = simplejson.dumps({"success": True, "description": description, "links": links, "beer_info":beerInfo})
         self.response.headers['Content-Length'] = len(jsonResponse)

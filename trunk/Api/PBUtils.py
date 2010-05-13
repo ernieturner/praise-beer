@@ -29,7 +29,7 @@ class Scraper():
       result = urlfetch.fetch(url,deadline=10)
       if result.status_code == 200:       
         content = re.sub('\n|\r','',result.content)
-        pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s]+)')
+        pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s!;]+)')
         if pat.search(content):
           m = pat.search(content)
           beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
