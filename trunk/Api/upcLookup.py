@@ -82,6 +82,7 @@ class GoogleXMLRPCTransport(object):
 class MainHandler(webapp.RequestHandler):
     def get(self):
         upcCode = self.request.get('upc')
+        
         if upcCode:
             errorCode = None
             #Support UPC-A codes by appending a 0 in front. EAN codes are 13
@@ -134,10 +135,6 @@ class MainHandler(webapp.RequestHandler):
                         errorCode = NO_BEER_FOUND
                 else:
                     errorCode = NO_UPC_FOUND
-
-                if type(beer_info) != dict:                  
-                  errorCode = NO_BEER_FOUND
-                  result    = "No Beer Found"
 
 
                 if errorCode is None:
