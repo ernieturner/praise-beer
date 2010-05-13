@@ -135,6 +135,11 @@ class MainHandler(webapp.RequestHandler):
                 else:
                     errorCode = NO_UPC_FOUND
 
+                if type(beer_info) != dict:                  
+                  errorCode = NO_BEER_FOUND
+                  result    = "No Beer Found"
+
+
                 if errorCode is None:
                     baLink = ''                
                     if re.search(r"\/(\d+)\/(\d+)\/?",links[0]):
