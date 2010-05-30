@@ -34,7 +34,8 @@ class Scraper():
           m = pat.search(content)
           beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
           
-          pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()/]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+          # -a-zA-Z\s()/
+          pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([^<]*)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
           if pat.search(content):
             m = pat.search(content)
             beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
@@ -51,7 +52,7 @@ class Scraper():
             m = pat.search(content)           
             beer_info = {'ratings':{'overall':m.group(1,2,3), 'bros':m.group(4,5)}}
 
-            pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([a-zA-Z\s()/]+)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
+            pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([^<]*)</b></a> \| &nbsp;(\d+\.?\d+)% <a')
             if pat.search(content):
               m = pat.search(content)
               beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
