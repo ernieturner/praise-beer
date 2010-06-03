@@ -73,6 +73,18 @@ public class FrontController extends Activity
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(scanResult != null)
         {
+            String upcCodeScanned = scanResult.getContents();
+            int upcCodeLength = upcCodeScanned.length();
+
+            //Check the length of the UPC code scanned. If it isn't one of the supported lengths,
+            //that means there might have been a scanning error, so display the error message
+            if(upcCodeLength != 6 && upcCodeLength != 8 && upcCodeLength != 12 && upcCodeLength != 13)
+            {
+                Intent i = new Intent(this, ErrorDisplay.class);
+                i.putExtra("errorCode", ApiErrorCodes.INVALID_UPC_CODE);
+                startActivity(i);
+                return;
+            }
             Intent i = new Intent(this, ApiHandler.class);
             i.putExtra("upcCode", scanResult.getContents());
             startActivityForResult(i, ApiHandler.REQUEST_CODE);
