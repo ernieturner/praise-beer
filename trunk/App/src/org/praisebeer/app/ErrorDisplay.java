@@ -39,7 +39,7 @@ public class ErrorDisplay extends Activity
                 convertedErrorMessage = getString(R.string.error_noDescription);
                 break;
         }
-        if(errorMessage != "")
+        if(errorMessage != "" && errorMessage != null)
             convertedErrorMessage = " - " + errorMessage;
         ((TextView) findViewById(R.id.errorText)).setText(convertedErrorMessage);
     }

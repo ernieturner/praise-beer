@@ -117,10 +117,14 @@ public class ApiHandler extends Activity implements Runnable
                     }
                     catch(JSONException e){/**We're going to assume we always send back valid JSON*/}
                     
-                    JSONObject stats = beerInfo.getJSONObject("stats");
-                    beerDetails.setBeerABV(stats.getString("abv"));
-                    beerDetails.setBeerStyle(stats.getString("style_name"));
-                    beerDetails.setBeerStyleID(stats.getString("style_id"));
+                    try
+                    {
+                        JSONObject stats = beerInfo.getJSONObject("stats");
+                        beerDetails.setBeerABV(stats.getString("abv"));
+                        beerDetails.setBeerStyle(stats.getString("style_name"));
+                        beerDetails.setBeerStyleID(stats.getString("style_id"));
+                    }
+                    catch(JSONException e){}
                 }
                 // Convert links from JSON array to normal array
                 JSONArray apiLinks = apiResult.getJSONArray("links");
