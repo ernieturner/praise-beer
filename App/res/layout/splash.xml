@@ -7,7 +7,7 @@
     <ImageView
         style="@style/FillParentAll"
         android:scaleType="center"
-        android:src="@drawable/logo" />
+        android:src="@drawable/home" />
 
     <Button
         android:id="@+id/scanBeer"
