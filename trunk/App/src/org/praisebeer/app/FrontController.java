@@ -26,7 +26,12 @@ public class FrontController extends Activity
         scanBeer.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v)
             {
-                IntentIntegrator.initiateScan(FrontController.this);
+                IntentIntegrator.initiateScan(FrontController.this,
+                                              IntentIntegrator.DEFAULT_TITLE,
+                                              IntentIntegrator.DEFAULT_MESSAGE,
+                                              IntentIntegrator.DEFAULT_YES,
+                                              IntentIntegrator.DEFAULT_NO,
+                                              IntentIntegrator.PRODUCT_CODE_TYPES);
             }
         });
 
