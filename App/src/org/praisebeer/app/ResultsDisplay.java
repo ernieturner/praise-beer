@@ -23,6 +23,7 @@ public class ResultsDisplay extends Activity
 
         Button goToBeerProfilePage = (Button) findViewById(R.id.viewBeerPage);
         Button goToBeerStylePage = (Button) findViewById(R.id.findOtherSimilarStyles);
+        Button incorrectBeerScanned = (Button) findViewById(R.id.incorrectBeerScanned);
 
         goToBeerProfilePage.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v)
@@ -49,6 +50,15 @@ public class ResultsDisplay extends Activity
                 }
             }
         });
+        
+        incorrectBeerScanned.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v)
+            {
+                //TODO: Hook up intent to let user manually enter beer. Should this maybe
+                //      go back to the FrontController? That would enable the app to not
+                //      allow users to use the back button...
+            }
+        });
     }
 
     /**
@@ -58,7 +68,10 @@ public class ResultsDisplay extends Activity
     {
         ((TextView) findViewById(R.id.beerName)).setText(this.scanResults.getProductName());
         ((TextView) findViewById(R.id.beerStyle)).setText(this.scanResults.getBeerStyle());
-        ((TextView) findViewById(R.id.beerABV)).setText(this.scanResults.getBeerABV() + "%");
+        String beerABVText = this.scanResults.getBeerABV();
+        if(beerABVText != null && !beerABVText.equals("null") && !beerABVText.equals("Unknown ABV"))
+            beerABVText += "%";
+        ((TextView) findViewById(R.id.beerABV)).setText(beerABVText);
 
         TextView communityRating = (TextView) findViewById(R.id.communityRating);
         TextView brothersRating = (TextView) findViewById(R.id.brothersRating);
