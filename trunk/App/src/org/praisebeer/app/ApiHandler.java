@@ -120,8 +120,12 @@ public class ApiHandler extends Activity implements Runnable
                     try
                     {
                         JSONObject stats = beerInfo.getJSONObject("stats");
-                        beerDetails.setBeerABV(stats.getString("abv"));
-                        beerDetails.setBeerStyle(stats.getString("style_name"));
+                        String beerABV = stats.getString("abv");
+                        String styleName = stats.getString("style_name");
+                        if(beerABV != null && beerABV != "null")
+                            beerDetails.setBeerABV(beerABV);
+                        if(styleName != null && !styleName.equals("null"))
+                            beerDetails.setBeerStyle(styleName);
                         beerDetails.setBeerStyleID(stats.getString("style_id"));
                     }
                     catch(JSONException e){}
