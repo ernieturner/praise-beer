@@ -17,7 +17,7 @@ public class BeerDetails implements java.io.Serializable
     private String brothersRating = "N/A";
     private String numberOfRatings;
     private String communityRatingDescription;
-    private String brothersRatingDescription = "N/A";
+    private String brothersRatingDescription = "No Reviews";
     private String beerABV = "Unknown ABV";
     private String beerStyle = "Unknown Beer Type";
     private String beerStyleID = "";
@@ -120,7 +120,8 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setCommunityRatingDescription(String description)
     {
-        this.communityRatingDescription = description;
+        String firstLetter = description.substring(0, 1);
+        this.communityRatingDescription = firstLetter.toUpperCase() + description.substring(1);
     }
     
     /**
@@ -136,7 +137,8 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBeerStyle(String style)
     {
-        this.beerStyle = style;
+        if(style != null && !style.equals("null"))
+            this.beerStyle = style;
     }
     
     /**
@@ -168,7 +170,8 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBeerABV(String ABV)
     {
-        this.beerABV = ABV;
+        if(ABV != null && !ABV.equals("null"))
+            this.beerABV = ABV;
     }
 
     /**
@@ -184,7 +187,11 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBrothersRatingDescription(String description)
     {
-        this.brothersRatingDescription = description;
+        if(!description.equals("no reviews; yet!"))
+        {
+            String firstLetter = description.substring(0, 1);
+            this.brothersRatingDescription = firstLetter.toUpperCase() + description.substring(1);
+        }
     }
 
     /**

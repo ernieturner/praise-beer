@@ -36,4 +36,5 @@
 <string name="okLabel">OK</string>
 <string name="error_noDescription">Sorry, there was a problem sending that description to the server.</string>
 <string name="incorrectBeer">Not the beer you scanned?</string>
+<string name="beerAdvocateAttribution">Ratings courtesy of www.beeradvocate.com</string>
 </resources>
