@@ -41,7 +41,7 @@ public class ApiHandler extends Activity implements Runnable
         String description = extras.getString("descriptionEntered");
         
         //Determine if this is a UPC lookup or a name lookup
-        if(description == null || description == "")
+        if(description == null || description.equals(""))
         {
             this.requestUrl += "/upclookup?upc=" + beerDetails.getUpcCode();
         }
@@ -51,7 +51,7 @@ public class ApiHandler extends Activity implements Runnable
             this.requestUrl += "/namelookup?upc=" + beerDetails.getUpcCode() + "&description=" + URLEncoder.encode(beerDetails.getProductName());
         }
         
-        if(beerDetails.getUpcCode() != null && beerDetails.getUpcCode() != "")
+        if(beerDetails.getUpcCode() != null && !beerDetails.getUpcCode().equals(""))
         {
             showDialog(SEARCH_DIALOG_ID);
             Thread thread = new Thread(this);
@@ -120,12 +120,8 @@ public class ApiHandler extends Activity implements Runnable
                     try
                     {
                         JSONObject stats = beerInfo.getJSONObject("stats");
-                        String beerABV = stats.getString("abv");
-                        String styleName = stats.getString("style_name");
-                        if(beerABV != null && beerABV != "null")
-                            beerDetails.setBeerABV(beerABV);
-                        if(styleName != null && !styleName.equals("null"))
-                            beerDetails.setBeerStyle(styleName);
+                        beerDetails.setBeerABV(stats.getString("abv"));
+                        beerDetails.setBeerStyle(stats.getString("style_name"));
                         beerDetails.setBeerStyleID(stats.getString("style_id"));
                     }
                     catch(JSONException e){}
