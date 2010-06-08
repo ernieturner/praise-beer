@@ -18,7 +18,10 @@ handlers:
   login: admin
 - url: /flushMemcache
   script: flushMemcache.py
-  login: admin      
+  login: admin
+- url: /dataViewer
+  script: dataViewer.py
+  login: admin              
 - url: /remote_api
   script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
   login: admin  
