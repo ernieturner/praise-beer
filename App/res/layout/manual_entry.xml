@@ -8,7 +8,7 @@
         style="@style/FillParentAll"
         android:padding="15sp"
         android:scrollbars="vertical">
-	
+
         <TextView
             android:id="@+id/ME_noResultsFoundMessage"
             android:text="@string/noUpcResultsFound"
@@ -32,9 +32,10 @@
         <EditText
             android:id="@+id/ME_beerNameEntry"
             style="@style/Center"
+            android:capitalize="words"
             android:background="@android:drawable/editbox_background"
             android:layout_below="@id/ME_beerNameEntryDescription"/>
-    
+
     <!-- END Beer name entry section -->
     
         <TextView 

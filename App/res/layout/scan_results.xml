@@ -93,6 +93,7 @@
                 android:id="@+id/beerAdvocateLink"
                 style="@style/BlackRowCenterSmallText"
                 android:text="@string/beerAdvocateAttribution"
+                android:autoLink="web"
                 android:layout_weight="1"/>
         </LinearLayout>
 	    
