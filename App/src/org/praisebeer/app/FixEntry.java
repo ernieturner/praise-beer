@@ -17,6 +17,7 @@ public class FixEntry extends Activity
     public static final int REQUEST_CODE = 0x4160A34C;
     private String upcCode = "";
     private String currentDescription = "";
+    private boolean modification = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -31,6 +32,7 @@ public class FixEntry extends Activity
         //more sense as to what we're doing
         if(extras.getBoolean("nonExistingEntry") == true)
         {
+            this.modification = false;
             ((TextView)findViewById(R.id.FE_noResultsFoundMessage)).setText(getString(R.string.noBeerFoundWithDescription));
         }
         
@@ -60,6 +62,7 @@ public class FixEntry extends Activity
                     Intent i = new Intent();
                     i.putExtra("descriptionEntered", beerDescription.toString().trim());
                     i.putExtra("upcCode", FixEntry.this.upcCode);
+                    i.putExtra("entryModification", FixEntry.this.modification);
                     setResult(Activity.RESULT_OK, i);
                     finish();
                 }
