@@ -32,17 +32,18 @@ class MainHandler(webapp.RequestHandler):
     def get(self):
         upcCode = self.request.get('upc')
         description = self.request.get('description')
+        modification = self.request.get('mod')
         response = ""
         beerInfo = {}
 
         #Make sure a description was passed in
         if not description:
-            self.response.out.write(simplejson.dumps({"success": False, "error_code": NO_DESCRIPTION_PROVIDED}))
+            self.printResponse(simplejson.dumps({"success": False, "error_code": NO_DESCRIPTION_PROVIDED}))
             return
 
         #Make sure a UPC was passed in
         if not upcCode:
-            self.response.out.write(simplejson.dumps({"success": False, "error_code": NO_UPC_CODE_SENT}))
+            self.printResponse(simplejson.dumps({"success": False, "error_code": NO_UPC_CODE_SENT}))
             return
 
         #Find results for description entered
@@ -54,38 +55,46 @@ class MainHandler(webapp.RequestHandler):
         if len(links) > 0:
             beerInfo = PBUtils.Scraper().doScrape(links[0])
         else:
-            self.response.out.write(simplejson.dumps({"success": False, "error_code": NO_BEER_FOUND}))
+            self.printResponse(simplejson.dumps({"success": False, "error_code": NO_BEER_FOUND}))
             return
         
         if type(beerInfo) != dict:
-          jsonResponse = simplejson.dumps({"success": False, "errorResponse": "No Beer Found", "error_code": "3"})
-          self.response.headers['Content-Length'] = len(jsonResponse)
-          self.response.out.write(jsonResponse)
+          self.printResponse(simplejson.dumps({"success": False, "error_code": NO_BEER_FOUND}))
           return
           
-        #Check if we already have an entry for this UPC code, if we don't, add it        
-        datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).fetch(1,0)
-        if(len(datastoreEntry) == 0):
-            baLink = ''                
-            if re.search(r"\/(\d+)\/(\d+)\/?",links[0]):
-              m = re.search(r"\/(\d+)\/(\d+)\/?",links[0])
-              baLink = m.group(1) + '/'+ m.group(2)
-              
-            upcEntry             = PBDatabase.UPC()
-            upcEntry.code        = upcCode
-            upcEntry.description = description
-            upcEntry.origin      = 'manualentry:pending'
-            upcEntry.ba_link     = baLink
+        #Check if we already have an entry for this UPC code, if we don't, add it. If this
+        #is a modification request, then edit the DB and make a different flag
+        datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).get()
+        if(datastoreEntry is None):
+            baLink = ''
+            if re.search(r"\/(\d+)\/(\d+)\/?", links[0]):
+                m = re.search(r"\/(\d+)\/(\d+)\/?", links[0])
+                baLink = m.group(1) + '/' + m.group(2)
+            upcEntry = PBDatabase.UPC(code=upcCode,
+                                      description=description,
+                                      origin = 'manualentry:pending',
+                                      ba_link = baLink)
             upcEntry.put()
-
+        #We already have an entry, but we're processing a modification request
+        elif(modification == '1'):
+            entryModification = PBDatabase.ModificationHistory(code=upcCode,
+                                                               oldDescription=datastoreEntry.description,
+                                                               newDescription=description)
+            entryModification.put()
+            datastoreEntry.origin = 'manualentry:edit'
+            datastoreEntry.description = description
+            datastoreEntry.put()
+        
         jsonResponse = simplejson.dumps({"success": True, "description": description, "links": links, "beer_info":beerInfo})
-        self.response.headers['Content-Length'] = len(jsonResponse)
-        self.response.out.write(jsonResponse)
+        self.printResponse(jsonResponse)
+
+    def printResponse(self, response):
+        self.response.headers['Content-Length'] = len(response)
+        self.response.out.write(response)
 
 def main():
     application = webapp.WSGIApplication([('/namelookup', MainHandler)], debug=True)
     run_wsgi_app(application)
-
 
 if __name__ == '__main__':
     main()
