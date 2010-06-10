@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.util.Linkify;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -56,9 +55,11 @@ public class ResultsDisplay extends Activity
         incorrectBeerScanned.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v)
             {
-                //TODO: Hook up intent to let user manually enter beer. Should this maybe
-                //      go back to the FrontController? That would enable the app to not
-                //      allow users to use the back button...
+                Intent incorrectData = new Intent();
+                incorrectData.putExtra("upcCode", ResultsDisplay.this.scanResults.getUpcCode());
+                incorrectData.putExtra("currentBeerName", ResultsDisplay.this.scanResults.getStoredBeerName());
+                setResult(Activity.RESULT_OK, incorrectData);
+                finish();
             }
         });
     }
@@ -68,7 +69,10 @@ public class ResultsDisplay extends Activity
      */
     private void setResultValues()
     {
-        ((TextView) findViewById(R.id.beerName)).setText(this.scanResults.getProductName());
+        String beerNameToDisplay = this.scanResults.getProductName();
+        if(beerNameToDisplay == null || beerNameToDisplay.equals("") || beerNameToDisplay.equals("null"))
+            beerNameToDisplay = this.scanResults.getStoredBeerName();
+        ((TextView) findViewById(R.id.beerName)).setText(beerNameToDisplay);
         ((TextView) findViewById(R.id.beerStyle)).setText(this.scanResults.getBeerStyle());
         String beerABVText = this.scanResults.getBeerABV();
         if(beerABVText != null && !beerABVText.equals("null") && !beerABVText.equals("Unknown ABV"))
@@ -85,7 +89,5 @@ public class ResultsDisplay extends Activity
         ((TextView) findViewById(R.id.communityRatingName)).setText(this.scanResults.getCommunityRatingDescription());
         ((TextView) findViewById(R.id.brothersRatingName)).setText(this.scanResults.getBrothersRatingDescription());
         ((TextView) findViewById(R.id.communityRatingCount)).setText("w/ " + this.scanResults.getNumberOfRatings() + " reviews");
-        Linkify.addLinks(((TextView) findViewById(R.id.beerAdvocateLink)), Linkify.ALL);
-        
     }
 }

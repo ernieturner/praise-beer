@@ -13,6 +13,7 @@ public class BeerDetails implements java.io.Serializable
 
     /* Rating Details */
     private String productName;
+    private String storedBeerName;
     private String communityRating;
     private String brothersRating = "N/A";
     private String numberOfRatings;
@@ -88,6 +89,7 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBrothersRating(String rating)
     {
+        if(rating != null && !rating.equals("null"))
         this.brothersRating = rating;
     }
 
@@ -195,7 +197,7 @@ public class BeerDetails implements java.io.Serializable
     }
 
     /**
-     * Returns product name
+     * Returns product name (i.e. scanned value on BA)
      */
     public String getProductName()
     {
@@ -203,11 +205,29 @@ public class BeerDetails implements java.io.Serializable
     }
     
     /**
-     * Sets product name
+     * Sets product name (i.e. scanned value on BA)
      */
     public void setProductName(String name)
     {
-        productName = name;
+        if(name != null && !name.equals("null"))
+            productName = name;
+    }
+    
+    /**
+     * Returns stored beer name (i.e. what's in the DB)
+     */
+    public String getStoredBeerName()
+    {
+        return storedBeerName;
+    }
+    
+    /**
+     * Sets stored beer name (i.e. what's in the DB)
+     */
+    public void setStoredBeerName(String name)
+    {
+        if(name != null && !name.equals("null"))
+            storedBeerName = name;
     }
 
     /**

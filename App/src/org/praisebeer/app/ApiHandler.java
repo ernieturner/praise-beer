@@ -47,8 +47,10 @@ public class ApiHandler extends Activity implements Runnable
         }
         else
         {
-            beerDetails.setProductName(description);
-            this.requestUrl += "/namelookup?upc=" + beerDetails.getUpcCode() + "&description=" + URLEncoder.encode(beerDetails.getProductName());
+            beerDetails.setStoredBeerName(description);
+            this.requestUrl += "/namelookup?upc=" + beerDetails.getUpcCode() + "&description=" + URLEncoder.encode(beerDetails.getStoredBeerName());
+            if(extras.getBoolean("entryModification") == true)
+                this.requestUrl += "&mod=1";
         }
         
         if(beerDetails.getUpcCode() != null && !beerDetails.getUpcCode().equals(""))
@@ -95,7 +97,7 @@ public class ApiHandler extends Activity implements Runnable
             if(success)
             {
                 beerDetails.setScanSuccess(true);
-                beerDetails.setProductName(apiResult.getString("description"));
+                beerDetails.setStoredBeerName(apiResult.getString("description"));
                 JSONObject beerInfo = apiResult.getJSONObject("beer_info");
                 if(beerInfo != null)
                 {
@@ -120,9 +122,22 @@ public class ApiHandler extends Activity implements Runnable
                     try
                     {
                         JSONObject stats = beerInfo.getJSONObject("stats");
-                        beerDetails.setBeerABV(stats.getString("abv"));
-                        beerDetails.setBeerStyle(stats.getString("style_name"));
-                        beerDetails.setBeerStyleID(stats.getString("style_id"));
+                        try{
+                            beerDetails.setProductName(stats.getString("name"));
+                        }
+                        catch(JSONException e){}
+                        try{
+                            beerDetails.setBeerABV(stats.getString("abv"));
+                        }
+                        catch(JSONException e){}
+                        try{
+                            beerDetails.setBeerStyle(stats.getString("style_name"));
+                        }
+                        catch(JSONException e){}
+                        try{
+                            beerDetails.setBeerStyleID(stats.getString("style_id"));
+                        }
+                        catch(JSONException e){}
                     }
                     catch(JSONException e){}
                 }
@@ -136,6 +151,16 @@ public class ApiHandler extends Activity implements Runnable
             else
             {
                 int errorCode = apiResult.getInt("error_code");
+                //If we didn't find a beer, we should at least have gotten a description
+                if(errorCode == ApiErrorCodes.NO_BEER_FOUND)
+                {
+                    try
+                    {
+                        JSONObject errorDetails = apiResult.getJSONObject("errorResponse");
+                        beerDetails.setProductName(errorDetails.getString("description"));
+                    }
+                    catch(JSONException e){}
+                }
                 beerDetails.setResultErrorCode(errorCode);
                 beerDetails.setScanSuccess(false);
             }

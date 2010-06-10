@@ -55,8 +55,8 @@ public class FrontController extends Activity
         {
             this.handleScanResposne(requestCode, resultCode, data);
         }
-        //Result from manual beer entry
-        else if(requestCode == ManualUserEntry.REQUEST_CODE && resultCode != RESULT_CANCELED)
+        //Result from manual beer entry or user fixing an entry
+        else if((requestCode == ManualUserEntry.REQUEST_CODE || requestCode == FixEntry.REQUEST_CODE) && resultCode != RESULT_CANCELED)
         {
             this.handleManualUserEntryResponse(data);
         }
@@ -64,6 +64,11 @@ public class FrontController extends Activity
         else if(requestCode == ApiHandler.REQUEST_CODE && resultCode != RESULT_CANCELED)
         {
             this.handleResultsResponse(data);
+        }
+        //Result from results display i.e. incorrect beer reported
+        else if(requestCode == ResultsDisplay.REQUEST_CODE && resultCode != RESULT_CANCELED)
+        {
+            this.handleIncorrectResultShown(data, true);
         }
     }
     
@@ -108,6 +113,9 @@ public class FrontController extends Activity
         Intent i = new Intent(this, ApiHandler.class);
         i.putExtra("upcCode", data.getStringExtra("upcCode"));
         i.putExtra("descriptionEntered", data.getStringExtra("descriptionEntered"));
+        boolean fixingEntry = data.getBooleanExtra("entryModification", false);
+        if(fixingEntry == true)
+            i.putExtra("entryModification", true);
         startActivityForResult(i, ApiHandler.REQUEST_CODE);
     }
     
@@ -125,7 +133,7 @@ public class FrontController extends Activity
             {
                 Intent i = new Intent(this, ResultsDisplay.class);
                 i.putExtra("scanResults", scanResults);
-                startActivity(i);
+                startActivityForResult(i, ResultsDisplay.REQUEST_CODE);
             }
             else
             {
@@ -139,6 +147,14 @@ public class FrontController extends Activity
                 //No beer found, ask user for description modification
                 else if(scanResults.getResultErrorCode() == ApiErrorCodes.NO_BEER_FOUND)
                 {
+                    if(scanResults.getProductName() != null)
+                    {
+                        Intent fixDescription = new Intent();
+                        fixDescription.putExtra("currentBeerName", scanResults.getProductName());
+                        fixDescription.putExtra("upcCode", scanResults.getUpcCode());
+                        this.handleIncorrectResultShown(fixDescription, false);
+                    }
+                    
                     //TODO: Build up description modification view+activity
                 }
                 //Some other error, handle with generic message display
@@ -156,5 +172,21 @@ public class FrontController extends Activity
             // TODO: Handle lack of response from UPC lookup, load
             // generic error page?
         }
+    }
+    
+    /**
+     * Handles use case when user clicks button saying we've found the wrong beer. At
+     * this point we just ask the user to manually enter the beer name as we don't really
+     * have any better options at this time.
+     * @param data Intent Data of results we've shown so we can make a modification
+     */
+    private void handleIncorrectResultShown(Intent data, boolean existingEntry)
+    {
+        Intent i = new Intent(this, FixEntry.class);
+        i.putExtra("upcCode", data.getStringExtra("upcCode"));
+        i.putExtra("currentBeerName", data.getStringExtra("currentBeerName"));
+        if(existingEntry == false)
+            i.putExtra("nonExistingEntry", true);
+        startActivityForResult(i, FixEntry.REQUEST_CODE);
     }
 }
