@@ -27,6 +27,9 @@
         <activity android:name="ManualUserEntry" 
                   android:label="@string/upcCodeNotFound">
         </activity>
+        <activity android:name="FixEntry" 
+                  android:label="@string/fixExistingEntryTitle">
+        </activity>
         <activity android:name="ErrorDisplay" 
                   android:label="@string/errorOccured">
         </activity>

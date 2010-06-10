@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FillParentAll"
+    android:id="@+id/FE_scrollContainer">
+
+	<RelativeLayout
+        android:id="@+id/FE_layout"
+        style="@style/FillParentAll"
+        android:padding="15sp"
+        android:scrollbars="vertical">
+	
+        <TextView
+            android:id="@+id/FE_noResultsFoundMessage"
+            android:text="@string/fixExistingEntry"
+            android:textSize="18sp"
+            style="@style/Center"/>
+
+    <!-- START Beer name entry section -->
+        <TextView
+            android:id="@+id/FE_beerNameEntryLabel"
+            android:text="@string/beerNameLabel"
+            android:textSize="25sp"
+            style="@style/Center"
+            android:paddingTop="35sp"
+            android:layout_below="@id/FE_noResultsFoundMessage"/>
+        <TextView
+            android:id="@+id/FE_beerNameEntryDescription"
+            android:text="@string/beerNameEntryDescription"
+            android:textSize="16sp"
+            style="@style/Center"
+            android:layout_below="@id/FE_beerNameEntryLabel"/>
+        <EditText
+            android:id="@+id/FE_beerNameEntry"
+            style="@style/Center"
+            android:capitalize="words"
+            android:background="@android:drawable/editbox_background"
+            android:layout_below="@id/FE_beerNameEntryDescription"/>
+    
+    <!-- END Beer name fix entry section -->
+    
+        <TextView 
+            android:id="@+id/FE_spacer"
+            android:paddingTop="35sp"
+            style="@style/Center"
+            android:layout_below="@id/FE_beerNameEntryDescription"/>
+
+    <!-- START submit/cancel button section -->
+        <Button
+	        android:id="@+id/FE_submitButton"
+	        style="@style/SideButtons"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@id/FE_spacer"
+	        android:text="@string/submit"/>
+	    <Button
+	        android:id="@+id/FE_cancelButton"
+	        style="@style/SideButtons"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/FE_spacer"
+	        android:text="@string/cancel"/>
+        
+    <!-- END submit/cancel button section -->
+    </RelativeLayout>
+</ScrollView>
