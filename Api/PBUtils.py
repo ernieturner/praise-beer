@@ -12,6 +12,7 @@ import re
 from google.appengine.api import urlfetch
 from google.appengine.api.urlfetch import DownloadError 
 from django.utils import simplejson
+from google.appengine.api import memcache
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -19,22 +20,37 @@ from django.utils import simplejson
 
 GOOGLE_SEARCH_API_KEY = 'ABQIAAAAAlIdqGCJUyFNZYYITSwQaxQMMZlHq7uMtE8oKCK3ertxke9vYhTldmsx1t8SNWeqeFA1Cqo-hQcWhw'
 BOSS_SEARCH_API_KEY   = 'iwKJ.8nV34GERUNY2z2d3JeFQU8MzQi5vBdoAjzzcCGs175VukcNx1sfKvOlN529tImhNgZrrUE-'
+BA_BEER_PROFILE_URL  = 'beeradvocate.com/beer/profile/'
 # ----------------------------------------------------------------------------------------
 # Scraper - This will scrape the BA site for us, or Google's cache if BA is being too slow
 # ----------------------------------------------------------------------------------------
 class Scraper():
   def doScrape(self,url):
     try:
+      uniqueBeerCode = url.partition(BA_BEER_PROFILE_URL)
+      uniqueBeerCode = uniqueBeerCode[2]
+      if uniqueBeerCode != '':
+        cachedData = memcache.get(uniqueBeerCode)
+        if cachedData is not None and len(cachedData) > 0:
+          return cachedData
+      
       result = urlfetch.fetch(url,deadline=10)
       if result.status_code == 200:
-        return self.parseResults(result.content)
-        
+        beerDetails = self.parseResults(result.content)
+        if uniqueBeerCode != '' and len(beerDetails) > 0 and beerDetails['ratings'] and beerDetails['stats']:
+            #Set memcache to expire in 10 days
+            memcache.set(uniqueBeerCode, beerDetails, 864000)
+        return beerDetails
     except:
       try:
         cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'
         result = urlfetch.fetch(cache_url,deadline=10)
         if result.status_code == 200:
-          return self.parseResults(result.content)
+          beerDetails = self.parseResults(result.content)
+          if uniqueBeerCode != '' and len(beerDetails) > 0 and beerDetails['ratings'] and beerDetails['stats']:
+             #Set memcache to expire in 10 days
+            memcache.set(uniqueBeerCode, beerDetails, 864000)
+          return beerDetails
         else:
           return 'An error occurred during URL fetch ('+ result.status.code +').'
       except:
