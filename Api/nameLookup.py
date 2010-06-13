@@ -61,15 +61,16 @@ class MainHandler(webapp.RequestHandler):
         if type(beerInfo) != dict:
           self.printResponse(simplejson.dumps({"success": False, "error_code": NO_BEER_FOUND}))
           return
-          
+
+        baLink = ''
+        if re.search(r"\/(\d+)\/(\d+)\/?", links[0]):
+            m = re.search(r"\/(\d+)\/(\d+)\/?", links[0])
+            baLink = m.group(1) + '/' + m.group(2)
         #Check if we already have an entry for this UPC code, if we don't, add it. If this
         #is a modification request, then edit the DB and make a different flag
         datastoreEntry = db.GqlQuery("SELECT * FROM UPC WHERE code = :1", upcCode).get()
         if(datastoreEntry is None):
-            baLink = ''
-            if re.search(r"\/(\d+)\/(\d+)\/?", links[0]):
-                m = re.search(r"\/(\d+)\/(\d+)\/?", links[0])
-                baLink = m.group(1) + '/' + m.group(2)
+            
             upcEntry = PBDatabase.UPC(code=upcCode,
                                       description=description,
                                       origin = 'manualentry:pending',
@@ -83,6 +84,7 @@ class MainHandler(webapp.RequestHandler):
             entryModification.put()
             datastoreEntry.origin = 'manualentry:edit'
             datastoreEntry.description = description
+            datastoreEntry.ba_link = baLink
             datastoreEntry.put()
         
         jsonResponse = simplejson.dumps({"success": True, "description": description, "links": links, "beer_info":beerInfo})
