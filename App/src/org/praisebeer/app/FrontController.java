@@ -154,8 +154,6 @@ public class FrontController extends Activity
                         fixDescription.putExtra("upcCode", scanResults.getUpcCode());
                         this.handleIncorrectResultShown(fixDescription, false);
                     }
-                    
-                    //TODO: Build up description modification view+activity
                 }
                 //Some other error, handle with generic message display
                 else
