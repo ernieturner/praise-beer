@@ -89,6 +89,8 @@ public class ApiHandler extends Activity implements Runnable
             beerDetails.setResultErrorCode(ApiErrorCodes.OUTGOING_REQUEST_FAILURE);
             beerDetails.setResultErrorMessage(e.getMessage());
             beerDetails.setScanSuccess(false);
+            handler.sendEmptyMessage(0);
+            return;
         }
         try
         {
