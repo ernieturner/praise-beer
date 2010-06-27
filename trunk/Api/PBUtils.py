@@ -42,8 +42,8 @@ class Scraper():
             memcache.set(uniqueBeerCode, beerDetails, 864000)
         return beerDetails
     except:
-      try:
-        cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en&strip=1'
+      try:        
+        cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en'
         result = urlfetch.fetch(cache_url,deadline=10)
         if result.status_code == 200:
           beerDetails = self.parseResults(result.content)
