@@ -54,7 +54,7 @@
 	    
 	    <LinearLayout
 	        style="@style/FillParentHorizontal"
-	        android:layout_weight="2">
+	        android:layout_weight="3">
 	        <TextView
 	            android:id="@+id/communityRatingName"
 	            style="@style/BlackRowCenterMediumText"
@@ -66,20 +66,6 @@
 	            android:layout_weight="1"/>
 	    </LinearLayout>
 	    
-	    <!-- 
-	    <LinearLayout
-	        style="@style/FillParentHorizontal"
-	        android:layout_weight="3">
-	        <TextView
-	            android:id="@+id/communityRatingCount"
-	            style="@style/BlackRowCenterSmallText"
-	            
-	            android:layout_weight="1"/>
-	       <TextView
-	            style="@style/BlackRowCenterSmallText"
-	            android:layout_weight="1"/>
-	    </LinearLayout>
-	     -->
 	    <LinearLayout
             style="@style/FillParentHorizontal"
             android:layout_weight="4">
