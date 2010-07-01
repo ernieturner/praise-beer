@@ -7,7 +7,7 @@
 	<!-- START Beer name and information -->
 	  <LinearLayout 
 	    style="@style/FillParentVertical"
-	    android:layout_weight="9">
+	    android:layout_weight="3">
 	    <TextView
 	        android:id="@+id/beerName"
 	        style="@style/WhiteRowCenterText"
@@ -33,22 +33,14 @@
 
 	  </LinearLayout>
 	<!-- END Beer name and information -->
-	  
-	<!-- START Layout Spacer-->
-	  <LinearLayout 
-	    android:id="@+id/layoutSpacer"
-	    style="@style/FillParentVertical"
-	    android:layout_weight="12">
-	  </LinearLayout>
-	<!-- END Layout Spacer-->
 	
 	<!-- START Ratings Section-->
 	  <LinearLayout 
 	    style="@style/FillParentVertical"
-	    android:layout_weight="9">
+	    android:layout_weight="2">
 	    <LinearLayout
 	        style="@style/FillParentHorizontal"
-	        android:layout_weight="2">
+	        android:layout_weight="3">
 	        <TextView
 	            android:id="@+id/communityRating"
 	            style="@style/BlackRowCenterLargeText"
@@ -62,7 +54,7 @@
 	    
 	    <LinearLayout
 	        style="@style/FillParentHorizontal"
-	        android:layout_weight="3">
+	        android:layout_weight="2">
 	        <TextView
 	            android:id="@+id/communityRatingName"
 	            style="@style/BlackRowCenterMediumText"
@@ -74,21 +66,23 @@
 	            android:layout_weight="1"/>
 	    </LinearLayout>
 	    
+	    <!-- 
 	    <LinearLayout
 	        style="@style/FillParentHorizontal"
 	        android:layout_weight="3">
 	        <TextView
 	            android:id="@+id/communityRatingCount"
 	            style="@style/BlackRowCenterSmallText"
+	            
 	            android:layout_weight="1"/>
 	       <TextView
 	            style="@style/BlackRowCenterSmallText"
 	            android:layout_weight="1"/>
 	    </LinearLayout>
-	    
+	     -->
 	    <LinearLayout
             style="@style/FillParentHorizontal"
-            android:layout_weight="3">
+            android:layout_weight="4">
             <TextView
                 android:id="@+id/beerAdvocateLink"
                 style="@style/BlackRowCenterSmallText"
@@ -96,31 +90,17 @@
                 android:autoLink="web"
                 android:layout_weight="1"/>
         </LinearLayout>
+        
+        <LinearLayout
+            style="@style/FillParentHorizontal"
+            android:layout_weight="4">
+            <TextView
+                android:id="@+id/layoutSpacer"
+                style="@style/BlackRowCenterSmallText"
+                android:layout_weight="1"/>
+        </LinearLayout>
 	    
 	  </LinearLayout>
-	<!-- END Ratings Section-->  
-	
-	<!-- START Button Link-->
-	  <LinearLayout 
-	    android:id="@+id/layoutSpacer"
-	    style="@style/FillParentVertical"
-	    android:layout_weight="10">
-	    <Button
-	        android:text="@string/viewProfilePage"
-	        android:id="@+id/viewBeerPage"
-	        style="@style/BlackRowCenterSmallText"
-	        android:layout_weight="1"/>
-	      <Button
-	        android:text="@string/viewStylePage"
-	        android:id="@+id/findOtherSimilarStyles"
-	        style="@style/BlackRowCenterSmallText"
-	        android:layout_weight="1"/>
-	     <Button
-            android:text="@string/incorrectBeer"
-            android:id="@+id/incorrectBeerScanned"
-            style="@style/BlackRowCenterSmallText"
-            android:layout_weight="1"/>
-	  </LinearLayout>
-	<!-- END Button Link-->
+	<!-- END Ratings Section-->
 	
 </LinearLayout>

@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class ResultsDisplay extends Activity
@@ -21,47 +22,6 @@ public class ResultsDisplay extends Activity
         Bundle extras = getIntent().getExtras();
         scanResults = (BeerDetails) extras.getSerializable("scanResults");
         setResultValues();
-
-        Button goToBeerProfilePage = (Button) findViewById(R.id.viewBeerPage);
-        Button goToBeerStylePage = (Button) findViewById(R.id.findOtherSimilarStyles);
-        Button incorrectBeerScanned = (Button) findViewById(R.id.incorrectBeerScanned);
-
-        goToBeerProfilePage.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v)
-            {
-                String beerProfileUrl = ResultsDisplay.this.scanResults.getProductLink();
-                if(!beerProfileUrl.equals("") && beerProfileUrl != null)
-                {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(beerProfileUrl));
-                    startActivity(i);
-                }
-            }
-        });
-
-        goToBeerStylePage.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v)
-            {
-                String beerStyleID = ResultsDisplay.this.scanResults.getBeerStyleID();
-                if(!beerStyleID.equals(""))
-                {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse("http://www.beeradvocate.com/beer/style/" + beerStyleID));
-                    startActivity(i);
-                }
-            }
-        });
-        
-        incorrectBeerScanned.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v)
-            {
-                Intent incorrectData = new Intent();
-                incorrectData.putExtra("upcCode", ResultsDisplay.this.scanResults.getUpcCode());
-                incorrectData.putExtra("currentBeerName", ResultsDisplay.this.scanResults.getStoredBeerName());
-                setResult(Activity.RESULT_OK, incorrectData);
-                finish();
-            }
-        });
     }
 
     /**
@@ -86,8 +46,75 @@ public class ResultsDisplay extends Activity
         brothersRating.setText(this.scanResults.getBrothersRating());
         communityRating.setTextColor(this.scanResults.calculateColorByRating(scanResults.getCommunityRating()));
         brothersRating.setTextColor(this.scanResults.calculateColorByRating(scanResults.getBrothersRating()));
-        ((TextView) findViewById(R.id.communityRatingName)).setText(this.scanResults.getCommunityRatingDescription());
+        ((TextView) findViewById(R.id.communityRatingName)).setText(this.scanResults.getCommunityRatingDescription() + "\n" + String.format(getString(R.string.ratingsText), this.scanResults.getNumberOfRatings()), TextView.BufferType.SPANNABLE);
         ((TextView) findViewById(R.id.brothersRatingName)).setText(this.scanResults.getBrothersRatingDescription());
-        ((TextView) findViewById(R.id.communityRatingCount)).setText("w/ " + this.scanResults.getNumberOfRatings() + " reviews");
+        //((TextView) findViewById(R.id.communityRatingCount)).setText("w/ " + this.scanResults.getNumberOfRatings() + " reviews");
+    }
+    
+    /**
+     * Event handler for when menu button is clicked on results page
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.layout.results_menu, menu);
+        return true;
+    }
+    
+    /**
+     * Event handler for when a menu item is selected
+     */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.viewBeerPage:
+            goToBeerProfilePage();
+            return true;
+        case R.id.findOtherSimilarStyles:
+            goToBeerStylePage();
+            return true;
+        case R.id.incorrectBeerScanned:
+            incorrectBeerResult();
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Handles intent to pull up beer profile page
+     */
+    private void goToBeerProfilePage()
+    {
+        String beerProfileUrl = this.scanResults.getProductLink();
+        if(!beerProfileUrl.equals("") && beerProfileUrl != null)
+        {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(beerProfileUrl));
+            startActivity(i);
+        }
+    }
+    
+    /**
+     * Handles intent to pull up beer style page
+     */
+    private void goToBeerStylePage()
+    {
+        String beerStyleID = this.scanResults.getBeerStyleID();
+        if(!beerStyleID.equals(""))
+        {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("http://www.beeradvocate.com/beer/style/" + beerStyleID));
+            startActivity(i);
+        }
+    }
+
+    /**
+     * Handles intent to go to modify beer result page
+     */
+    private void incorrectBeerResult()
+    {
+        Intent incorrectData = new Intent();
+        incorrectData.putExtra("upcCode", this.scanResults.getUpcCode());
+        incorrectData.putExtra("currentBeerName", this.scanResults.getStoredBeerName());
+        setResult(Activity.RESULT_OK, incorrectData);
+        finish();
     }
 }
