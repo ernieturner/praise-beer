@@ -36,7 +36,7 @@
 <string name="okLabel">OK</string>
 <string name="error_noDescription">Sorry, there was a problem sending that description to the server.</string>
 <string name="incorrectBeer">Not the beer you scanned?</string>
-<string name="beerAdvocateAttribution">Ratings courtesy of www.beeradvocate.com</string>
+<string name="beerAdvocateAttribution">Beer ratings courtesy of beeradvocate.com</string>
 <string name="noUpcResultsFound">Sorry, we weren\'t able to find any results for that UPC code. If you are up to the task, would you like to make our app better? Please fill out the name of the beer you scanned below!</string>
 <string name="fixExistingEntryTitle">Edit Existing Entry</string>
 <string name="noBeerFoundWithDescription">We found a name for that beer, but we couldn\'t seem to find any ratings for it. The name is entered below. If you tweak the description, we might be able to find the ratings for it.</string>

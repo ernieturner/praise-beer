@@ -42,7 +42,7 @@
     </style>
     
     <style name="BlackRowCenterSmallText" parent="@style/BlackRowCenterLargeText">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="SideButtons" parent="@style/WrapContentAll">

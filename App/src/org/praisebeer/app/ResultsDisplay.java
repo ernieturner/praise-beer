@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -46,9 +47,10 @@ public class ResultsDisplay extends Activity
         brothersRating.setText(this.scanResults.getBrothersRating());
         communityRating.setTextColor(this.scanResults.calculateColorByRating(scanResults.getCommunityRating()));
         brothersRating.setTextColor(this.scanResults.calculateColorByRating(scanResults.getBrothersRating()));
-        ((TextView) findViewById(R.id.communityRatingName)).setText(this.scanResults.getCommunityRatingDescription() + "\n" + String.format(getString(R.string.ratingsText), this.scanResults.getNumberOfRatings()), TextView.BufferType.SPANNABLE);
+        
+        String text = String.format("%1$s <br/><small><small>w/ %2$s ratings</small></small>", this.scanResults.getCommunityRatingDescription(), this.scanResults.getNumberOfRatings());
+        ((TextView) findViewById(R.id.communityRatingName)).setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
         ((TextView) findViewById(R.id.brothersRatingName)).setText(this.scanResults.getBrothersRatingDescription());
-        //((TextView) findViewById(R.id.communityRatingCount)).setText("w/ " + this.scanResults.getNumberOfRatings() + " reviews");
     }
     
     /**
