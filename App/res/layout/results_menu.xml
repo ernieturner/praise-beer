@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      android:theme="@android:style/Theme.Panel">
+
+    <item android:id="@+id/viewBeerPage"
+          android:title="@string/viewProfilePage" 
+          android:textSize="23sp"/>
+
+    <item android:id="@+id/findOtherSimilarStyles"
+          android:title="@string/viewStylePage" 
+          android:textSize="23sp"/>
+
+    <item android:id="@+id/incorrectBeerScanned"
+          android:title="@string/incorrectBeer" 
+          android:textSize="23sp"/>
+</menu>
