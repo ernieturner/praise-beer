@@ -113,7 +113,7 @@ class MainHandler(webapp.RequestHandler):
             rpcServer   = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
             upcDBResult = rpcServer.lookupEAN(upcCode)
             
-            if type(upcDBResult) == dict and upcDBResult['found']:
+            if type(upcDBResult) == dict and upcDBResult.has_key('found'):
                 result['description'] = upcDBResult['description']
                 result['found']       = True
 
