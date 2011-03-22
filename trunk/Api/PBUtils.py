@@ -42,7 +42,7 @@ class Scraper():
             memcache.set(uniqueBeerCode, beerDetails, 864000)
         return beerDetails
     except:
-      try:        
+      try:
         cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en'
         result = urlfetch.fetch(cache_url,deadline=10)
         if result.status_code == 200:
@@ -62,22 +62,26 @@ class Scraper():
     content = re.sub('\n|\r', '', content)
     beer_info = {}
 
-    pat = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span><br>([a-z\s]+)<br>w/ ([0-9,]+) Reviews</td>.*THE BROS<br><span class="BAscore_big">([A-Z/]+[+-]?)</span><br>([a-z\s!;]+)')
-    if pat.search(content):
-      m = pat.search(content)
-      beer_info['ratings'] = {'overall':m.group(1,2,3), 'bros':m.group(4,5)}
-          
-      # -a-zA-Z\s()/
-      pat = re.compile('<b>Style \| ABV</b><br><a href="/beer/style/(\d+)"><b>([^<]*)</b></a> \| &nbsp;(?:(\d+\.?\d*?)%|ABV)')
-      if pat.search(content):
-        m = pat.search(content)
-        beer_info['stats'] = {'abv':m.group(3), 'style_name':m.group(2), 'style_id':m.group(1)}
+    ratingRegex = re.compile('BAscore_big">([A-Z/]+[/]?[+-]?)</span>\s*<br>\s*([a-z\s]+)<br>([0-9,]+) Reviews</td>.*THE BROS\s*<br/?><span\s+class="BAscore_big">([A-Z/]+[+-]?)</span>\s*<br/?>([a-z\s!;]+)')
+    matches = ratingRegex.search(content)
+    if matches:
+      beer_info['ratings'] = {'overall': matches.group(1,2,3), 'bros': matches.group(4,5)}
+      
+      styleRegex = re.compile('<b>Style\s*[|]\s*ABV</b>\s*<br/?>\s*<a href="/beer/style/(\d+)"><b>([^<]*)</b></a>\s*[|]\s*&nbsp;\s*(?:(\d+\.?\d*?)%)')
+      matches = styleRegex.search(content)
+      if matches:
+        beer_info['stats'] = {'abv': matches.group(3), 'style_name': matches.group(2), 'style_id': matches.group(1)}
 
-        pat = re.compile('<h1 class="norm">([^<]*)<')
-        if pat.search(content):
-          m = pat.search(content)
-          beer_info['stats']['name'] = m.group(1).strip()
-                    
+        nameRegex = re.compile('<h1 class="norm">([^<]*)<')
+        matches = nameRegex.search(content)
+        if matches:
+          beer_info['stats']['name'] = matches.group(1).strip()
+
+      breweryRegex = re.compile('<b>Brewed by:</b>\s*<br/?>\s*<a href="/beer/profile/(\d+)">\s*<b>\s*([^<]+)')
+      matches = breweryRegex.search(content)
+      if matches:
+         beer_info['stats']['brewery'] = matches.group(1,2)
+      
     return beer_info
 # -----------------------------------------------------------------------------
 # BOSS API Search Handler Class
