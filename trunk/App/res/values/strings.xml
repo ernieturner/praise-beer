@@ -3,7 +3,7 @@
     
     <string name="appName">Praise Beer</string>
 <string name="scanBeer">Scan Beer</string>
-<string name="quitApp">Quit App</string>
+<string name="quitApp">Quit</string>
 <string name="scanContent">Scanned UPC Value: </string>
 
 
@@ -42,4 +42,6 @@
 <string name="noBeerFoundWithDescription">We found a name for that beer, but we couldn\'t seem to find any ratings for it. The name is entered below. If you tweak the description, we might be able to find the ratings for it.</string>
 <string name="ratingsText">w/ %1$s reviews</string>
 
+<string name="viewBreweryPage">View Other Beers by %1$s</string>
+<string name="searchBeer">Search for Beer</string>
 </resources>

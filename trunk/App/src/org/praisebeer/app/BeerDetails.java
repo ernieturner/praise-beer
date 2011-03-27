@@ -22,6 +22,8 @@ public class BeerDetails implements java.io.Serializable
     private String beerABV = "Unknown ABV";
     private String beerStyle = "Unknown Beer Type";
     private String beerStyleID = "";
+    private String beerBreweryID = "";
+    private String beerBreweryName = "";
     private Vector<String> productLinks;
 
     /** Result Errors and Success */
@@ -93,6 +95,38 @@ public class BeerDetails implements java.io.Serializable
         this.brothersRating = rating;
     }
 
+    /**
+     * Returns ID of brewery
+     */
+    public String getBreweryID()
+    {
+        return this.beerBreweryID;
+    }
+
+    /**
+     * Set ID of brewery
+     */
+    public void setBreweryID(String id)
+    {
+        this.beerBreweryID = id;
+    }
+    
+    /**
+     * Returns name of brewery
+     */
+    public String getBreweryName()
+    {
+        return this.beerBreweryName;
+    }
+
+    /**
+     * Set name of brewery
+     */
+    public void setBreweryName(String name)
+    {
+        this.beerBreweryName = name;
+    }
+    
     /**
      * Returns number of ratings for beer
      */

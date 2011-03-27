@@ -50,5 +50,16 @@
         <item name="android:paddingRight">40sp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">fill_horizontal</item>
+        <item name="android:background">@drawable/homebutton</item>
     </style>
+    
+    <style name="HomeButton" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">270dip</item>
+        <item name="android:layout_height">70dip</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/homebutton</item>
+    </style>
+
 </resources>
