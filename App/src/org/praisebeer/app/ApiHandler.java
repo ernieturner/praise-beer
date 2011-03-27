@@ -140,6 +140,12 @@ public class ApiHandler extends Activity implements Runnable
                             beerDetails.setBeerStyleID(stats.getString("style_id"));
                         }
                         catch(JSONException e){}
+                        try{
+                            JSONArray breweryInfo = stats.getJSONArray("brewery");
+                            beerDetails.setBreweryID(breweryInfo.getString(0));
+                            beerDetails.setBreweryName(breweryInfo.getString(1));
+                        }
+                        catch(JSONException e){}
                     }
                     catch(JSONException e){}
                 }

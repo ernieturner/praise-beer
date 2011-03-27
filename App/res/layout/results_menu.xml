@@ -4,6 +4,10 @@
     <item android:id="@+id/viewBeerPage"
           android:title="@string/viewProfilePage" 
           android:textSize="23sp"/>
+    
+    <item android:id="@+id/viewBreweryPage"
+          android:title="@string/viewBreweryPage" 
+          android:textSize="23sp"/>
 
     <item android:id="@+id/findOtherSimilarStyles"
           android:title="@string/viewStylePage" 
