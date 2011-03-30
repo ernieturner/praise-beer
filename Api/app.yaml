@@ -10,6 +10,8 @@ handlers:
   script: upcLookup.py
 - url: /namelookup
   script: nameLookup.py
+- url: /namesearch
+  script: nameSearch.py
 - url: /cron
   script: cron.py
 - url: /favicon.ico

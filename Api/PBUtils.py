@@ -88,7 +88,7 @@ class Scraper():
 # -----------------------------------------------------------------------------
 
 class BossSearch():
-  def getResults(self,description):
+  def getResults(self, description, returnTitle=False):
     base   = 'http://boss.yahooapis.com/ysearch/web/v1/'
     params = {
       'appid':BOSS_SEARCH_API_KEY,
@@ -97,27 +97,33 @@ class BossSearch():
     payload = urllib.urlencode(params)
     url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload    
 
-    response = StringIO(urlfetch.fetch(url).content)    
-    result   = self._formatResults(simplejson.load(response))    
+    response = StringIO(urlfetch.fetch(url).content)
+    result   = self._formatResults(simplejson.load(response), returnTitle)
     return result;
 
-  def _formatResults(self,searchResults):    
+  def _formatResults(self, searchResults, returnTitle=False):    
     baBase = 'http://www.beeradvocate.com/beer/profile/'
     lookup = {}
     links  = []
         
     if int(searchResults['ysearchresponse']['count']) > 0:
-      for entry in searchResults['ysearchresponse']['resultset_web']:      
+      for entry in searchResults['ysearchresponse']['resultset_web']:
         if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
           m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
-          key = baBase + m.group(1) + '/'+ m.group(2)       
+          key = baBase + m.group(1) + '/'+ m.group(2)
+          title = self._removeHtmlTags(entry['title'])
           if not lookup.has_key(key):
             lookup[key] = 1
-            links.append(key)
+            if returnTitle == True:
+              links.append({'url':key, 'title':title})
+            else:
+              links.append(key);
       return links
-    else:
-      return []
-      
+    return []
+
+  def _removeHtmlTags(self, data):
+    p = re.compile(r'<.*?>')
+    return p.sub('', data)
   
 # -----------------------------------------------------------------------------
 # Google API Search Handler Class
