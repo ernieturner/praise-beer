@@ -80,7 +80,6 @@ class GoogleXMLRPCTransport(object):
 class MainHandler(webapp.RequestHandler):
     def get(self):
         upcCode = self.request.get('upc')
-        
         if upcCode == "" or upcCode is None:
             self.printResponse(simplejson.dumps({"success": False, "error_code": NO_UPC_CODE_SENT}))
             return

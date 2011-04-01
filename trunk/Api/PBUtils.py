@@ -115,7 +115,7 @@ class BossSearch():
           if not lookup.has_key(key):
             lookup[key] = 1
             if returnTitle == True:
-              links.append({'url':key, 'title':title})
+              links.append({'url':m.group(1) + '/' + m.group(2), 'title':title})
             else:
               links.append(key);
       return links
