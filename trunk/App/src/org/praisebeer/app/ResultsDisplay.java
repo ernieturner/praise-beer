@@ -58,7 +58,12 @@ public class ResultsDisplay extends Activity
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.layout.results_menu, menu);
+        //If no UPC code was found (because we did a search) don't display the option for "Not the beer you scanned"
+        if(this.scanResults.getUpcCode().equals(""))
+            inflater.inflate(R.layout.results_menu_without_incorrect, menu);
+        else
+            inflater.inflate(R.layout.results_menu, menu);
+        menu.getItem(1).setTitle(String.format(getString(R.string.viewBreweryPage), this.scanResults.getBreweryName()));
         return true;
     }
     
@@ -67,15 +72,18 @@ public class ResultsDisplay extends Activity
      */
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.viewBeerPage:
-            goToBeerProfilePage();
-            return true;
-        case R.id.findOtherSimilarStyles:
-            goToBeerStylePage();
-            return true;
-        case R.id.incorrectBeerScanned:
-            incorrectBeerResult();
-            return true;
+            case R.id.viewBeerPage:
+                goToBeerProfilePage();
+                return true;
+            case R.id.viewBreweryPage:
+                goToBeerBreweryPage();
+                return true;
+            case R.id.findOtherSimilarStyles:
+                goToBeerStylePage();
+                return true;
+            case R.id.incorrectBeerScanned:
+                incorrectBeerResult();
+                return true;
         }
         return false;
     }
@@ -90,6 +98,20 @@ public class ResultsDisplay extends Activity
         {
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(beerProfileUrl));
+            startActivity(i);
+        }
+    }
+    
+    /**
+     * Handles intent to pull up beer profile page
+     */
+    private void goToBeerBreweryPage()
+    {
+        String beerBreweryID = this.scanResults.getBreweryID();
+        if(!beerBreweryID.equals("") && beerBreweryID != null)
+        {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("http://www.beeradvocate.com/beer/profile/" + beerBreweryID));
             startActivity(i);
         }
     }

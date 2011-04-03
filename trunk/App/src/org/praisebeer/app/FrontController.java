@@ -20,6 +20,7 @@ public class FrontController extends Activity
 
         // Obtain handles to UI objects
         Button scanBeer = (Button) findViewById(R.id.scanBeer);
+        Button searchBeer = (Button) findViewById(R.id.searchBeer);
         Button quitApp = (Button) findViewById(R.id.quitApp);
 
         // Register handler for beer scanning
@@ -35,6 +36,14 @@ public class FrontController extends Activity
             }
         });
 
+        searchBeer.setOnClickListener(new Button.OnClickListener(){
+           public void onClick(View v)
+           {
+               Intent i = new Intent(FrontController.this, SearchForBeer.class);
+               startActivityForResult(i, SearchForBeer.REQUEST_CODE);
+           }
+        });
+        
         // Register handler for closing app
         quitApp.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v)
@@ -71,7 +80,7 @@ public class FrontController extends Activity
             this.handleIncorrectResultShown(data, true);
         }
     }
-    
+
     /**
      * Handles data returned from scan activity and sends data to API query activity
      * @param requestCode int Request code sent back from activity
@@ -97,6 +106,7 @@ public class FrontController extends Activity
             }
             Intent i = new Intent(this, ApiHandler.class);
             i.putExtra("upcCode", scanResult.getContents());
+            i.putExtra("requestType", ApiHandler.UPC_LOOKUP);
             startActivityForResult(i, ApiHandler.REQUEST_CODE);
         }
     }
@@ -112,6 +122,7 @@ public class FrontController extends Activity
         //activity knows what URL to use depending on what data is passed to it
         Intent i = new Intent(this, ApiHandler.class);
         i.putExtra("upcCode", data.getStringExtra("upcCode"));
+        i.putExtra("requestType", ApiHandler.UPC_LOOKUP);
         i.putExtra("descriptionEntered", data.getStringExtra("descriptionEntered"));
         boolean fixingEntry = data.getBooleanExtra("entryModification", false);
         if(fixingEntry == true)
@@ -125,6 +136,18 @@ public class FrontController extends Activity
      * @param data Intent Data recieved from activity
      */
     private void handleResultsResponse(Intent data)
+    {
+        int requestType = data.getIntExtra("requestType", 0);
+        if(requestType == ApiHandler.UPC_LOOKUP){
+            this.handleUpcLookupResult(data);
+        }
+    }
+    
+    /**
+     * Handler for parsing results from UPC scan
+     * @param data
+     */
+    private void handleUpcLookupResult(Intent data)
     {
         BeerDetails scanResults = (BeerDetails) data.getSerializableExtra("scanResults");
         if(scanResults != null)
