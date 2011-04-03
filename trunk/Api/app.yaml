@@ -12,6 +12,8 @@ handlers:
   script: nameLookup.py
 - url: /namesearch
   script: nameSearch.py
+- url: /idlookup
+  script: idLookup.py
 - url: /cron
   script: cron.py
 - url: /favicon.ico
