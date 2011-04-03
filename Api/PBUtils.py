@@ -41,6 +41,8 @@ class Scraper():
             #Set memcache to expire in 10 days
             memcache.set(uniqueBeerCode, beerDetails, 864000)
         return beerDetails
+      else:
+        return "URL not found"
     except:
       try:
         cache_url = 'http://webcache.googleusercontent.com/search?q=cache:'+ url + '&hl=en'
