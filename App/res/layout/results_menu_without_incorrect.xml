@@ -12,8 +12,4 @@
     <item android:id="@+id/findOtherSimilarStyles"
           android:title="@string/viewStylePage" 
           android:textSize="23sp"/>
-          
-    <item android:id="@+id/incorrectBeerScanned"
-          android:title="@string/incorrectBeer" 
-          android:textSize="23sp"/>
 </menu>

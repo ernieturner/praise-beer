@@ -28,6 +28,12 @@
         <activity android:name="ManualUserEntry" 
                   android:label="@string/upcCodeNotFound">
         </activity>
+        <activity android:name="SearchForBeer" 
+                  android:label="@string/searchForBeer">
+        </activity>
+        <activity android:name="SearchResultsDisplay" 
+                  android:label="@string/searchResults">
+        </activity>
         <activity android:name="FixEntry" 
                   android:label="@string/fixExistingEntryTitle">
         </activity>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FillParentAll"
+    android:id="@+id/SF_scrollContainer">
+
+    <RelativeLayout
+        android:id="@+id/SF_layout"
+        style="@style/FillParentAll"
+        android:padding="15sp"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/SF_enterKeywordMessage"
+            android:text="@string/enterSearchTerm"
+            android:textSize="18sp"
+            style="@style/Center"/>
+
+    <!-- START Beer name entry section -->
+        <EditText
+            android:id="@+id/SF_beerNameEntry"
+            style="@style/Center"
+            android:capitalize="words"
+            android:layout_marginTop="20sp"
+            android:background="@android:drawable/editbox_background"
+            android:layout_below="@id/SF_enterKeywordMessage" />
+
+    <!-- END Beer name entry section -->
+    
+        <TextView 
+            android:id="@+id/SF_spacer"
+            android:paddingTop="35sp"
+            style="@style/Center"
+            android:layout_below="@id/SF_beerNameEntry"/>
+
+    <!-- START submit/cancel button section -->
+        <Button
+            android:id="@+id/SF_submitButton"
+            style="@style/SideButtons"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/SF_spacer"
+            android:text="@string/submit"/>
+        <Button
+            android:id="@+id/SF_cancelButton"
+            style="@style/SideButtons"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/SF_spacer"
+            android:text="@string/cancel"/>
+        
+    <!-- END submit/cancel button section -->
+    </RelativeLayout>
+</ScrollView>

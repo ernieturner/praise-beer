@@ -44,4 +44,7 @@
 
 <string name="viewBreweryPage">View Other Beers by %1$s</string>
 <string name="searchBeer">Search for Beer</string>
+<string name="searchForBeer">Search For Beer</string>
+<string name="enterSearchTerm">Enter the name of the beer. This usually works best if you enter the brewery that made it as well.</string>
+<string name="searchResults">Search Results</string>
 </resources>
