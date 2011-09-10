@@ -91,6 +91,7 @@ class Scraper():
 
 class BossSearch():
   def getResults(self, description, returnTitle=False):
+    return []
     base   = 'http://boss.yahooapis.com/ysearch/web/v1/'
     params = {
       'appid':BOSS_SEARCH_API_KEY,
@@ -98,10 +99,9 @@ class BossSearch():
     }
     payload = urllib.urlencode(params)
     url     = base + urllib.quote('inurl:"beer/profile" ') + urllib.quote(description) + '?' + payload    
-
     response = StringIO(urlfetch.fetch(url).content)
     result   = self._formatResults(simplejson.load(response), returnTitle)
-    return result;
+    return result
 
   def _formatResults(self, searchResults, returnTitle=False):    
     baBase = 'http://www.beeradvocate.com/beer/profile/'
@@ -119,7 +119,7 @@ class BossSearch():
             if returnTitle == True:
               links.append({'url':m.group(1) + '/' + m.group(2), 'title':title})
             else:
-              links.append(key);
+              links.append(key)
       return links
     return []
 
@@ -132,7 +132,7 @@ class BossSearch():
 # -----------------------------------------------------------------------------
 
 class GoogleSearch():
-  def getResults(self,description): 
+  def getResults(self,description,returnTitle=False): 
     base   = "http://ajax.googleapis.com/ajax/services/search/web?"
     params = {
       'v':'1.0',
@@ -143,18 +143,27 @@ class GoogleSearch():
     url     = base + payload
     
     response = StringIO(urlfetch.fetch(url).content)    
-    result   = self._formatResults(simplejson.load(response))
+    result   = self._formatResults(simplejson.load(response), returnTitle)
     return result;          
 
-  def _formatResults(self,searchResults):        
+  def _formatResults(self,searchResults,returnTitle=False):        
     baBase = 'http://www.beeradvocate.com/beer/profile/'    
     lookup = {}
     links  = []
     for entry in searchResults['responseData']['results']:
       if re.search(r"\/(\d+)\/(\d+)\/?",entry['url']):
         m = re.search(r"\/(\d+)\/(\d+)\/?",entry['url'])
-        key = baBase + m.group(1) + '/'+ m.group(2)                           
+        key = baBase + m.group(1) + '/'+ m.group(2)
+        title = self._removeHtmlTags(entry['title'])
         if not lookup.has_key(key):
           lookup[key] = 1
+          if returnTitle == True:
+            links.append({'url':m.group(1) + '/' + m.group(2), 'title':title})
+          else:
+            links.append(key)
           links.append(key)
-    return links  
+    return links
+  
+  def _removeHtmlTags(self, data):
+      p = re.compile(r'<.*?>')
+      return p.sub('', data)
