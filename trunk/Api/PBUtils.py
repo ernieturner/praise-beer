@@ -132,11 +132,11 @@ class BossSearch():
 # -----------------------------------------------------------------------------
 
 class GoogleSearch():
-  def getResults(self,description,returnTitle=False): 
+  def getResults(self, description, returnTitle=False): 
     base   = "http://ajax.googleapis.com/ajax/services/search/web?"
     params = {
       'v':'1.0',
-      'key':GOOGLE_SEARCH_API_KEY,
+      #'key':GOOGLE_SEARCH_API_KEY,
       'q':'site:beeradvocate.com/beer/profile/ '+ description
     }
     payload = urllib.urlencode(params)
@@ -146,7 +146,7 @@ class GoogleSearch():
     result   = self._formatResults(simplejson.load(response), returnTitle)
     return result;          
 
-  def _formatResults(self,searchResults,returnTitle=False):        
+  def _formatResults(self, searchResults, returnTitle=False):        
     baBase = 'http://www.beeradvocate.com/beer/profile/'    
     lookup = {}
     links  = []
