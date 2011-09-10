@@ -47,9 +47,7 @@ class MainHandler(webapp.RequestHandler):
             return
 
         #Find results for description entered
-        links  = PBUtils.BossSearch().getResults(description)
-        if len(links) == 0:
-            links = PBUtils.GoogleSearch().getResults(description)
+        links = PBUtils.GoogleSearch().getResults(description)
 
         #If no results were found, report error
         if len(links) > 0:

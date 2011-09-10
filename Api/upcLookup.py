@@ -123,9 +123,7 @@ class MainHandler(webapp.RequestHandler):
             if result.has_key('ba_link') and result['ba_link'] is not None:
               links = [BA_BEER_PROFILE_URL + result['ba_link']]
             else:
-              links  = PBUtils.BossSearch().getResults(result['description'])
-              if len(links) == 0:
-                links  = PBUtils.GoogleSearch().getResults(result['description'])
+              links  = PBUtils.GoogleSearch().getResults(result['description'])
             
             if len(links) > 0:
                 beerInfo = PBUtils.Scraper().doScrape(links[0])
