@@ -99,11 +99,9 @@ class GoogleSearch():
       'q':'site:' + BA_BEER_PROFILE_URL + ' ' + description
     }
     payload = urllib.urlencode(params)
-    url     = base + payload
-
-    response = StringIO(urlfetch.fetch(url).content)    
-    result   = self._formatResults(simplejson.load(response), returnTitle)
-    return result;          
+    url = base + payload
+    result = urlfetch.fetch(url)
+    return self._formatResults(simplejson.loads(result.content), returnTitle)
 
   def _formatResults(self, searchResults, returnTitle=False):        
     baBase = 'http://www.beeradvocate.com/beer/profile/'    
