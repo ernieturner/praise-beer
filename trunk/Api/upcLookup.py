@@ -114,9 +114,8 @@ class MainHandler(webapp.RequestHandler):
             
             if type(upcDBResult) == dict and upcDBResult.has_key('found'):
                 result['description'] = upcDBResult['description']
-                result['found']       = True
+                result['found'] = True
 
-        #self.response.out.write('%s = %r %s' % (result, result, type(result)))
         if type(result) == dict and result.has_key('found'):
             productDescription = result['description']
             
@@ -124,14 +123,13 @@ class MainHandler(webapp.RequestHandler):
               links = [BA_BEER_PROFILE_URL + result['ba_link']]
             else:
               links  = PBUtils.GoogleSearch().getResults(result['description'])
-            
+
             if len(links) > 0:
                 beerInfo = PBUtils.Scraper().doScrape(links[0])
             else:
                 errorCode = NO_BEER_FOUND
         else:
             errorCode = NO_UPC_FOUND
-
         #If an error was encountered, send back the error code. Add addtional errorResponse index to provide app
         #with more information
         if errorCode is not None:
