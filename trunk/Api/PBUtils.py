@@ -37,12 +37,15 @@ class Scraper():
       if result.status_code == 200:
         try:
           beerDetails = self.parseResults(result.content)
-          if uniqueBeerCode != '' and len(beerDetails) > 0 and beerDetails['ratings'] and beerDetails['stats']:
+          try:
+            if uniqueBeerCode != '' and len(beerDetails) > 0 and beerDetails['ratings'] and beerDetails['stats']:
               #Set memcache to expire in 10 days
               memcache.set(uniqueBeerCode, beerDetails, 864000)
+          except:
+            "Error setting memcache"
           return beerDetails
         except:
-          return "Error with regex matching or memcache setting"
+          return "Error with regex matching"
       else:
         return "URL not found"
     except:
@@ -64,21 +67,22 @@ class Scraper():
 
   def parseResults(self, content):
     content = re.sub('\n|\r', '', content)
+
     beer_info = {}
-    ratingRegex = re.compile('BAscore_big">([0-9]+)</span>.*<b>([a-z]+).*<br>-<br>([0-9,]+)\s*Reviews.*BAscore_big">([0-9NA/]+)</span>.*=ratings"><b>([a-z]*)</b>')
+    ratingRegex = re.compile('BAscore_big">([0-9]+)</span>.*<b>([-a-z]+).*<br>-<br>([0-9,]+)\s*Reviews.*BAscore_big">([0-9NA/]+)</span>.*=ratings"><b>([-a-z]*)</b>')
     matches = ratingRegex.search(content)
     if matches:
       beer_info['ratings'] = {'overall': matches.group(1,2,3), 'bros': matches.group(4,5)}
-      styleRegex = re.compile('<b>Style\s*[|]\s*ABV.*/beer/style/(\d+)"><b>([^<]*)</b></a>\s*[|]\s*&nbsp;\s*(?:(\d+\.?\d*?)%)')
+      styleRegex = re.compile('<b>Style\s*[|]\s*ABV.*/beer/style/(\d+)"><b>([^<]*)</b></a>\s*[|]\s*&nbsp;\s*(ABV\s*\?|\d+[.]\d*)')
       matches = styleRegex.search(content)
       if matches:
         beer_info['stats'] = {'abv': matches.group(3), 'style_name': matches.group(2), 'style_id': matches.group(1)}
-
+        if beer_info['stats']['abv'] == 'ABV ?':
+            beer_info['stats']['abv'] = '?'
         nameRegex = re.compile('<h1 class="norm">([^<]*)<')
         matches = nameRegex.search(content)
         if matches:
           beer_info['stats']['name'] = matches.group(1).strip()
-
       breweryRegex = re.compile('<b>Brewed by:.*/beer/profile/(\d+)">\s*<b>\s*([^<]+)')
       matches = breweryRegex.search(content)
       if matches:
