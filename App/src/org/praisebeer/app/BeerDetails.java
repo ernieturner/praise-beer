@@ -47,19 +47,20 @@ public class BeerDetails implements java.io.Serializable
      */
     public int calculateColorByRating(String rating)
     {
-        String ratingCore = rating.substring(0, 1);
+        if(rating.equals("N/A"))
+            return Color.rgb(0x0, 0x0, 0x0);
 
-        if(ratingCore.equals("A"))
+        int ratingScore = Integer.parseInt(rating);
+
+        if(ratingScore > 90)
             return Color.rgb(0x19, 0xe1, 0x1d);
-        if(ratingCore.equals("B"))
+        if(ratingScore > 80)
             return Color.rgb(0xb2, 0xda, 0x14);
-        if(ratingCore.equals("C"))
+        if(ratingScore > 70)
             return Color.rgb(0xe7, 0xef, 0x0c);
-        if(ratingCore.equals("D"))
+        if(ratingScore > 60)
             return Color.rgb(0xf7, 0xb1, 0x2b);
-        if(ratingCore.equals("F"))
-            return Color.rgb(0xf5, 0x0e, 0x0e);
-        return Color.rgb(0x0, 0x0, 0x0);
+        return Color.rgb(0xf5, 0x0e, 0x0e); 
     }
 
     /**
@@ -92,7 +93,7 @@ public class BeerDetails implements java.io.Serializable
     public void setBrothersRating(String rating)
     {
         if(rating != null && !rating.equals("null"))
-        this.brothersRating = rating;
+            this.brothersRating = rating;
     }
 
     /**
@@ -206,7 +207,7 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBeerABV(String ABV)
     {
-        if(ABV != null && !ABV.equals("null"))
+        if(ABV != null && !ABV.equals("null") && !ABV.equals("?"))
             this.beerABV = ABV;
     }
 
@@ -223,7 +224,7 @@ public class BeerDetails implements java.io.Serializable
      */
     public void setBrothersRatingDescription(String description)
     {
-        if(!description.equals("no reviews; yet!"))
+        if(description != null && !description.equals(""))
         {
             String firstLetter = description.substring(0, 1);
             this.brothersRatingDescription = firstLetter.toUpperCase() + description.substring(1);
