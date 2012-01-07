@@ -40,7 +40,7 @@ public class ErrorDisplay extends Activity
                 break;
         }
         if(errorMessage != "" && errorMessage != null)
-            convertedErrorMessage = " - " + errorMessage;
+            convertedErrorMessage = convertedErrorMessage + " - " + errorMessage;
         ((TextView) findViewById(R.id.errorText)).setText(convertedErrorMessage);
     }
 }

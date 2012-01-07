@@ -35,7 +35,6 @@ public class ApiHandler extends Activity implements Runnable
     private BeerDetails beerDetails;
     private ArrayList<String[]> searchResults;
     
-    
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
