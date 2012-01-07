@@ -24,7 +24,8 @@ from google.appengine.api import memcache
 # Constants
 # -----------------------------------------------------------------------------
 
-UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/rpc'
+UPC_DATABASE_RPC_URL = 'http://www.upcdatabase.com/xmlrpc'
+UPC_DATABASE_RPC_KEY = '0e48d052dd756b91c2c1de42fa89eb4630bed385'
 BA_BEER_PROFILE_URL  = 'http://www.beeradvocate.com/beer/profile/'
 INVALID_UPC_CODE = 0
 NO_UPC_CODE_SENT = 1
@@ -110,8 +111,8 @@ class MainHandler(webapp.RequestHandler):
         else:
             upcDBResult = {}
             rpcServer   = xmlrpclib.ServerProxy(UPC_DATABASE_RPC_URL, GoogleXMLRPCTransport())
-            upcDBResult = rpcServer.lookupEAN(upcCode)
-            
+            params = {'rpc_key': UPC_DATABASE_RPC_KEY, 'ean': upcCode}
+            upcDBResult = rpcServer.lookup(params)
             if type(upcDBResult) == dict and upcDBResult.has_key('found'):
                 result['description'] = upcDBResult['description']
                 result['found'] = True
